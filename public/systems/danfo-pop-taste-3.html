@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danfo Pop / Taste V3 Type Blast</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--yellow:#f2c200;--ink:#191308;--red:#d43d17;--blue:#274690;--cream:#f6efdc}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--yellow);color:var(--ink);font-family:"Space Grotesk",sans-serif;
+    background-image:radial-gradient(rgba(25,19,8,.13) 1.2px, transparent 1.2px);background-size:14px 14px}
+  .page{min-height:calc(100dvh - 46px);display:flex;flex-direction:column;justify-content:space-between;
+    padding:clamp(20px,4vw,44px)}
+  nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .wordmark{font-family:Anton;font-size:26px}.wordmark span{color:var(--red)}
+  nav a{background:var(--ink);color:var(--yellow);padding:10px 22px;text-decoration:none;font-weight:700;
+    text-transform:uppercase;font-size:13px}
+  h1{font-family:Anton;text-transform:uppercase;line-height:.88;letter-spacing:-.005em;
+    font-size:clamp(64px,13.5vw,190px)}
+  h1 .a{color:var(--ink)}
+  h1 .b{color:transparent;-webkit-text-stroke:4px var(--ink)}
+  h1 .c{color:var(--red);text-shadow:6px 6px 0 var(--ink)}
+  h1 .d{color:var(--cream);text-shadow:5px 5px 0 var(--blue)}
+  .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:28px}
+  .sub{font-size:16px;font-weight:700;text-transform:uppercase;max-width:30ch;letter-spacing:.02em}
+  .cta{background:var(--red);color:var(--cream);font-family:Anton;font-size:22px;text-transform:uppercase;
+    padding:18px 40px;text-decoration:none;box-shadow:7px 7px 0 var(--ink)}
+  .cta:active{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+  .texture{margin-top:26px;height:90px;border:3px dashed var(--ink);display:flex;align-items:center;
+    justify-content:center;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#5c4d10}
+  .ticker{background:var(--ink);color:var(--yellow);font-family:Anton;text-transform:uppercase;
+    font-size:15px;letter-spacing:.1em;padding:12px 0;white-space:nowrap;overflow:hidden;margin:0 calc(-1*clamp(20px,4vw,44px)) calc(-1*clamp(20px,4vw,44px))}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><div class="wordmark">IJE<span>*</span></div><a href="#">Get a seat</a></nav>
+  <h1>
+    <span class="a">Six</span> <span class="b">strangers.</span><br>
+    <span class="c">One evening.</span><br>
+    <span class="d">See what happens.</span>
+  </h1>
+  <div class="foot">
+    <p class="sub">The best table in Lagos hasn't met yet.</p>
+    <a class="cta" href="#">Get a seat</a>
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: coarse halftone dot texture fading left to right, single color black on transparent]
+       brand asset, screenprint grain band -->
+  <div class="texture">IMAGE SLOT · halftone texture band · 12:1</div>
+  <div class="ticker">&nbsp;THURSDAY 7PM · LAGOS · NO SMALL TALK · THURSDAY 7PM · LAGOS · NO SMALL TALK · THURSDAY 7PM · LAGOS · NO SMALL TALK&nbsp;</div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

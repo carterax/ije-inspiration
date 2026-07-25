@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hand-Painted / Impeccable</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--orange);color:var(--cream);font-family:"Chakra Petch",sans-serif;
+    background-image:radial-gradient(rgba(247,240,227,.07) 1.5px, transparent 1.5px);background-size:9px 9px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-family:"Permanent Marker";font-size:28px;color:var(--cream);transform:rotate(-2deg)}
+  nav a{font-family:"Permanent Marker";background:var(--amber);color:var(--ink);padding:10px 24px;
+    text-decoration:none;font-size:16px;transform:rotate(1.4deg);display:inline-block;border-radius:6px 14px 8px 12px}
+  nav a:hover{transform:rotate(0) scale(1.04)}
+  .hero{min-height:66dvh;display:flex;flex-direction:column;justify-content:center;padding:40px 0;position:relative}
+  h1{font-family:"Permanent Marker";font-size:clamp(42px,7vw,90px);line-height:1.08;max-width:14ch}
+  h1 .a{color:var(--cream)}
+  h1 .b{color:var(--amber)}
+  .sub{margin-top:24px;font-size:17px;max-width:38ch;line-height:1.65;color:#f6e3d3}
+  .cta{margin-top:30px;display:inline-block;width:max-content;font-family:"Permanent Marker";
+    background:var(--cream);color:var(--orange);padding:14px 34px;text-decoration:none;font-size:19px;
+    transform:rotate(-1.4deg);border-radius:10px 18px 12px 16px;box-shadow:4px 5px 0 rgba(17,24,39,.3)}
+  .cta:hover{transform:rotate(0) scale(1.03)}
+  .stickers{position:absolute;right:0;top:16%;width:240px;pointer-events:none;text-align:center}
+  .stk{font-family:"Permanent Marker";display:inline-block;margin:8px 4px;padding:8px 16px;font-size:14px;
+    border-radius:8px 16px 10px 14px}
+  .s1{background:var(--amber);color:var(--ink);transform:rotate(5deg)}
+  .s2{background:var(--cream);color:var(--orange);transform:rotate(-4deg)}
+  .s3{background:var(--ink);color:var(--cream);transform:rotate(3deg)}
+  .mottoes{background:var(--cream);color:var(--ink);margin:0 -100vw;padding:56px 100vw 72px}
+  .planks{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .plank{background:#fff;padding:26px 22px;border-radius:8px 16px 10px 14px;box-shadow:5px 6px 0 rgba(17,24,39,.15)}
+  .plank:nth-child(1){transform:rotate(-1.2deg)}
+  .plank:nth-child(2){transform:rotate(.8deg);background:var(--amber)}
+  .plank:nth-child(3){transform:rotate(-.6deg)}
+  .plank h3{font-family:"Permanent Marker";font-size:21px;color:var(--orange)}
+  .plank:nth-child(2) h3{color:var(--ink)}
+  .plank p{margin-top:8px;font-size:14px;line-height:1.55;color:#374151}
+  @media(max-width:860px){.stickers{display:none}.planks{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Enter with joy</a></nav>
+  <section class="hero">
+    <div class="stickers" aria-hidden="true">
+      <span class="stk s1">No condition</span><br>
+      <span class="stk s2">is permanent</span><br>
+      <span class="stk s3">God's time!</span>
+    </div>
+    <h1><span class="a">Forever grateful for</span> <span class="b">good company.</span></h1>
+    <p class="sub">Six strangers, one table, painted with the same brush as every danfo blessing. Lagos, Thursdays.</p>
+    <a class="cta" href="#">Hop in, there's space</a>
+  </section>
+</div>
+<section class="mottoes">
+  <div class="wrap" style="padding:0">
+    <div class="planks">
+      <div class="plank"><h3>Thank you Jesus</h3><p>For the table, the pepper soup, and the stranger who overshared first.</p></div>
+      <div class="plank"><h3>No hurry in life</h3><p>Dinner runs long here. The best stories arrive after the plates leave.</p></div>
+      <div class="plank"><h3>Who knows tomorrow</h3><p>Tonight's strangers, tomorrow's wedding guests. It has happened before.</p></div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

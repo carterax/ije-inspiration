@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Social / Impeccable V4 Photo Tiles</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--deep:#8a5c00;--tan:#e2d5b8}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px 64px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:700;font-size:24px}
+  nav a{background:var(--ink);color:var(--cream);padding:12px 26px;border-radius:999px;text-decoration:none;
+    font-weight:600;font-size:14px}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding:26px 0 20px}
+  h1{font-size:clamp(30px,4.4vw,50px);font-weight:700;line-height:1.06;max-width:18ch}
+  h1 span{color:var(--orange)}
+  .head .mono{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6b7280}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tile{border-radius:12px;overflow:hidden;text-decoration:none;color:var(--cream);display:block;
+    transition:transform .15s ease}
+  .tile:hover{transform:translateY(-4px)}
+  .tile .slot{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
+  .tile .slot i{border:2px dashed rgba(247,240,227,.6);padding:12px 16px;font-style:normal;
+    font-family:"JetBrains Mono";font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+  .tile .cap{display:flex;justify-content:space-between;align-items:center;padding:14px 16px}
+  .tile .cap b{font-weight:700;font-size:17px}
+  .tile .cap span{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.1em}
+  .p1{background:var(--orange)}
+  .p2{background:var(--amber);color:var(--ink)}
+  .p2 .slot i{border-color:rgba(17,24,39,.4)}
+  .p3{background:var(--ink)}
+  .p4{background:var(--deep)}
+  .p5{background:var(--tan);color:var(--ink)}
+  .p5 .slot i{border-color:rgba(17,24,39,.4)}
+  .p6{background:var(--orange)}
+  @media(max-width:820px){.tiles{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Get a seat</a></nav>
+  <div class="head">
+    <h1>Every night has <span>its own shade.</span></h1>
+    <span class="mono">Object photography · no faces, ever</span>
+  </div>
+  <!-- HIGGSFIELD per tile: single object still life, warm amber/orange grades, clean ground, no people -->
+  <section class="tiles">
+    <a class="tile p1" href="#"><div class="slot"><i>SLOT · six plates overhead · 4:3</i></div>
+      <div class="cap"><b>Dinner Club</b><span>THU · 2 LEFT</span></div></a>
+    <a class="tile p2" href="#"><div class="slot"><i>SLOT · cards mid-game · 4:3</i></div>
+      <div class="cap"><b>Card Night</b><span>FRI · 4 LEFT</span></div></a>
+    <a class="tile p3" href="#"><div class="slot"><i>SLOT · two glasses against skyline · 4:3</i></div>
+      <div class="cap"><b>Rooftop Hang</b><span>SAT · WAITLIST</span></div></a>
+    <a class="tile p4" href="#"><div class="slot"><i>SLOT · popcorn and ticket stubs · 4:3</i></div>
+      <div class="cap"><b>Film Club</b><span>SAT · 3 LEFT</span></div></a>
+    <a class="tile p5" href="#"><div class="slot"><i>SLOT · long table with 24 chairs · 4:3</i></div>
+      <div class="cap"><b>The Big Table</b><span>MONTHLY</span></div></a>
+    <a class="tile p6" href="#"><div class="slot"><i>SLOT · woven basket and fabric · 4:3</i></div>
+      <div class="cap"><b>Market Crawl</b><span>SUN · 6 LEFT</span></div></a>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

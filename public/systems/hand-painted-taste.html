@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hand-Painted / Taste</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--board:#1f3d7a;--yellow:#f5c518;--white:#f4f1e6;--red:#cf3b2a;--rust:#17284f}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--board);color:var(--white);font-family:"Space Grotesk",sans-serif;
+    background-image:radial-gradient(rgba(244,241,230,.05) 1.5px, transparent 1.5px),
+      linear-gradient(175deg, rgba(23,40,79,.6) 0%, transparent 40%);background-size:9px 9px,100% 100%}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-family:"Permanent Marker";font-size:30px;color:var(--yellow);transform:rotate(-2deg)}
+  nav a{font-family:"Permanent Marker";background:var(--yellow);color:var(--rust);padding:10px 24px;
+    text-decoration:none;font-size:17px;transform:rotate(1.4deg);display:inline-block;
+    border-radius:6px 14px 8px 12px}
+  nav a:hover{transform:rotate(0deg) scale(1.04)}
+  .hero{min-height:70dvh;display:flex;flex-direction:column;justify-content:center;padding:40px 0;position:relative}
+  h1{font-family:"Permanent Marker";font-size:clamp(44px,7.4vw,96px);line-height:1.06;max-width:14ch}
+  h1 .y{color:var(--yellow)}
+  h1 .w{color:var(--white)}
+  h1 u{text-decoration-thickness:6px;text-decoration-color:var(--red);text-underline-offset:10px}
+  .sub{margin-top:26px;font-size:17px;max-width:38ch;line-height:1.65;color:#cfd8ec;font-weight:500}
+  .cta{margin-top:32px;display:inline-block;width:max-content;font-family:"Permanent Marker";
+    background:var(--red);color:var(--white);padding:14px 34px;text-decoration:none;font-size:20px;
+    transform:rotate(-1.6deg);border-radius:10px 18px 12px 16px;box-shadow:4px 5px 0 rgba(0,0,0,.35)}
+  .cta:hover{transform:rotate(0) scale(1.03)}
+  .stickers{position:absolute;right:0;top:14%;width:250px;pointer-events:none;text-align:center}
+  .stk{font-family:"Permanent Marker";display:inline-block;margin:8px 4px;padding:8px 16px;font-size:15px;
+    border-radius:8px 16px 10px 14px}
+  .s1{background:var(--yellow);color:var(--rust);transform:rotate(5deg)}
+  .s2{background:var(--white);color:var(--board);transform:rotate(-4deg)}
+  .s3{background:var(--red);color:var(--white);transform:rotate(3deg)}
+  .mottoes{padding:24px 0 84px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .plank{background:var(--white);color:var(--rust);padding:26px 22px;border-radius:8px 16px 10px 14px;
+    box-shadow:5px 6px 0 rgba(0,0,0,.35)}
+  .plank:nth-child(1){transform:rotate(-1.4deg)}
+  .plank:nth-child(2){transform:rotate(1deg);background:var(--yellow)}
+  .plank:nth-child(3){transform:rotate(-.8deg)}
+  .plank h3{font-family:"Permanent Marker";font-size:22px}
+  .plank p{margin-top:8px;font-size:14px;line-height:1.55;font-weight:500}
+  @media(max-width:860px){.stickers{display:none}.mottoes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Enter with joy</a></nav>
+  <section class="hero">
+    <div class="stickers" aria-hidden="true">
+      <span class="stk s1">No condition</span><br>
+      <span class="stk s2">is permanent</span><br>
+      <span class="stk s3">God's time!</span>
+    </div>
+    <h1><span class="y">Forever grateful</span><br><span class="w">for <u>good company.</u></span></h1>
+    <p class="sub">Six strangers, one table, painted with the same brush as every danfo blessing. Lagos, Thursdays.</p>
+    <a class="cta" href="#">Hop in, there's space</a>
+  </section>
+  <section class="mottoes">
+    <div class="plank"><h3>Thank you Jesus</h3><p>For the table, the pepper soup, and the stranger who overshared first.</p></div>
+    <div class="plank"><h3>No hurry in life</h3><p>Dinner runs long here. The best stories arrive after the plates leave.</p></div>
+    <div class="plank"><h3>Who knows tomorrow</h3><p>Tonight's strangers, tomorrow's wedding guests. It has happened before.</p></div>
+  </section>
+</div>
+</body>
+</html>

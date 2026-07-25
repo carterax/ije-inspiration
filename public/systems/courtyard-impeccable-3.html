@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courtyard / Impeccable V3 Type Candle</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@200;300;400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--dusk:#2a1509}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--dusk);color:var(--cream);font-family:"Chakra Petch",sans-serif}
+  .page{min-height:calc(100dvh - 46px);display:flex;flex-direction:column;
+    padding:0 clamp(24px,6vw,72px);position:relative;overflow:hidden}
+  .glow{position:absolute;left:50%;bottom:-10%;width:900px;height:600px;transform:translateX(-50%);
+    background:radial-gradient(closest-side, rgba(204,136,0,.26), transparent 70%);pointer-events:none}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:700;font-size:20px;letter-spacing:.3em}
+  nav a{background:var(--amber);color:var(--ink);padding:11px 24px;border-radius:4px;text-decoration:none;
+    font-weight:600;font-size:14px}
+  .hero{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
+  h1{font-weight:200;font-size:clamp(40px,7vw,98px);line-height:1.08;max-width:14ch;text-transform:uppercase}
+  h1 .dim{color:#7d6a52}
+  h1 .lit{font-weight:700;color:var(--amber);text-shadow:0 0 40px rgba(204,136,0,.5)}
+  .sub{margin-top:24px;font-size:16px;color:#e0c9ae;font-weight:300;max-width:40ch;line-height:1.65}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:32px 0 40px;position:relative;z-index:1}
+  .cta{background:var(--orange);color:var(--cream);padding:15px 36px;border-radius:4px;text-decoration:none;
+    font-weight:600;font-size:15px}
+  .cta:hover{background:var(--amber);color:var(--ink)}
+  .mono{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b59468}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="glow" aria-hidden="true"></div>
+  <nav><div class="wordmark">IJE</div><a href="#">Join Thursday</a></nav>
+  <section class="hero">
+    <h1><span class="dim">You know what's sexy?</span><br><span class="lit">A real conversation.</span></h1>
+    <p class="sub">Six strangers. One evening under string lights in Lagos. See what happens.</p>
+  </section>
+  <div class="foot">
+    <span class="mono">Thursday · 7 PM · Somewhere good</span>
+    <a class="cta" href="#">Join Thursday</a>
+  </div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

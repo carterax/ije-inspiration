@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gele Studio / Impeccable V4 Photo Editorial</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--green:#1d4f43;--deep:#143b32}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--green);color:var(--cream);font-family:"Chakra Petch",sans-serif}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 36px 72px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+  .wordmark{font-weight:700;font-size:24px;letter-spacing:.2em}
+  nav a{background:var(--amber);color:var(--ink);padding:11px 26px;border-radius:4px;text-decoration:none;
+    font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+  .heroframe{border:2px solid var(--amber);border-radius:8px;padding:12px;background:var(--deep)}
+  .heroslot{aspect-ratio:21/9;border:2px dashed rgba(204,136,0,.55);border-radius:4px;display:flex;
+    align-items:center;justify-content:center;text-align:center;font-family:"JetBrains Mono";font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--amber);padding:16px;line-height:1.8}
+  .caption{display:flex;justify-content:space-between;padding:12px 4px 2px;font-family:"JetBrains Mono";
+    font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9db3a7}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding:38px 0 28px}
+  h1{font-size:clamp(28px,4.2vw,48px);font-weight:700;line-height:1.14;max-width:22ch;text-transform:uppercase}
+  h1 span{color:var(--amber)}
+  .head a{background:var(--orange);color:var(--cream);padding:14px 32px;border-radius:4px;text-decoration:none;
+    font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.08em;flex-shrink:0}
+  .head a:hover{background:var(--amber);color:var(--ink)}
+  .row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pl{border:2px solid var(--amber);border-radius:8px;padding:10px;background:var(--deep)}
+  .pl .slot{aspect-ratio:4/5;border:2px dashed rgba(204,136,0,.5);border-radius:4px;display:flex;
+    align-items:center;justify-content:center;text-align:center;font-family:"JetBrains Mono";font-size:9.5px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--amber);padding:14px;line-height:1.7}
+  .pl p{margin-top:8px;text-align:center;font-family:"JetBrains Mono";font-size:9.5px;
+    letter-spacing:.18em;text-transform:uppercase;color:#9db3a7}
+  @media(max-width:800px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Reserve</a></nav>
+  <!-- HIGGSFIELD: [SUBJECT: long dinner table with gold aso-oke runner, brass candlesticks, six empty velvet chairs, saturated green wall, no people]
+       retro editorial photography, warm amber light, film grain. 21:9 -->
+  <div class="heroframe">
+    <div class="heroslot">HERO IMAGE SLOT<br>gold-dressed table, six velvet chairs, green wall<br>21:9 · no people</div>
+    <div class="caption"><span>Issue 01 · The table</span><span>Set for six, photographed at seven</span></div>
+  </div>
+  <div class="head">
+    <h1>An evening styled like <span>a cover shoot.</span></h1>
+    <a href="#">Reserve a seat</a>
+  </div>
+  <!-- HIGGSFIELD per plate: styling still life on saturated green, warm amber light, film grain, no people -->
+  <section class="row">
+    <div class="pl"><div class="slot">SLOT · gele tied on stand, gold fabric</div><p>The headpiece</p></div>
+    <div class="pl"><div class="slot">SLOT · pearls and gold rings on velvet tray</div><p>The jewelry</p></div>
+    <div class="pl"><div class="slot">SLOT · two glasses, brass candlestick, green wall</div><p>The last hour</p></div>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

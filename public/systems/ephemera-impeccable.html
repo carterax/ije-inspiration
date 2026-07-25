@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ephemera Archive / Impeccable</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--surface:#FFFFFF}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif}
+  .page{max-width:1200px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:2px solid var(--ink)}
+  .wordmark{font-weight:700;font-size:22px}
+  nav .tag{font-family:"JetBrains Mono";font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--orange)}
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;padding:64px 0;align-items:center}
+  h1{font-size:clamp(40px,5.4vw,70px);line-height:1.04;font-weight:700}
+  h1 em{font-style:normal;color:var(--orange)}
+  .sub{margin-top:18px;font-size:17px;color:#4b5563;max-width:38ch}
+  .cta{margin-top:28px;display:inline-block;background:var(--amber);color:var(--ink);padding:14px 30px;
+    border-radius:4px;text-decoration:none;font-weight:600;font-size:15px}
+  .cta:hover{background:var(--orange);color:var(--cream)}
+  .ticket{background:var(--surface);border:2px solid var(--ink);border-radius:8px;padding:24px;
+    font-family:"JetBrains Mono";font-size:13px;position:relative;max-width:360px;justify-self:end;transform:rotate(-1.2deg)}
+  .ticket::before,.ticket::after{content:"";position:absolute;width:22px;height:22px;background:var(--cream);
+    border:2px solid var(--ink);border-radius:50%;top:50%;margin-top:-11px}
+  .ticket::before{left:-13px;clip-path:inset(0 0 0 50%)}
+  .ticket::after{right:-13px;clip-path:inset(0 50% 0 0)}
+  .ticket h3{font-size:12px;letter-spacing:.22em;color:var(--orange);margin-bottom:14px;font-weight:600}
+  .ticket .li{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed #d8cdb8}
+  .ticket .li:last-of-type{border:none}
+  .ticket .admit{margin-top:14px;background:var(--amber);color:var(--ink);text-align:center;padding:8px;
+    border-radius:3px;letter-spacing:.2em;font-weight:600;font-size:11px}
+  .inventory{background:var(--orange);color:var(--cream);margin:0 -100vw;padding:64px 100vw}
+  .inventory h2{font-size:clamp(24px,3.2vw,36px);font-weight:700;text-transform:uppercase;margin-bottom:6px}
+  .inventory p{color:#f3dccb;margin-bottom:28px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  .card{background:var(--cream);color:var(--ink);border-radius:8px;padding:20px;min-height:150px;
+    display:flex;flex-direction:column;justify-content:space-between}
+  .card .glyph{font-size:38px;font-weight:700}
+  .card .label{font-family:"JetBrains Mono";font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--orange)}
+  .card .label b{display:block;color:var(--ink);margin-top:2px}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}.ticket{justify-self:start}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><div class="wordmark">IJE</div><div class="tag">Archive of good nights</div></nav>
+  <section class="hero">
+    <div>
+      <h1>Dinner is <em>the excuse.</em></h1>
+      <p class="sub">We match six strangers over food in Lagos. Keep the ticket. The night is the souvenir.</p>
+      <a class="cta" href="#">Claim a seat</a>
+    </div>
+    <aside class="ticket" aria-label="Admission ticket">
+      <h3>ADMIT ONE STRANGER</h3>
+      <div class="li"><span>Table</span><span>No. 7</span></div>
+      <div class="li"><span>Day</span><span>Thursday</span></div>
+      <div class="li"><span>Time</span><span>7:00 PM</span></div>
+      <div class="li"><span>Dress</span><span>Come as you are</span></div>
+      <div class="admit">IJE / LAGOS</div>
+    </aside>
+  </section>
+</div>
+<section class="inventory">
+  <div class="page" style="padding:0">
+    <h2>Objects from last week</h2>
+    <p>Every table leaves something behind. We keep the inventory.</p>
+    <div class="cards">
+      <div class="card"><div class="glyph">52</div><div class="label">Card deck, worn<b>Card night, Yaba</b></div></div>
+      <div class="card"><div class="glyph">C90</div><div class="label">Mixtape, side A<b>Rooftop, VI</b></div></div>
+      <div class="card"><div class="glyph">No.7</div><div class="label">Table number<b>Dinner club, Ikeja</b></div></div>
+      <div class="card"><div class="glyph">2:14</div><div class="label">Last bus home<b>Nobody took it</b></div></div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

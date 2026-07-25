@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ephemera / Impeccable V3 Type Ledger</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--soft:#6b7280}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif;
+    background-image:linear-gradient(rgba(17,24,39,.04) 1px, transparent 1px);background-size:100% 34px}
+  .page{max-width:900px;margin:0 auto;padding:0 32px 72px}
+  nav{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:2px solid var(--ink)}
+  .wordmark{font-weight:700;font-size:22px}
+  nav .no{font-family:"JetBrains Mono";font-size:11px;color:var(--orange);letter-spacing:.14em;text-transform:uppercase}
+  h1{padding:52px 0 8px;font-size:clamp(36px,5.6vw,66px);line-height:1.04;font-weight:700}
+  h1 em{font-style:normal;color:var(--orange)}
+  .ledger{margin-top:28px}
+  .row{display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:20px 0;
+    border-bottom:1px solid rgba(17,24,39,.2)}
+  .row .n{font-family:"JetBrains Mono";font-size:12px;color:var(--orange);font-weight:600}
+  .row .item{font-size:clamp(19px,2.6vw,28px);font-weight:600}
+  .row .item small{display:block;font-size:14px;font-weight:400;color:#4b5563;margin-top:4px}
+  .row .qty{font-family:"JetBrains Mono";font-size:12px;color:var(--soft);text-transform:uppercase;letter-spacing:.1em}
+  .total{display:flex;justify-content:space-between;align-items:center;padding:26px 0;gap:16px;flex-wrap:wrap}
+  .total b{font-size:clamp(20px,2.8vw,30px);font-weight:700}
+  .total b span{color:var(--orange)}
+  .total a{background:var(--orange);color:var(--cream);padding:15px 32px;border-radius:4px;text-decoration:none;font-weight:600}
+  .total a:hover{background:var(--amber);color:var(--ink)}
+  .texband{height:76px;border:2px dashed var(--amber);border-radius:4px;display:flex;align-items:center;
+    justify-content:center;font-family:"JetBrains Mono";font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:#8a6a20}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><div class="wordmark">IJE</div><div class="no">Ledger of one evening</div></nav>
+  <h1>Inventory of a night <em>that hasn't happened.</em></h1>
+  <section class="ledger">
+    <div class="row"><span class="n">001</span><span class="item">Six strangers<small>Matched for the argument, the laugh, the second round.</small></span><span class="qty">QTY 6</span></div>
+    <div class="row"><span class="n">002</span><span class="item">One long table<small>Address drops the morning of. Somewhere good.</small></span><span class="qty">QTY 1</span></div>
+    <div class="row"><span class="n">003</span><span class="item">Real questions<small>No "what do you do." Better fuel.</small></span><span class="qty">UNLIMITED</span></div>
+    <div class="row"><span class="n">004</span><span class="item">Small talk<small>Confiscated at the door.</small></span><span class="qty">QTY 0</span></div>
+    <div class="row"><span class="n">005</span><span class="item">A story you'll retell<small>Six versions of it. All true.</small></span><span class="qty">MIN. 1</span></div>
+  </section>
+  <div class="total">
+    <b>Total due: <span>one seat.</span></b>
+    <a href="#">Claim it</a>
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: warm cream paper texture with faint amber stamp marks, no people] brand asset. 10:1 -->
+  <div class="texband">IMAGE SLOT · paper texture with stamp marks · 10:1</div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

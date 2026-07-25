@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Mask / Taste V5 Catalogue Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--void:#141210;--bone:#e5ddcc;--terra:#a8532f;--stone:#4d4437}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--void);color:var(--bone);font-family:Sora,sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:36px 16px 64px}
+  .head{width:min(680px,100%);display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+  .wordmark{font-weight:600;font-size:20px;letter-spacing:.3em}
+  .head span{font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a8172}
+  .card{width:min(680px,100%);background:var(--bone);color:#2b261d;padding:40px 38px;
+    font-family:"IBM Plex Mono";font-size:13px;box-shadow:0 24px 70px rgba(0,0,0,.6)}
+  .card .inst{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8a7a58;text-align:center}
+  .card h1{margin-top:14px;font-family:Sora;font-size:clamp(24px,3.6vw,34px);font-weight:600;
+    line-height:1.25;text-align:center}
+  .card h1 em{font-style:normal;color:var(--terra)}
+  .grid{margin-top:28px;display:grid;grid-template-columns:130px 1fr;border-top:1px solid #b9ad90}
+  .grid>div{padding:11px 4px;border-bottom:1px solid #b9ad90}
+  .grid .k{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8a7a58;font-weight:500}
+  .grid .v{font-size:13px}
+  .grid .v b{color:var(--terra);font-weight:500}
+  .slot{margin:24px 0 0;height:130px;border:2px dashed #a89b7c;display:flex;align-items:center;
+    justify-content:center;text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:#8a7a58;padding:12px}
+  .cta{display:block;margin:26px auto 0;width:max-content;background:#2b261d;color:var(--bone);
+    padding:14px 36px;text-decoration:none;font-family:Sora;font-weight:600;font-size:13px;
+    letter-spacing:.12em;text-transform:uppercase}
+  .cta:hover{background:var(--terra)}
+</style>
+</head>
+<body>
+<div class="head"><div class="wordmark">IJE</div><span>Accessions Dept.</span></div>
+<article class="card">
+  <div class="inst">Museum of Dropped Masks · Lagos · Condition Report</div>
+  <h1>Object: one social mask, <em>gently worn.</em></h1>
+  <div class="grid">
+    <div class="k">Accession No.</div><div class="v">2026.THU.001</div>
+    <div class="k">Object</div><div class="v">Composed public face, adult, Lagos variant</div>
+    <div class="k">Materials</div><div class="v">Small talk, job title, a rehearsed weekend summary</div>
+    <div class="k">Condition</div><div class="v"><b>Fragile.</b> Cracks under one real question</div>
+    <div class="k">Provenance</div><div class="v">Worn daily since approx. secondary school</div>
+    <div class="k">Deaccession</div><div class="v">Scheduled Thursday, 7 PM, over dinner with five strangers</div>
+    <div class="k">Method</div><div class="v">Shared plates, better questions, one friendly argument</div>
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: crumpled paper mask lying flat on an archival tray with a measurement scale bar, no people]
+       museum conservation photography, bone tones, even light. 5:1 -->
+  <div class="slot">IMAGE SLOT · mask on archival tray with scale bar · 5:1 · no people</div>
+  <a class="cta" href="#">Schedule the deaccession</a>
+</article>
+<script src="variants-nav.js"></script>
+</body>
+</html>

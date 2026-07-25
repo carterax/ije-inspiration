@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ephemera / Impeccable V2 Specimen Wall</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--soft:#6b7280}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif}
+  .page{max-width:1200px;margin:0 auto;padding:0 32px 72px}
+  nav{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:2px solid var(--ink)}
+  .wordmark{font-weight:700;font-size:22px}
+  nav a{color:var(--orange);font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+  .intro{padding:48px 0 32px;max-width:620px}
+  h1{font-size:clamp(32px,4.4vw,52px);line-height:1.1;font-weight:700}
+  h1 em{font-style:normal;color:var(--orange)}
+  .intro p{margin-top:12px;font-size:16px;color:#4b5563}
+  .wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+  .obj{background:#fff;border-radius:8px;padding:16px;min-height:250px;display:flex;flex-direction:column;gap:12px;
+    border-top:5px solid var(--amber)}
+  .obj:nth-child(even){border-top-color:var(--orange)}
+  .obj .slot{flex:1;border:2px dashed var(--amber);border-radius:4px;display:flex;align-items:center;
+    justify-content:center;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:#8a6a20;text-align:center;padding:10px}
+  .obj .label{font-family:"JetBrains Mono";font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--orange)}
+  .obj .label b{display:block;color:var(--ink);font-weight:600;margin-top:2px}
+  .foot{margin-top:32px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot b{font-size:20px;font-weight:700}
+  .foot a{background:var(--orange);color:var(--cream);padding:14px 30px;border-radius:4px;text-decoration:none;font-weight:600}
+  .foot a:hover{background:var(--amber);color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><div class="wordmark">IJE</div><a href="#">Claim a seat</a></nav>
+  <section class="intro">
+    <h1>Objects from nights <em>that mattered.</em></h1>
+    <p>Every table leaves something behind. We keep the inventory. Add yours on Thursday.</p>
+  </section>
+  <section class="wall">
+    <!-- HIGGSFIELD per cell: single object, museum specimen photography, warm amber grade, no people -->
+    <div class="obj"><div class="slot">SLOT · worn card deck · 4:5</div><div class="label">Specimen 01<b>Card night, Yaba</b></div></div>
+    <div class="obj"><div class="slot">SLOT · cassette tape · 4:5</div><div class="label">Specimen 02<b>Rooftop, VI</b></div></div>
+    <div class="obj"><div class="slot">SLOT · brass table number 7 · 4:5</div><div class="label">Specimen 03<b>Dinner club, Ikeja</b></div></div>
+    <div class="obj"><div class="slot">SLOT · pair of dice · 4:5</div><div class="label">Specimen 04<b>Game night, Surulere</b></div></div>
+    <div class="obj"><div class="slot">SLOT · cinema ticket stub · 4:5</div><div class="label">Specimen 05<b>Film club, Landmark</b></div></div>
+    <div class="obj"><div class="slot">SLOT · burnt-down candle · 4:5</div><div class="label">Specimen 06<b>Nobody watched the time</b></div></div>
+  </section>
+  <div class="foot">
+    <b>Your object goes here.</b>
+    <a href="#">Claim a seat</a>
+  </div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

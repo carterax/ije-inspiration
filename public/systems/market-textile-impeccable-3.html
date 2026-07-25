@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Textile / Impeccable V3 Type Wax</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--deep:#8a5c00}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--orange);color:var(--cream);font-family:"Chakra Petch",sans-serif}
+  .page{min-height:calc(100dvh - 46px);display:flex;flex-direction:column}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:20px 32px}
+  .wordmark{font-weight:700;font-size:26px}.wordmark span{color:var(--amber)}
+  nav a{background:var(--amber);color:var(--ink);padding:12px 26px;border-radius:4px;text-decoration:none;
+    font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+  nav a:hover{background:var(--cream);color:var(--orange)}
+  .pat{height:32px;background:repeating-conic-gradient(from 45deg, var(--amber) 0 25%, transparent 0 50%) 0 0/32px 32px}
+  .hero{flex:1;display:flex;flex-direction:column;justify-content:center;padding:36px 32px}
+  h1{font-weight:700;text-transform:uppercase;line-height:.96;font-size:clamp(48px,10vw,140px)}
+  h1 .a{color:var(--cream)}
+  h1 .b{color:var(--amber)}
+  h1 .c{color:transparent;-webkit-text-stroke:3px var(--cream)}
+  .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;
+    padding:28px 32px 36px}
+  .sub{font-size:15px;font-weight:500;text-transform:uppercase;max-width:32ch}
+  .cta{background:var(--ink);color:var(--cream);padding:16px 36px;border-radius:4px;text-decoration:none;
+    font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.08em}
+  .cta:hover{background:var(--amber);color:var(--ink)}
+  .pat2{height:32px;background:repeating-radial-gradient(circle at 50% 0%, var(--amber) 0 8px, transparent 8px 18px)}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><div class="wordmark">IJE<span>*</span></div><a href="#">Find your table</a></nav>
+  <div class="pat" aria-hidden="true"></div>
+  <section class="hero">
+    <h1>
+      <span class="a">Six patterns.</span><br>
+      <span class="b">One table.</span><br>
+      <span class="c">Somehow it matches.</span>
+    </h1>
+  </section>
+  <div class="foot">
+    <p class="sub">Strangers cut from every cloth. Lagos, weekly.</p>
+    <a class="cta" href="#">Find your table</a>
+  </div>
+  <div class="pat2" aria-hidden="true"></div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courtyard / Taste V3 Type Candle</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--night:#12160f;--amber:#e8a75c;--warm:#f2e5cf;--soft:#9aa08c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--night);color:var(--warm);font-family:Outfit,sans-serif}
+  .page{min-height:calc(100dvh - 46px);display:flex;flex-direction:column;
+    padding:0 clamp(24px,6vw,72px);position:relative;overflow:hidden}
+  .glow{position:absolute;left:50%;bottom:-10%;width:900px;height:600px;transform:translateX(-50%);
+    background:radial-gradient(closest-side, rgba(232,167,92,.22), transparent 70%);pointer-events:none}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:600;font-size:20px;letter-spacing:.3em}
+  nav a{color:var(--night);background:var(--amber);padding:11px 24px;border-radius:999px;text-decoration:none;
+    font-weight:500;font-size:14px}
+  .hero{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
+  h1{font-weight:200;font-size:clamp(44px,7.4vw,104px);line-height:1.08;max-width:14ch}
+  h1 .dim{color:#5f6654}
+  h1 .lit{font-weight:600;color:var(--amber);text-shadow:0 0 40px rgba(232,167,92,.45)}
+  .sub{margin-top:26px;font-size:16px;color:var(--soft);font-weight:300;max-width:40ch;line-height:1.7}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:32px 0 40px;position:relative;z-index:1}
+  .cta{background:var(--amber);color:var(--night);padding:15px 36px;border-radius:999px;text-decoration:none;
+    font-weight:600;font-size:15px}
+  .cta:hover{background:var(--warm)}
+  .mono{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="glow" aria-hidden="true"></div>
+  <nav><div class="wordmark">IJE</div><a href="#">Join Thursday</a></nav>
+  <section class="hero">
+    <h1><span class="dim">You know what's sexy?</span><br><span class="lit">A real conversation.</span></h1>
+    <p class="sub">Six strangers. One evening under string lights in Lagos. See what happens.</p>
+  </section>
+  <div class="foot">
+    <span class="mono">Thursday · 7 PM · Somewhere good</span>
+    <a class="cta" href="#">Join Thursday</a>
+  </div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

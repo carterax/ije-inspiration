@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danfo Pop / Taste V2 Stacked Broadside</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--yellow:#f2c200;--ink:#191308;--red:#d43d17;--blue:#274690;--cream:#f6efdc}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--cream);font-family:"Space Grotesk",sans-serif}
+  .strip{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;
+    padding:clamp(28px,5vw,56px);border-bottom:6px solid var(--ink);position:relative}
+  .strip h2,.strip h1{font-family:Anton;font-size:clamp(40px,6.6vw,92px);line-height:.94;text-transform:uppercase}
+  .strip p{margin-top:12px;font-size:15px;font-weight:500;max-width:40ch;text-transform:uppercase;letter-spacing:.02em}
+  .s1{background:var(--yellow);color:var(--ink);
+    background-image:radial-gradient(rgba(25,19,8,.12) 1.2px, transparent 1.2px);background-size:14px 14px}
+  .s2{background:var(--red);color:var(--cream)}
+  .s3{background:var(--blue);color:var(--cream)}
+  .s4{background:var(--cream);color:var(--ink);text-align:center;display:block}
+  .tag{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;display:block}
+  .s1 .tag{color:var(--red)}.s2 .tag{color:var(--yellow)}.s3 .tag{color:var(--yellow)}
+  .imgslot{width:clamp(140px,18vw,240px);aspect-ratio:1;border:3px dashed currentColor;display:flex;
+    align-items:center;justify-content:center;text-align:center;font-size:10.5px;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;padding:12px;flex-shrink:0}
+  .cta{margin-top:22px;display:inline-block;background:var(--ink);color:var(--cream);font-family:Anton;
+    font-size:18px;text-transform:uppercase;padding:15px 32px;text-decoration:none;box-shadow:5px 5px 0 rgba(0,0,0,.3)}
+  .s4 .cta{background:var(--red);box-shadow:5px 5px 0 var(--ink)}
+  .cta:active{transform:translate(2px,2px)}
+  .s4 h2 span{color:var(--red)}
+  @media(max-width:700px){.strip{grid-template-columns:1fr}.imgslot{display:none}}
+</style>
+</head>
+<body>
+<section class="strip s1">
+  <div><span class="tag">Lagos · Weekly</span>
+    <h1>Six strangers.</h1>
+    <p>Matched for the argument, the laugh, and the second round.</p>
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: cluster of danfo bus stickers and painted stars on yellow metal, no people]
+       flat screenprint style, chipped paint texture, thick outlines -->
+  <div class="imgslot">IMAGE SLOT<br>sticker cluster<br>1:1</div>
+</section>
+<section class="strip s2">
+  <div><span class="tag">One booking</span>
+    <h2>One evening.</h2>
+    <p>A spot you'd never find alone. Address drops the morning of.</p>
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: six enamel plates stacked beside worn playing cards on a wooden table, no people]
+       graphic red monochrome screenprint, halftone shadows, bold poster crop -->
+  <div class="imgslot">IMAGE SLOT<br>plates and cards<br>1:1</div>
+</section>
+<section class="strip s3">
+  <div><span class="tag">No small talk</span>
+    <h2>See what happens.</h2>
+    <p>Phones face down. Questions face up. The table does the rest.</p>
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: graphic mask illustration in cobalt and yellow, screenprint misregistration]
+       brand asset, flat shapes, thick black ink outlines -->
+  <div class="imgslot">IMAGE SLOT<br>mask illustration<br>1:1</div>
+</section>
+<section class="strip s4">
+  <h2>Take a <span>seat.</span></h2>
+  <p style="margin:10px auto 0;max-width:40ch">Thursday. 7 PM. Somewhere good.</p>
+  <a class="cta" href="#">Get a seat</a>
+</section>
+<script src="variants-nav.js"></script>
+</body>
+</html>

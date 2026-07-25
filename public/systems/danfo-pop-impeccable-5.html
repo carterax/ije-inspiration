@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danfo Pop / Impeccable V5 Route Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--cream);font-family:"Chakra Petch",sans-serif;
+    display:flex;align-items:flex-start;justify-content:center;padding:40px 16px 60px}
+  .board{width:min(880px,100%);background:#1a2030;border:2px solid var(--amber);border-radius:10px;overflow:hidden}
+  .head{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;background:var(--amber);color:var(--ink)}
+  .wordmark{font-weight:700;font-size:26px}
+  .head .mono{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+  .title{padding:32px 28px;border-bottom:1px solid rgba(204,136,0,.35)}
+  .title h1{font-size:clamp(34px,5.4vw,64px);line-height:1;text-transform:uppercase;font-weight:700}
+  .title h1 em{font-style:normal;color:var(--amber)}
+  .title h1 .arrow{color:var(--orange)}
+  .departures{padding:8px 28px}
+  .dep{display:grid;grid-template-columns:86px 1fr auto auto;gap:16px;align-items:center;padding:18px 0;
+    border-bottom:1px solid rgba(247,240,227,.12)}
+  .dep:last-child{border-bottom:none}
+  .dep .t{font-family:"JetBrains Mono";font-size:14px;color:var(--amber);font-weight:600}
+  .dep .what{font-weight:600;font-size:16px;text-transform:uppercase}
+  .dep .what small{display:block;font-weight:400;font-size:12px;color:#9aa2b5;text-transform:none;margin-top:2px}
+  .dep .plat{font-family:"JetBrains Mono";font-size:11px;color:#9aa2b5;text-transform:uppercase}
+  .dep .status{font-family:"JetBrains Mono";font-size:11px;padding:5px 12px;border-radius:3px;
+    background:var(--orange);color:var(--cream);text-transform:uppercase;letter-spacing:.08em}
+  .dep .status.ok{background:#2c5a3f}
+  .foot{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:22px 28px;
+    background:#131826;border-top:1px solid rgba(204,136,0,.35)}
+  .imgslot{border:2px dashed var(--amber);border-radius:6px;padding:14px 18px;font-family:"JetBrains Mono";
+    font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;text-align:center;color:var(--amber)}
+  .foot a{background:var(--orange);color:var(--cream);font-weight:700;font-size:16px;text-transform:uppercase;
+    padding:15px 34px;border-radius:5px;text-decoration:none}
+  .foot a:hover{background:var(--amber);color:var(--ink)}
+  @media(max-width:640px){.dep{grid-template-columns:70px 1fr}.dep .plat,.dep .status{display:none}
+    .foot{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<article class="board">
+  <div class="head">
+    <div class="wordmark">IJE</div>
+    <span class="mono">Departures · Lagos · This week</span>
+  </div>
+  <div class="title">
+    <h1>Stranger <span class="arrow">→</span> <em>Friend.</em> Via dinner.</h1>
+  </div>
+  <div class="departures">
+    <div class="dep"><span class="t">19:00</span><span class="what">Dinner Club, Ikoyi<small>Six seats. Set menu. Better questions.</small></span><span class="plat">Table 7</span><span class="status">2 seats</span></div>
+    <div class="dep"><span class="t">20:00</span><span class="what">Card Night, Yaba<small>Competitive but friendly. Runs late.</small></span><span class="plat">Table 3</span><span class="status ok">Boarding</span></div>
+    <div class="dep"><span class="t">18:00</span><span class="what">Rooftop Hang, VI<small>Sunset first, talk after.</small></span><span class="plat">Roof</span><span class="status">Waitlist</span></div>
+    <div class="dep"><span class="t">10:00</span><span class="what">Market Crawl, Balogun<small>Daylight edition. Wear walking shoes.</small></span><span class="plat">Gate 1</span><span class="status ok">6 seats</span></div>
+  </div>
+  <div class="foot">
+    <!-- HIGGSFIELD: [SUBJECT: warm paper ticket texture with a route stamp, no people] brand asset. 3:1 -->
+    <div class="imgslot">IMAGE SLOT · ticket paper texture with stamp · 3:1</div>
+    <a href="#">Claim a seat</a>
+  </div>
+</article>
+<script src="variants-nav.js"></script>
+</body>
+</html>

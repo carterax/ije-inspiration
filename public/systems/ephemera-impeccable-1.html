@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ephemera / Impeccable V1 Split Receipt</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--soft:#6b7280}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif}
+  .page{max-width:1200px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:2px solid var(--ink)}
+  .wordmark{font-weight:700;font-size:22px}
+  nav .tag{font-family:"JetBrains Mono";font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--orange)}
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;padding:60px 0;align-items:start}
+  h1{font-size:clamp(38px,5.2vw,64px);line-height:1.06;font-weight:700}
+  h1 em{font-style:normal;color:var(--orange)}
+  .sub{margin-top:16px;font-size:17px;color:#4b5563;max-width:38ch}
+  .cta{margin-top:26px;display:inline-block;background:var(--amber);color:var(--ink);padding:14px 30px;
+    border-radius:4px;text-decoration:none;font-weight:600;font-size:15px}
+  .cta:hover{background:var(--orange);color:var(--cream)}
+  .imgslot{margin-top:34px;height:140px;border:2px dashed var(--amber);border-radius:6px;display:flex;
+    align-items:center;justify-content:center;font-family:"JetBrains Mono";font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:#8a6a20;text-align:center;padding:14px}
+  .receipt{background:#fff;border:2px solid var(--ink);border-radius:8px;padding:24px;
+    font-family:"JetBrains Mono";font-size:13px;max-width:350px;justify-self:end;transform:rotate(-1.2deg)}
+  .receipt h3{font-size:12px;letter-spacing:.22em;color:var(--orange);margin-bottom:14px;font-weight:600;text-align:center}
+  .receipt .li{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed #d8cdb8}
+  .receipt .total{font-weight:600;border-bottom:none;font-size:14px;margin-top:6px}
+  .receipt .stamp{margin-top:14px;background:var(--amber);color:var(--ink);text-align:center;padding:8px;
+    border-radius:3px;letter-spacing:.2em;font-weight:600;font-size:11px}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}.receipt{justify-self:start}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><div class="wordmark">IJE</div><div class="tag">Archive of good nights</div></nav>
+  <section class="hero">
+    <div>
+      <h1>The best table in Lagos <em>hasn't met yet.</em></h1>
+      <p class="sub">Six strangers. One evening. Keep the receipt.</p>
+      <a class="cta" href="#">Claim a seat</a>
+      <!-- HIGGSFIELD: [SUBJECT: cinema tickets, dice and a cassette on textured paper, overhead, no people]
+           warm amber grade, archival flat lay. 4:1 -->
+      <div class="imgslot">IMAGE SLOT · tickets, dice, cassette flat lay · 4:1 · no people</div>
+    </div>
+    <aside class="receipt" aria-label="Receipt for one night">
+      <h3>IJE RECEIPT</h3>
+      <div class="li"><span>1x table for six</span><span>held</span></div>
+      <div class="li"><span>3x new people</span><span>min.</span></div>
+      <div class="li"><span>1x long argument</span><span>friendly</span></div>
+      <div class="li"><span>1x second round</span><span>likely</span></div>
+      <div class="li total"><span>TOTAL</span><span>one seat</span></div>
+      <div class="stamp">SEE WHAT HAPPENS</div>
+    </aside>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

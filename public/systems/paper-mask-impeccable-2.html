@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Mask / Impeccable V2 Gallery Walk</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--void:#17130e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--void);color:var(--cream);font-family:"Chakra Petch",sans-serif}
+  .room{min-height:84dvh;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
+    padding:40px clamp(24px,6vw,72px);border-bottom:1px solid rgba(204,136,0,.3)}
+  .room:nth-child(even){direction:rtl}
+  .room:nth-child(even)>*{direction:ltr}
+  .ex{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--amber)}
+  h1,h2{margin-top:12px;font-size:clamp(26px,3.6vw,42px);font-weight:600;line-height:1.22}
+  h1 span,h2 span{color:var(--amber)}
+  .room p{margin-top:12px;font-size:15px;color:#c9bda6;line-height:1.7;max-width:36ch;font-weight:300}
+  .imgslot{aspect-ratio:3/4;max-height:56dvh;border:2px dashed var(--amber);border-radius:6px;display:flex;
+    align-items:center;justify-content:center;text-align:center;font-family:"JetBrains Mono";font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:#b59468;padding:20px;justify-self:center;width:min(100%,340px)}
+  .exit{min-height:46dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:48px 24px;background:var(--cream);color:var(--ink)}
+  .exit h2{font-weight:700}
+  .exit h2 span{color:var(--orange)}
+  .exit a{margin-top:24px;display:inline-block;background:var(--orange);color:var(--cream);padding:15px 36px;
+    border-radius:4px;text-decoration:none;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+  .exit a:hover{background:var(--amber);color:var(--ink)}
+  .wordmark{position:fixed;top:60px;left:28px;font-weight:700;letter-spacing:.28em;font-size:15px;z-index:5}
+  @media(max-width:800px){.room{grid-template-columns:1fr;min-height:0;padding-top:64px}}
+</style>
+</head>
+<body>
+<div class="wordmark">IJE</div>
+<section class="room">
+  <div>
+    <div class="ex">Exhibit I</div>
+    <h1>The face <span>you came with.</span></h1>
+    <p>Composed on the ride over. Checked in the phone camera. Perfectly presentable.</p>
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: composed golden mask, dark plinth, single side light, no people] 3:4 -->
+  <div class="imgslot">SLOT · composed mask · 3:4</div>
+</section>
+<section class="room">
+  <div>
+    <div class="ex">Exhibit II</div>
+    <h2>The first <span>crack.</span></h2>
+    <p>Usually during the second course. Someone asks a real question and the surface starts to give.</p>
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: golden mask with a visible crack of warm light, dramatic shadow, no people] 3:4 -->
+  <div class="imgslot">SLOT · mask with a crack of light · 3:4</div>
+</section>
+<section class="room">
+  <div>
+    <div class="ex">Exhibit III</div>
+    <h2>The real <span>laugh.</span></h2>
+    <p>Unmistakable once heard. The mask never quite fits again after this.</p>
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: mask set down on a dinner table beside a glass, warm candle light, no people] 3:4 -->
+  <div class="imgslot">SLOT · mask set down at the table · 3:4</div>
+</section>
+<section class="exit">
+  <h2>The exit is through <span>the gift shop of new friends.</span></h2>
+  <a href="#">Take a seat on Thursday</a>
+</section>
+<script src="variants-nav.js"></script>
+</body>
+</html>

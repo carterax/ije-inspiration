@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Textile / Impeccable</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--deep:#8a5c00}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif}
+  .band{height:20px;background:repeating-conic-gradient(from 45deg, var(--amber) 0 25%, var(--orange) 0 50%) 0 0/40px 40px}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+  .wordmark{font-weight:700;font-size:26px}
+  .wordmark span{color:var(--orange)}
+  nav a{background:var(--ink);color:var(--cream);padding:12px 26px;border-radius:4px;text-decoration:none;
+    font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+  nav a:hover{background:var(--orange)}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:52px 0;min-height:62dvh}
+  h1{font-size:clamp(40px,6vw,78px);font-weight:700;line-height:1.02;text-transform:uppercase}
+  h1 .a{color:var(--orange)}
+  h1 .b{color:var(--amber)}
+  .sub{margin-top:20px;font-size:16px;max-width:36ch;line-height:1.6;color:#4b5563}
+  .cta{margin-top:28px;display:inline-block;background:var(--orange);color:var(--cream);padding:15px 32px;
+    border-radius:4px;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.06em}
+  .cta:hover{background:var(--amber);color:var(--ink)}
+  .bolts{justify-self:center;width:min(100%,400px);display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .bolt{aspect-ratio:1/2.3;border:3px solid var(--ink);border-radius:4px}
+  .bolt:nth-child(1){background:repeating-radial-gradient(circle at 50% 20%, var(--amber) 0 12px, var(--ink) 12px 22px)}
+  .bolt:nth-child(2){background:repeating-linear-gradient(45deg, var(--orange) 0 14px, var(--cream) 14px 20px, var(--deep) 20px 32px)}
+  .bolt:nth-child(3){background:repeating-conic-gradient(var(--orange) 0 12.5%, var(--cream) 0 25%) 0 0/36px 36px}
+  .stall{padding:8px 0 84px}
+  .stall h2{font-size:clamp(24px,3.2vw,36px);font-weight:700;text-transform:uppercase;margin-bottom:22px}
+  .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+  .card{border:2px solid var(--ink);border-radius:6px;background:#fff;overflow:hidden}
+  .card .cloth{height:104px}
+  .card:nth-child(1) .cloth{background:repeating-radial-gradient(circle at 30% 30%, var(--amber) 0 10px, var(--cream) 10px 20px)}
+  .card:nth-child(2) .cloth{background:repeating-linear-gradient(-45deg, var(--orange) 0 12px, var(--ink) 12px 15px, var(--amber) 15px 28px)}
+  .card:nth-child(3) .cloth{background:repeating-conic-gradient(from 30deg, var(--orange) 0 25%, var(--cream) 0 50%) 0 0/28px 28px}
+  .card:nth-child(4) .cloth{background:repeating-radial-gradient(circle at 70% 20%, var(--deep) 0 8px, var(--amber) 8px 17px)}
+  .card .info{padding:12px 14px;border-top:2px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline}
+  .card h3{font-weight:600;font-size:15px;text-transform:uppercase}
+  .card .mono{font-family:"JetBrains Mono";font-size:10.5px;color:var(--orange)}
+  @media(max-width:840px){.hero{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="band"></div>
+<div class="wrap">
+  <nav><div class="wordmark">IJE<span>*</span></div><a href="#">Find your table</a></nav>
+  <section class="hero">
+    <div>
+      <h1><span class="a">Cut from</span><br><span class="b">every cloth.</span></h1>
+      <p class="sub">Six strangers, six patterns, one table where they all somehow match. Lagos, weekly.</p>
+      <a class="cta" href="#">Find your table</a>
+    </div>
+    <div class="bolts" role="img" aria-label="Bolts of patterned fabric">
+      <div class="bolt"></div><div class="bolt"></div><div class="bolt"></div>
+    </div>
+  </section>
+  <section class="stall">
+    <h2>This week's stall</h2>
+    <div class="row">
+      <div class="card"><div class="cloth"></div><div class="info"><h3>Dinner Club</h3><span class="mono">THU</span></div></div>
+      <div class="card"><div class="cloth"></div><div class="info"><h3>Card Night</h3><span class="mono">FRI</span></div></div>
+      <div class="card"><div class="cloth"></div><div class="info"><h3>Rooftop Hang</h3><span class="mono">SAT</span></div></div>
+      <div class="card"><div class="cloth"></div><div class="info"><h3>Market Crawl</h3><span class="mono">SUN</span></div></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

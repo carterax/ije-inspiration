@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courtyard / Taste V2 Night Timeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--night:#12160f;--night2:#1a2016;--amber:#e8a75c;--warm:#f2e5cf;--soft:#9aa08c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--night);color:var(--warm);font-family:Outfit,sans-serif}
+  .wrap{max-width:900px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:600;font-size:22px;letter-spacing:.14em}
+  nav a{color:var(--night);background:var(--amber);padding:11px 24px;border-radius:999px;text-decoration:none;
+    font-weight:500;font-size:14px}
+  .hero{padding:56px 0 40px;text-align:center}
+  h1{font-size:clamp(32px,4.6vw,54px);font-weight:300;line-height:1.2}
+  h1 b{font-weight:600;color:var(--amber)}
+  .hero p{margin-top:14px;color:var(--soft);font-weight:300}
+  .line{position:relative;margin:24px 0 64px;padding-left:34px;border-left:1px solid rgba(232,167,92,.4)}
+  .stop{position:relative;padding:30px 0}
+  .stop::before{content:"";position:absolute;left:-40px;top:42px;width:11px;height:11px;border-radius:50%;
+    background:var(--amber);box-shadow:0 0 18px rgba(232,167,92,.8)}
+  .stop .when{font-family:"IBM Plex Mono";font-size:12px;color:var(--amber);letter-spacing:.16em}
+  .stop h2{margin-top:8px;font-size:clamp(24px,3.2vw,36px);font-weight:500}
+  .stop p{margin-top:8px;color:var(--soft);font-weight:300;max-width:52ch;line-height:1.7}
+  .stop .slot{margin-top:16px;height:130px;border:2px dashed rgba(232,167,92,.5);border-radius:6px;
+    display:flex;align-items:center;justify-content:center;font-family:"IBM Plex Mono";font-size:10.5px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--amber);text-align:center;padding:12px}
+  .end{text-align:center;padding:0 0 72px}
+  .end a{display:inline-block;background:var(--amber);color:var(--night);padding:15px 36px;border-radius:999px;
+    text-decoration:none;font-weight:600;font-size:15px}
+  .end a:hover{background:var(--warm)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Join Thursday</a></nav>
+  <section class="hero">
+    <h1>One evening, <b>played slow.</b></h1>
+    <p>Six strangers. Here is how the night goes.</p>
+  </section>
+  <section class="line">
+    <div class="stop"><span class="when">6:55 PM</span><h2>The address</h2>
+      <p>Dropped that morning. A courtyard behind a quiet street. You'd never have found it alone.</p>
+      <!-- HIGGSFIELD: [SUBJECT: warm lit gate and courtyard entrance at dusk, plants and lanterns, no people] 16:5 -->
+      <div class="slot">SLOT · courtyard entrance at dusk · 16:5 · no people</div></div>
+    <div class="stop"><span class="when">7:00 PM</span><h2>Arrive hungry</h2>
+      <p>String lights on. Six chairs. A table that already smells like a good decision.</p>
+      <!-- HIGGSFIELD: [SUBJECT: set table with six empty chairs under string lights, candles, no people] 16:5 -->
+      <div class="slot">SLOT · set table, six empty chairs · 16:5 · no people</div></div>
+    <div class="stop"><span class="when">8:30 PM</span><h2>Eat slow</h2>
+      <p>Shared plates, real questions. The table decides where the talk goes.</p></div>
+    <div class="stop"><span class="when">LATE</span><h2>Stay late</h2>
+      <p>Cards come out. Someone orders one more round. Nobody checks the time.</p>
+      <!-- HIGGSFIELD: [SUBJECT: cards spread beside a burnt-down candle on wood, warm low light, no people] 16:5 -->
+      <div class="slot">SLOT · cards and burnt candle · 16:5 · no people</div></div>
+  </section>
+  <div class="end"><a href="#">Join Thursday</a></div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

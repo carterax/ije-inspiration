@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Social / Taste V3 Type Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--ground:#f4f3ef;--ink:#191a1c;--coral:#e2543e;--lime:#c6d94e;--violet:#7b6cd9;--teal:#2e8f83;--sun:#e8b93b}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--ground);font-family:Outfit,sans-serif}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 32px 72px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:800;font-size:24px}
+  nav a{background:var(--ground);color:var(--ink);padding:12px 26px;border-radius:999px;text-decoration:none;
+    font-weight:700;font-size:14px}
+  nav a:hover{background:var(--coral);color:var(--ground)}
+  .kicker{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8e8f94;
+    padding:28px 0 10px}
+  .board a{display:block;text-decoration:none;font-weight:800;line-height:1.02;letter-spacing:-.02em;
+    font-size:clamp(44px,8vw,110px);padding:10px 0;border-bottom:1px solid #33343a;transition:padding-left .14s}
+  .board a:hover{padding-left:24px}
+  .board .c1{color:var(--coral)}
+  .board .c2{color:var(--teal)}
+  .board .c3{color:var(--violet)}
+  .board .c4{color:var(--sun)}
+  .board .c5{color:var(--lime)}
+  .board a span{display:inline-block;vertical-align:super;font-family:"IBM Plex Mono";font-weight:400;
+    font-size:12px;letter-spacing:.12em;color:#8e8f94;margin-left:14px;text-transform:uppercase}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:36px}
+  .foot p{font-size:16px;color:#8e8f94;max-width:40ch;font-weight:500}
+  .foot p b{color:var(--ground)}
+  .foot a{background:var(--coral);color:var(--ground);padding:15px 34px;border-radius:999px;text-decoration:none;
+    font-weight:800;font-size:15px}
+  .foot a:hover{background:var(--ground);color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">ije</div><a href="#">Get a seat</a></nav>
+  <div class="kicker">Six kinds of night · Lagos · Seats live</div>
+  <section class="board">
+    <a class="c1" href="#">Dinner Club<span>Thu · 2 left</span></a>
+    <a class="c2" href="#">Card Night<span>Fri · 4 left</span></a>
+    <a class="c3" href="#">Rooftop Hang<span>Sat · waitlist</span></a>
+    <a class="c4" href="#">Film Club<span>Sat · 3 left</span></a>
+    <a class="c5" href="#">Market Crawl<span>Sun · 6 left</span></a>
+  </section>
+  <div class="foot">
+    <p><b>Pick a night. We pick the people.</b> Six strangers, one evening, see what happens.</p>
+    <a href="#">Get a seat</a>
+  </div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Mask / Impeccable V4 Photo Plinths</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--void:#17130e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--void);color:var(--cream);font-family:"Chakra Petch",sans-serif}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 32px 64px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid rgba(204,136,0,.35)}
+  .wordmark{font-weight:700;font-size:20px;letter-spacing:.28em}
+  nav a{background:var(--amber);color:var(--ink);padding:11px 26px;border-radius:4px;text-decoration:none;
+    font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .heroslot{margin:20px 0 0;aspect-ratio:21/9;border:2px dashed var(--amber);border-radius:8px;display:flex;
+    align-items:center;justify-content:center;text-align:center;font-family:"JetBrains Mono";font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:#b59468;padding:16px}
+  .caption{display:flex;justify-content:space-between;padding:12px 2px 0;font-family:"JetBrains Mono";
+    font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#9a8a6a}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding:38px 0 26px}
+  h1{font-size:clamp(26px,3.8vw,42px);font-weight:600;line-height:1.2;max-width:22ch}
+  h1 span{color:var(--amber)}
+  .head a{background:var(--orange);color:var(--cream);padding:14px 32px;border-radius:4px;text-decoration:none;
+    font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;flex-shrink:0}
+  .head a:hover{background:var(--amber);color:var(--ink)}
+  .row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .plinth{display:flex;flex-direction:column;align-items:center}
+  .plinth .slot{width:100%;aspect-ratio:3/4;border:2px dashed var(--amber);border-radius:6px;display:flex;
+    align-items:center;justify-content:center;text-align:center;font-family:"JetBrains Mono";font-size:10px;
+    letter-spacing:.12em;text-transform:uppercase;color:#b59468;padding:14px}
+  .plinth .base{width:70%;height:32px;background:linear-gradient(180deg,#2a2118,var(--void));
+    border-top:1px solid rgba(204,136,0,.5)}
+  .plinth p{margin-top:10px;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;color:#9a8a6a;text-align:center}
+  @media(max-width:800px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Take a seat</a></nav>
+  <!-- HIGGSFIELD: [SUBJECT: row of six golden masks on plinths in a dark gallery, single raking light, no people]
+       amber on void, museum photography. 21:9 -->
+  <div class="heroslot">HERO IMAGE SLOT · six masks on plinths, raking light · 21:9 · no people</div>
+  <div class="caption"><span>Permanent collection · Lagos</span><span>Six masks, checked at the door</span></div>
+  <div class="head">
+    <h1>Every table starts as a gallery. <span>Then it becomes a kitchen.</span></h1>
+    <a href="#">Take a seat</a>
+  </div>
+  <section class="row">
+    <!-- HIGGSFIELD per plinth: single sculpted object, single-source light, amber grade, no people -->
+    <div class="plinth"><div class="slot">SLOT · stone head, side lit · 3:4</div><div class="base"></div><p>The professional</p></div>
+    <div class="plinth"><div class="slot">SLOT · gold mask · 3:4</div><div class="base"></div><p>The cool one</p></div>
+    <div class="plinth"><div class="slot">SLOT · mask mid-unfold · 3:4</div><div class="base"></div><p>The one who cracked first</p></div>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

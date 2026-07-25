@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courtyard / Impeccable V5 Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--dusk:#2a1509}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--dusk);color:var(--cream);font-family:"Chakra Petch",sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:36px 16px 64px;
+    background-image:radial-gradient(700px 420px at 50% 10%, rgba(204,136,0,.16), transparent 70%)}
+  .head{width:min(560px,100%);display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+  .wordmark{font-weight:700;font-size:20px;letter-spacing:.3em}
+  .head span{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+  .card{width:min(560px,100%);background:var(--cream);color:var(--ink);border-radius:6px;padding:48px 44px;
+    box-shadow:0 26px 80px rgba(0,0,0,.55);text-align:center;position:relative}
+  .card::before{content:"";position:absolute;inset:12px;border:1px solid var(--amber);border-radius:3px;pointer-events:none}
+  .card .crest{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--orange)}
+  .card h1{margin-top:16px;font-size:clamp(28px,4.4vw,42px);font-weight:700;line-height:1.16}
+  .card h1 em{font-style:normal;color:var(--orange)}
+  .card .body{margin-top:16px;font-size:15px;color:#4b5563;line-height:1.7;max-width:34ch;margin-left:auto;margin-right:auto}
+  .card .detail{margin:24px auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:400px}
+  .card .detail div{background:#fff;padding:12px 8px}
+  .card .detail b{display:block;font-family:"JetBrains Mono";font-size:9.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--orange)}
+  .card .detail span{font-weight:600;font-size:14px}
+  .card .slot{margin:8px auto 20px;height:100px;max-width:400px;border:2px dashed var(--amber);border-radius:4px;
+    display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono";font-size:10px;
+    letter-spacing:.14em;text-transform:uppercase;color:#8a6a20;text-align:center;padding:12px}
+  .card .rsvp{display:inline-block;background:var(--orange);color:var(--cream);padding:14px 40px;border-radius:4px;
+    text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+  .card .rsvp:hover{background:var(--amber);color:var(--ink)}
+  .card .ps{margin-top:18px;font-size:12px;color:#6b7280;font-style:italic}
+</style>
+</head>
+<body>
+<div class="head"><div class="wordmark">IJE</div><span>You are invited</span></div>
+<article class="card">
+  <div class="crest">Ije · Lagos</div>
+  <h1>Dinner with five people <em>you haven't met.</em></h1>
+  <p class="body">The pleasure of your company is requested at a table of six strangers. Come hungry. Leave with stories.</p>
+  <div class="detail">
+    <div><b>Day</b><span>Thursday</span></div>
+    <div><b>Time</b><span>7:00 PM</span></div>
+    <div><b>Place</b><span>Revealed at dawn</span></div>
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: wax seal and folded invitation on linen beside a lit candle, warm low light, no people] 4:1 -->
+  <div class="slot">IMAGE SLOT · invitation, wax seal, candle · 4:1 · no people</div>
+  <a class="rsvp" href="#">RSVP: one seat</a>
+  <p class="ps">Dress code: come as you are. Small talk: kindly left at the gate.</p>
+</article>
+<script src="variants-nav.js"></script>
+</body>
+</html>

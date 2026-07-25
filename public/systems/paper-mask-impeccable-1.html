@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Mask / Impeccable V1 Split Exhibit</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--void:#17130e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--void);color:var(--cream);font-family:"Chakra Petch",sans-serif}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid rgba(204,136,0,.35)}
+  .wordmark{font-weight:700;font-size:20px;letter-spacing:.28em}
+  nav a{background:var(--amber);color:var(--ink);padding:11px 26px;border-radius:4px;text-decoration:none;
+    font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  nav a:hover{background:var(--cream)}
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;min-height:72dvh;padding:40px 0}
+  .kicker{font-family:"JetBrains Mono";font-size:12px;letter-spacing:.2em;color:var(--amber);text-transform:uppercase}
+  h1{margin-top:14px;font-size:clamp(30px,4.2vw,52px);font-weight:600;line-height:1.18}
+  h1 span{color:var(--amber)}
+  .sub{margin-top:16px;font-size:15px;color:#c9bda6;line-height:1.7;max-width:38ch;font-weight:300}
+  .cta{margin-top:28px;display:inline-block;background:var(--orange);color:var(--cream);padding:14px 32px;
+    border-radius:4px;text-decoration:none;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+  .cta:hover{background:var(--amber);color:var(--ink)}
+  .plinth{justify-self:center;width:min(100%,360px);display:flex;flex-direction:column;align-items:center}
+  .imgslot{width:100%;aspect-ratio:3/4;border:2px dashed var(--amber);border-radius:6px;display:flex;
+    align-items:center;justify-content:center;text-align:center;font-family:"JetBrains Mono";font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:#b59468;padding:20px}
+  .base{margin-top:-2px;width:76%;height:44px;background:linear-gradient(180deg,#2a2118,var(--void));
+    border-top:1px solid rgba(204,136,0,.5)}
+  .label{margin-top:12px;font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#9a8a6a}
+  @media(max-width:800px){.hero{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Take a seat</a></nav>
+  <section class="hero">
+    <div>
+      <div class="kicker">Exhibit I</div>
+      <h1>Everyone arrives wearing a face. <span>Dinner takes it off.</span></h1>
+      <p class="sub">Six strangers. One evening in Lagos. See what happens when the masks come down.</p>
+      <a class="cta" href="#">Take a seat</a>
+    </div>
+    <div class="plinth">
+      <!-- HIGGSFIELD: [SUBJECT: golden sculptural mask on dark plinth, single-source side light, no people]
+           amber gold tones on deep void, museum exhibit photography. 3:4 -->
+      <div class="imgslot">IMAGE SLOT<br>golden mask on plinth<br>3:4 · dramatic side light</div>
+      <div class="base"></div>
+      <div class="label">The face you came with</div>
+    </div>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

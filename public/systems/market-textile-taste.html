@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Textile / Taste</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--indigo:#243a73;--wax-y:#e8b400;--wax-r:#c23b22;--wax-g:#2c6e49;--cream:#f5efdf;--ink:#1c1817}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:Archivo,sans-serif}
+  .band{height:22px;background:
+    repeating-conic-gradient(from 45deg, var(--wax-y) 0 25%, var(--indigo) 0 50%) 0 0/44px 44px}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+  .wordmark{font-weight:900;font-size:26px;letter-spacing:.02em}
+  .wordmark span{color:var(--wax-r)}
+  nav a{background:var(--indigo);color:var(--cream);padding:12px 26px;text-decoration:none;font-weight:800;
+    font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+  nav a:hover{background:var(--wax-r)}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:52px 0;min-height:66dvh}
+  h1{font-size:clamp(42px,6.2vw,82px);font-weight:900;line-height:1;text-transform:uppercase;letter-spacing:-.01em}
+  h1 .y{color:var(--wax-y);-webkit-text-stroke:2px var(--ink)}
+  h1 .r{color:var(--wax-r)}
+  .sub{margin-top:22px;font-size:16px;font-weight:600;max-width:36ch;line-height:1.6;color:#443c39}
+  .cta{margin-top:30px;display:inline-block;background:var(--wax-r);color:var(--cream);padding:15px 32px;
+    text-decoration:none;font-weight:900;font-size:14px;text-transform:uppercase;letter-spacing:.08em;
+    box-shadow:5px 5px 0 var(--ink)}
+  .cta:active{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+  .bolts{justify-self:center;width:min(100%,420px);display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .bolt{aspect-ratio:1/2.4;border:3px solid var(--ink)}
+  .bolt:nth-child(1){background:repeating-radial-gradient(circle at 50% 20%, var(--wax-y) 0 12px, var(--indigo) 12px 24px)}
+  .bolt:nth-child(2){background:repeating-linear-gradient(45deg, var(--wax-r) 0 14px, var(--cream) 14px 20px, var(--wax-g) 20px 34px)}
+  .bolt:nth-child(3){background:repeating-conic-gradient(var(--wax-g) 0 12.5%, var(--cream) 0 25%) 0 0/38px 38px}
+  .stall{padding:12px 0 84px}
+  .stall h2{font-size:clamp(26px,3.4vw,40px);font-weight:900;text-transform:uppercase;margin-bottom:24px}
+  .swatch-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+  .swatch-card{border:3px solid var(--ink);background:#fff}
+  .swatch-card .cloth{height:110px}
+  .swatch-card:nth-child(1) .cloth{background:repeating-radial-gradient(circle at 30% 30%, var(--indigo) 0 10px, var(--cream) 10px 20px)}
+  .swatch-card:nth-child(2) .cloth{background:repeating-linear-gradient(-45deg, var(--wax-y) 0 12px, var(--ink) 12px 16px, var(--wax-r) 16px 30px)}
+  .swatch-card:nth-child(3) .cloth{background:repeating-conic-gradient(from 30deg, var(--wax-r) 0 25%, var(--cream) 0 50%) 0 0/30px 30px}
+  .swatch-card:nth-child(4) .cloth{background:repeating-radial-gradient(circle at 70% 20%, var(--wax-g) 0 8px, var(--wax-y) 8px 18px)}
+  .swatch-card .info{padding:14px;border-top:3px solid var(--ink);display:flex;justify-content:space-between;align-items:baseline}
+  .swatch-card h3{font-weight:800;font-size:15px;text-transform:uppercase}
+  .swatch-card .mono{font-family:"IBM Plex Mono";font-size:10.5px;color:#6d645f}
+  @media(max-width:840px){.hero{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="band"></div>
+<div class="wrap">
+  <nav><div class="wordmark">IJE<span>*</span></div><a href="#">Find your table</a></nav>
+  <section class="hero">
+    <div>
+      <h1><span class="r">Cut from</span><br><span class="y">every cloth.</span></h1>
+      <p class="sub">Six strangers, six patterns, one table where they all somehow match. Lagos, weekly.</p>
+      <a class="cta" href="#">Find your table</a>
+    </div>
+    <div class="bolts" role="img" aria-label="Bolts of patterned fabric">
+      <div class="bolt"></div><div class="bolt"></div><div class="bolt"></div>
+    </div>
+  </section>
+  <section class="stall">
+    <h2>This week's stall</h2>
+    <div class="swatch-row">
+      <div class="swatch-card"><div class="cloth"></div><div class="info"><h3>Dinner Club</h3><span class="mono">THU</span></div></div>
+      <div class="swatch-card"><div class="cloth"></div><div class="info"><h3>Card Night</h3><span class="mono">FRI</span></div></div>
+      <div class="swatch-card"><div class="cloth"></div><div class="info"><h3>Rooftop Hang</h3><span class="mono">SAT</span></div></div>
+      <div class="swatch-card"><div class="cloth"></div><div class="info"><h3>Market Crawl</h3><span class="mono">SUN</span></div></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

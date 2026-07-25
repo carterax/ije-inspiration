@@ -1,0 +1,752 @@
+import raw from "../websites.txt?raw";
+
+export const CATS = {
+  storytelling: {
+    name: "Storytelling",
+    desc: "The page is a story, not a brochure. Content unfolds in chapters as you scroll: scenes enter, linger, and hand off to the next. Emotion first, information second. Perfect reference for making strangers feel something before they read anything.",
+    vocab: ["scroll-driven narrative","chaptered pacing","cinematic reveals","scene transitions","oversized serif headlines","full-bleed imagery","slow deliberate rhythm"]
+  },
+  structure: {
+    name: "Good Structure",
+    desc: "Confident information architecture. Every section knows its job, grids are strict, hierarchy is instantly legible. Study these for how to organize a lot of content without noise.",
+    vocab: ["strict grid","clear hierarchy","modular sections","generous whitespace","numbered navigation","consistent rhythm","legibility first"]
+  },
+  editorial: {
+    name: "Editorial",
+    desc: "Magazine DNA on the web. Print-inspired grids, expressive serif type, asymmetric layouts, and imagery treated like art direction rather than decoration.",
+    vocab: ["print-inspired grid","expressive serif","asymmetric layout","art-directed imagery","pull quotes","caption typography","warm paper ground"]
+  },
+  hotel: {
+    name: "Boutique Hospitality",
+    desc: "Warm, tactile, place-driven. These sites sell an atmosphere: paper textures, earthy palettes, photography that feels like memory. The closest reference family to what an Ije dinner should feel like before you arrive.",
+    vocab: ["warm paper texture","earthy palette","atmospheric photography","tactile materials","understated luxury","place as character","soft serif wordmarks"]
+  },
+  cultural: {
+    name: "Cultural",
+    desc: "Brand worlds built around people and community. Playful grids, social lists, bold color systems. Reference for showcasing event types and the social fabric of Ije.",
+    vocab: ["social lists","playful grid systems","bold color blocking","people-first photography","modular cards","energetic type"]
+  },
+  experimental: {
+    name: "Experimental",
+    desc: "Rule-breakers. WebGL, 3D scenes, unexpected interaction. Not templates to copy wholesale, but proof of how far a scroll can go. Steal one moment, not the whole site.",
+    vocab: ["WebGL scenes","3D interaction","non-linear navigation","immersive audio","cursor as character","spectacle"]
+  }
+};
+
+const CURATED = [
+  {name:"Mr Spring & Mrs Fresh", url:"https://mrspringmrsfresh.com/", cat:"storytelling", sub:"character x narrative",
+   note:"beautiful. also fits editorial and boutique hotel",
+   desc:"A brand told through two characters. The scroll is a courtship: playful illustration, warm ground, oversized serif moments, every section a scene in the story.",
+   tags:["character-led narrative","warm paper ground","playful illustration","oversized serif","chaptered scroll"],
+   brief:`CONCEPT: A character-led storytelling site. The brand is personified as two protagonists and the page unfolds as their story.
+LAYOUT: Full-width chaptered scroll. Each chapter is one viewport-tall scene with a single idea. Alternate text-led and image-led scenes. Generous vertical whitespace between chapters.
+TYPOGRAPHY: Oversized editorial serif for chapter headlines (10-14vw at moments of emphasis), humanist sans for supporting copy. Italic serif for asides and character voice.
+COLOR: Warm cream/paper ground, deep ink text, two character accent colors used sparingly. No pure white or black.
+IMAGERY: Playful illustration mixed with warm photography. Illustrations animate subtly on scroll entry.
+MOTION: Scroll-triggered scene reveals with slow ease-out. Elements enter staggered. Parallax kept subtle. One signature moment mid-page where type fills the screen.
+SECTIONS: Hero introduces the characters. 4-6 story chapters. Product/offer woven into the narrative, never a hard sell. Footer closes the story with a warm sign-off.`,
+   img:`[SUBJECT: two charming illustrated characters in a warm pastoral scene] hand-drawn editorial illustration, warm cream paper background, muted terracotta and sage palette, oversized elegant serif headline space above, soft grain texture, storybook warmth, generous empty space for typography, no harsh shadows`},
+
+  {name:"Nextec", url:"https://nextec.sk/", cat:"structure", sub:"grid x clarity",
+   desc:"Engineering-grade information architecture. Strict grids, numbered sections, and a hierarchy so clear you never wonder where you are.",
+   tags:["strict grid","numbered sections","clear hierarchy","modular blocks","restrained palette"],
+   brief:`CONCEPT: A structure-first corporate site where clarity is the aesthetic. Every section is a labeled, numbered module.
+LAYOUT: 12-column strict grid. Sections numbered (01, 02, 03) with mono labels. Consistent section anatomy: label, headline, supporting copy, content block. Generous but uniform spacing.
+TYPOGRAPHY: Neo-grotesque sans for everything; hierarchy achieved through size and weight only. Small mono uppercase labels for wayfinding.
+COLOR: Near-monochrome: off-white ground, near-black ink, one accent color reserved for interactive elements and section numbers.
+IMAGERY: Clean photography in strict crops, always aligned to grid columns.
+MOTION: Minimal. Fade-up on section entry, nothing else. Speed and stability are the feeling.
+SECTIONS: Hero with one-line value proposition. Numbered capability modules. Case studies in uniform cards. Contact as a full-width closing block.`,
+   img:`[SUBJECT: abstract architectural composition of clean rectangular blocks] minimal corporate photography style, off-white background, near-black geometric elements, one restrained accent color, strict grid alignment, engineered precision, flat even lighting, generous negative space`},
+
+  {name:"Britain's Favourite Butterfly", url:"https://britainsfavouritebutterfly.co.uk/", cat:"structure", sub:"campaign x order",
+   desc:"A public campaign organized like a field guide. Repeating card anatomy, clear voting structure, charm delivered through disciplined layout.",
+   tags:["field-guide cards","repeating anatomy","campaign structure","illustrated specimens","clear CTA flow"],
+   brief:`CONCEPT: A campaign microsite structured like a natural-history field guide. One repeating card anatomy carries the entire experience.
+LAYOUT: Uniform specimen cards in a responsive grid; each card identical in structure (image, name, fact, action). Strong intro section explaining the campaign in three steps. Sticky or repeated CTA.
+TYPOGRAPHY: Friendly serif for specimen names, clean sans for facts and UI. Small-caps labels for taxonomy details.
+COLOR: Soft natural ground (warm white or pale green), ink text, accent drawn from the illustrated subjects.
+IMAGERY: Consistent illustrated or photographed specimens, identically framed so the grid reads as a collection.
+MOTION: Gentle hover lift on cards. Vote interaction gives immediate playful feedback.
+SECTIONS: Hero stating the question. How-it-works in three numbered steps. The full specimen grid. Results/leaderboard. About the cause.`,
+   img:`[SUBJECT: a delicate butterfly specimen illustration] vintage natural-history field guide style, soft warm white background, precise botanical illustration detail, muted natural palette, taxonomy label typography space below, museum specimen framing, even soft light`},
+
+  {name:"Shane Sayers", url:"https://shanesayers.com/", cat:"storytelling", sub:"portfolio x cinema",
+   note:"good story telling",
+   desc:"A portfolio that behaves like a film. Full-bleed imagery, sequenced reveals, and pacing that makes you slow down and watch.",
+   tags:["cinematic scroll","full-bleed imagery","sequenced reveals","slow pacing","minimal chrome"],
+   brief:`CONCEPT: A cinematic portfolio where work is presented as scenes, not thumbnails. The site itself demonstrates the craft.
+LAYOUT: Full-bleed, one project per viewport. Minimal UI chrome; navigation appears only when needed. Project detail pages continue the cinematic pacing with large stills and sparse captions.
+TYPOGRAPHY: Refined sans or quiet serif, small and confident. Type never competes with imagery; it captions it.
+COLOR: Near-black or deep neutral ground letting imagery carry all color.
+IMAGERY: Large, high-quality stills and video loops. Every asset art-directed; nothing filler.
+MOTION: Slow scroll-linked reveals, crossfades between projects, subtle scale on imagery. Easing long and smooth (expo out). The pace is deliberate; nothing snaps.
+SECTIONS: Name/role as a quiet opening title. Sequential project scenes. Minimal about and contact as closing credits.`,
+   img:`[SUBJECT: a dramatic cinematic still of a lone figure in vast landscape] moody film photography, deep shadow and selective light, widescreen composition, muted cinematic color grade, minimal quiet typography space, atmospheric haze, contemplative pacing`},
+
+  {name:"Noomo Agency Storytelling", url:"https://storytelling.noomoagency.com/", cat:"experimental", sub:"WebGL x spectacle",
+   note:"wtf",
+   desc:"Full-blown WebGL spectacle. 3D scenes, immersive transitions, the scroll as a ride. A reference for signature moments, not whole-site structure.",
+   tags:["WebGL scenes","3D transitions","immersive scroll","spectacle","cursor interaction"],
+   brief:`CONCEPT: An immersive 3D narrative experience. The site is a ride: the user scrolls through rendered scenes rather than pages.
+LAYOUT: No conventional sections. A continuous 3D world where scroll position drives camera movement through scenes. HTML content floats as overlays anchored to moments in the journey.
+TYPOGRAPHY: Large display type integrated into 3D space, small clean sans for functional overlays.
+COLOR: Scene-driven; each chapter of the journey owns a palette. Transitions blend between them.
+IMAGERY: Real-time WebGL scenes (Three.js), particle systems, depth-of-field. Assets optimized aggressively; loading choreographed with a branded preloader.
+MOTION: Everything is motion. Camera easing is the star: long, smooth, physical. Cursor influences the scene subtly. Provide a reduced-motion fallback of static art-directed frames.
+SECTIONS: Preloader as opening titles. 3-5 scene chapters. A grounded HTML outro with contact. Escape hatch navigation for users who want content fast.`,
+   img:`[SUBJECT: a surreal floating 3D dreamscape with glowing organic forms] cinematic WebGL render aesthetic, volumetric light, deep atmospheric gradients, particle drift, depth of field, otherworldly immersive scene, dark rich palette with luminous accents`},
+
+  {name:"Momoamo", url:"https://momoamo.com/", cat:"editorial", sub:"magazine x web",
+   desc:"Print grids translated to the browser. Asymmetric compositions, expressive serif type, and imagery placed like a magazine spread.",
+   tags:["magazine spread layout","asymmetric grid","expressive serif","art-directed crops","pull quotes"],
+   brief:`CONCEPT: A digital magazine spread. Every viewport is composed like a print page: asymmetric, art-directed, typographically expressive.
+LAYOUT: Broken 12-column grid; images and text blocks offset and overlapping deliberately. Varied section compositions so no two spreads repeat. White space used as a design element.
+TYPOGRAPHY: High-contrast editorial serif for headlines with tight leading, refined sans or serif for body. Pull quotes at spread scale. Captions in small mono or small caps.
+COLOR: Paper-white or warm cream ground, ink text, one saturated editorial accent.
+IMAGERY: Photography with intentional crops: extreme close-ups against full-figure shots. Images sized by editorial importance, not template slots.
+MOTION: Restrained. Slow image reveals (clip-path or opacity), no parallax gimmicks. The layout is the show.
+SECTIONS: Cover-like hero. Feature spreads. An index/archive page in strict contrast to the expressive spreads.`,
+   img:`[SUBJECT: an elegant editorial portrait with dramatic crop] high-fashion magazine photography, warm paper white background, expressive serif typography space, asymmetric composition, one saturated accent color, art-directed negative space, print grain`},
+
+  {name:"Studio Modular", url:"https://studiomodular.be/", cat:"editorial", sub:"system x expression",
+   desc:"An editorial system with discipline: modular blocks that flex without breaking, type doing the heavy lifting.",
+   tags:["modular blocks","type-led design","flexible system","quiet palette","precise spacing"],
+   brief:`CONCEPT: A type-led studio site built as a modular editorial system. Expression comes from typography and composition inside disciplined blocks.
+LAYOUT: A small set of reusable section modules (statement, project row, image pair, list) combined in varied order. Consistent gutters; variety through module sequence, not one-off layouts.
+TYPOGRAPHY: One excellent typeface family carrying everything: display cuts for statements, text cuts for detail. Scale contrast is extreme: massive statements against small metadata.
+COLOR: Quiet two-tone base (warm off-white and ink) with a single accent for links and hover states.
+IMAGERY: Project imagery in consistent aspect ratios per module type. Hover reveals project metadata.
+MOTION: Micro only: underline animations, image zoom at 1.02 on hover, fade-up entries. Feels precise, never showy.
+SECTIONS: Statement hero. Selected work as alternating modules. Studio ethos as a full-bleed statement. Compact contact footer.`,
+   img:`[SUBJECT: bold typographic composition with layered letterforms] Swiss editorial poster style, warm off-white ground, oversized black serif letterforms cropped at edges, single accent color detail, precise modular grid, flat even light, museum print quality`},
+
+  {name:"Orchid Template", url:"https://orchid-template.framer.website/", cat:"editorial", sub:"soft x refined",
+   desc:"Refined editorial softness: airy spacing, gentle serif type, imagery that breathes. A calmer take on the magazine DNA.",
+   tags:["airy spacing","gentle serif","soft palette","breathing imagery","understated elegance"],
+   brief:`CONCEPT: A soft editorial site where restraint is the luxury. Everything breathes: airy spacing, gentle type, calm rhythm.
+LAYOUT: Centered and near-centered compositions with wide margins. Single-column reading measure for text, wide full-bleed moments for imagery. Rhythm alternates: text, air, image, air.
+TYPOGRAPHY: Light-weight refined serif for headlines, quiet sans for body. Sizes modest; elegance through spacing and weight rather than scale.
+COLOR: Soft warm neutrals: ivory, oat, muted taupe. Accent barely-there: a dusty tone, not a bright.
+IMAGERY: Soft natural light photography, muted grading, generous padding around each image.
+MOTION: Slow fades and gentle upward drifts (600-800ms, soft ease-out). Nothing sudden.
+SECTIONS: Quiet hero with a single serif line. Alternating story blocks. Full-width imagery pauses. Minimal footer.`,
+   img:`[SUBJECT: a single orchid stem in soft morning light] fine-art still life photography, ivory and oat neutral palette, soft diffused natural light, generous negative space, muted film grading, delicate serif typography space, calm minimal elegance`},
+
+  {name:"Tidescape", url:"https://tidescape.framer.ai/", cat:"hotel", sub:"coastal x calm",
+   note:"love this",
+   desc:"Coastal calm as a design system. Atmospheric photography, soft type, and pacing that feels like checking in somewhere quiet.",
+   tags:["coastal palette","atmospheric photography","soft serif","slow pacing","place as character"],
+   brief:`CONCEPT: A boutique coastal hotel site where the atmosphere of the place drives every decision. The site should feel like arriving somewhere quiet.
+LAYOUT: Full-width atmospheric hero, then alternating image/text bands with generous air. Rooms and experiences as wide cards with minimal chrome. Booking flow kept simple and calm.
+TYPOGRAPHY: Soft refined serif for headlines (lowercase or sentence case, never shouting), clean warm sans for details. Letter-spacing relaxed.
+COLOR: Coastal neutrals: sand, driftwood, sea-glass, off-white. Ink softened to deep warm gray.
+IMAGERY: Atmospheric photography: light on water, linen textures, empty morning spaces. People appear sparingly and candidly.
+MOTION: Slow crossfades and gentle reveals. Hero imagery may drift almost imperceptibly. Everything under-eased and unhurried.
+SECTIONS: Atmospheric hero with one line. The place (story). Rooms. Experiences. Practical details and booking. Footer with location and weather-like charm.`,
+   img:`[SUBJECT: a serene coastal hotel room with linen curtains and morning sea light] atmospheric interior photography, sand and sea-glass palette, soft natural morning light, linen textures, calm negative space, quiet luxury, muted film grade`},
+
+  {name:"Rosa Hotels", url:"https://rosahotels.dgrees.studio/", cat:"hotel", sub:"warm x crafted",
+   desc:"Crafted hospitality branding: warm palette, confident serif identity, photography that sells atmosphere over amenities.",
+   tags:["warm earthy palette","serif identity","atmosphere-led photo","crafted details","tactile feel"],
+   brief:`CONCEPT: A crafted boutique hotel brand site. Identity-led: the wordmark, palette, and photographic style do the selling.
+LAYOUT: Brand-forward hero with large serif wordmark over atmospheric imagery. Editorial sections mixing offset image pairs with short confident copy. Menu/booking accessible but never dominant.
+TYPOGRAPHY: Characterful serif for the identity and headlines, warm grotesque for supporting text. Small caps for labels (rooms, dining, spa).
+COLOR: Warm earth: terracotta, ochre, cream, deep olive. Palette applied boldly in full-color sections, not just accents.
+IMAGERY: Rich warm photography: golden light, textured materials, food and interiors treated with equal care.
+MOTION: Confident but restrained: smooth section transitions, image reveals on scroll, hover states with warmth (color washes, not shadows).
+SECTIONS: Identity hero. Story of the place. Rooms with atmosphere-first cards. Dining. Gallery as an editorial grid. Booking close.`,
+   img:`[SUBJECT: a sunlit terracotta hotel courtyard with olive trees] warm Mediterranean photography, terracotta ochre and olive palette, golden hour light, textured plaster walls, crafted serif typography space, tactile material detail, editorial travel magazine quality`},
+
+  {name:"The Largo", url:"https://thelargo.com/", cat:"hotel", sub:"paper x heritage",
+   note:"love the paper like bg",
+   desc:"Paper-textured ground gives the whole site a printed, heritage feel. Digital, but it reads like good stationery.",
+   tags:["paper texture ground","heritage feel","stationery typography","warm ink","printed charm"],
+   brief:`CONCEPT: A heritage hospitality site that feels printed: paper-textured background, stationery typography, the charm of a well-made brochure.
+LAYOUT: Contained widths like a printed page, with the paper texture visible in wide margins. Sections separated by fine rules and ornament details rather than color blocks.
+TYPOGRAPHY: Classic serif with true italics for headlines, refined text serif for body. Small caps and letterspaced labels. Numerals and details set like fine stationery.
+COLOR: Warm paper ground (visible fiber/grain texture), soft near-black ink, one heritage accent (deep green, burgundy, or navy).
+IMAGERY: Photography treated like tipped-in plates: contained, bordered, captioned. Slight warm grade to sit naturally on the paper ground.
+MOTION: Minimal, print doesn't move. Gentle fades only. Hover states are ink-like: underlines, color deepening.
+SECTIONS: Crest or wordmark opening. The story. Rooms as catalogue entries. Dining and details. Practical information set like a colophon.`,
+   img:`[SUBJECT: an elegant hotel facade illustration in engraved style] vintage engraving on warm textured paper, visible paper grain, soft near-black ink linework, one deep heritage accent color, fine stationery ornament borders, classic serif typography space, printed heirloom quality`},
+
+  {name:"Paput Menorca", url:"https://www.paputmenorca.com/", cat:"hotel", sub:"outdoors x sun",
+   note:"potential outdoorsy vibe",
+   desc:"Sun-washed and outdoorsy. Natural light photography, breezy layout, a palette pulled straight from the landscape.",
+   tags:["sun-washed palette","outdoor photography","breezy layout","landscape colors","natural textures"],
+   brief:`CONCEPT: An outdoorsy retreat site that feels sun-washed. The landscape is the brand: colors, textures, and pacing all drawn from the outdoors.
+LAYOUT: Open, breezy compositions: wide imagery, short text moments, lots of light. Horizontal scroll or wide galleries for landscape sequences. Activities and spaces presented as days, not amenities.
+TYPOGRAPHY: Relaxed serif or humanist sans with generous spacing. Nothing corporate; slightly imperfect warmth welcome.
+COLOR: Landscape-derived: sun-bleached white, warm stone, dry grass gold, sea blue used sparingly. High ambient brightness overall.
+IMAGERY: Natural light only: harsh noon sun accepted, shadows welcome. Textures of stone, water, and plants interleaved with spaces.
+MOTION: Light and airy: quick soft fades, imagery that slides gently. The site should feel like walking outside, not entering a lobby.
+SECTIONS: Full-light hero. The setting (landscape story). Stay (rooms). Days (activities/experiences). Getting there. Simple booking.`,
+   img:`[SUBJECT: a sun-bleached stone finca against dry golden grass and sea horizon] Mediterranean outdoor photography, harsh natural noon light, sun-washed white and stone palette, dry grass gold accents, breezy open composition, summer heat haze, travel editorial style`},
+
+  {name:"Crav Burgers", url:"https://www.cravburgers.shop/", cat:"hotel", sub:"playful x symbol",
+   note:"playful symbolisms",
+   desc:"Playful symbolism as brand language: icons, shapes, and type used like toys. Proof that hospitality can grin.",
+   tags:["playful iconography","symbol-led brand","bold shapes","toy-like interactions","appetite colors"],
+   brief:`CONCEPT: A playful food brand site built on symbolism: icons and shapes are the brand language, used boldly and repeated like a visual chant.
+LAYOUT: Bold blocked sections in full brand colors. Symbols oversized, cropped, repeated in patterns. Menu items presented graphically (illustration/icon-first) rather than photo-first.
+TYPOGRAPHY: Chunky rounded or condensed display type with personality, simple sans for details. Type interacts with symbols: wrapped, stacked, rotated.
+COLOR: Appetite-driven and saturated: warm red or orange, cream, deep brown. Full-bleed color sections alternate to keep energy high.
+IMAGERY: Iconography and illustration lead; photography only for hero food moments, styled graphic and punchy.
+MOTION: Toy-like: symbols bounce-free but snappy (fast ease-out), marquee text strips, hover states that swap symbols. Fun but never chaotic.
+SECTIONS: Big symbol hero. Menu as a graphic board. Brand story told in symbols. Locations/order CTA repeated boldly.`,
+   img:`[SUBJECT: a bold graphic burger built from simple geometric shapes] playful flat illustration, saturated warm red and cream palette, chunky rounded shapes, repeated symbol pattern background, toy-like charm, punchy poster composition, appetite appeal`},
+
+  {name:"Burrito Madre", url:"https://burritomadre.rs/en/", cat:"hotel", sub:"section x craft",
+   note:"a particular section could be useful. see mood board screenshot 4.31.29 PM",
+   desc:"Flagged for one particularly useful section pattern. Energetic food brand with crafted section design worth stealing.",
+   tags:["notable section pattern","energetic brand","crafted sections","food photography","bold type moments"],
+   brief:`CONCEPT: An energetic food brand site with individually crafted sections; each section is designed as its own poster rather than a template row.
+LAYOUT: Sections as posters: each owns a distinct composition, background treatment, and focal point. Strong horizontal breaks between them. One standout section pattern (see mood board reference) to adapt: study its structure, spacing, and content rhythm.
+TYPOGRAPHY: Bold display type with attitude for section titles, clean sans for menu detail. Scale jumps aggressively between sections to reset attention.
+COLOR: High-energy brand palette with section-by-section variation on a shared base. Food colors kept true and appetizing.
+IMAGERY: Punchy food photography, cutouts on flat color, textures for depth. Every section's imagery styled to its poster concept.
+MOTION: Section-entry animations tailored per poster: one slides, one fades, one scales. Cohesive easing family keeps it unified.
+SECTIONS: Hero poster. Menu highlights as individual posters. The standout reference section adapted. Locations and order flow.`,
+   img:`[SUBJECT: a vibrant burrito cutout floating on flat bold color] energetic food poster design, saturated flat color background, punchy studio food photography cutout, bold display typography space, graphic shadows, street-food energy, appetizing color grade`},
+
+  {name:"Life at Spotify", url:"https://www.lifeatspotify.com/", cat:"cultural", sub:"social x grid",
+   note:"loving the social list. could showcase event types; love the grids too, jesus too good",
+   desc:"Social lists and grid systems done exceptionally. The pattern to steal for showcasing Ije event types: playful, modular, people-first.",
+   tags:["social lists","modular grid mastery","playful color system","people-first photos","flexible cards"],
+   brief:`CONCEPT: A culture/community site built on a masterful modular grid and social list patterns. Content types (people, values, events) each get a card anatomy, and the grid mixes them fluidly.
+LAYOUT: A flexible grid where cards span varied column widths and heights, mixed by content type: photo cards, color-block statement cards, list cards. The mix feels curated, not random. Social lists (e.g. event types, roles, values) presented as bold scannable stacks with hover states.
+TYPOGRAPHY: Friendly confident sans with a distinctive display weight for statements. List items set large; scannability is the feature.
+COLOR: A systematic multi-color palette: each category/content type owns a color, applied to card backgrounds in full saturation on a neutral page ground.
+IMAGERY: Candid people-first photography, consistently treated (similar grade) so mixed grids stay cohesive.
+MOTION: Cards animate in with stagger. Hover states are generous: color swaps, image reveals, list items that slide. Playful but performant.
+SECTIONS: Statement hero. Mixed-grid showcase. Social lists by category. Stories/profiles. Join CTA.`,
+   img:`[SUBJECT: a joyful modular grid collage of candid people and bold color blocks] vibrant editorial collage, systematic multi-color card grid, candid warm photography mixed with flat saturated color blocks, playful confident composition, community energy, clean neutral ground between cards`}
+];
+
+/* ---- design systems from the mood board ---- */
+
+export const SYSTEMS = [
+  {
+    id: "danfo-pop",
+    name: "Danfo Pop",
+    sub: "screenprint x street",
+    desc: "Lagos street energy as a graphic system. Danfo yellow, screenprint texture, mask iconography, thick ink borders. Loud, proud, unmistakably local.",
+    reasoning: "Half your mood board is graphic African figuration: the mask posters, the screenprint faces, the Cabin Biscuits packaging, the danfo buses themselves. This system turns that into UI. It gives Ije instant Lagos identity that no imported aesthetic can fake, and it photographs brilliantly for social.",
+    inspirations: ["Mask and sculpture illustrations (board 1)", "Danfo buses and LAGOS signage (board 7)", "Cabin Biscuits vintage packaging (board 3-4)", "Screenprint poster faces in yellow/red/blue (board 1)"],
+    vocab: ["danfo yellow", "screenprint texture", "thick ink borders", "mask iconography", "condensed display type", "halftone dots", "poster energy"],
+    palette: ["#f2c200", "#191308", "#d43d17", "#274690", "#f6efdc"],
+    details: "Type: condensed poster sans (Anton) plus a grotesk for body. Color: danfo yellow ground, ink black frames, screenprint red and blue accents. Texture: halftone dot fields, hard offset shadows. Motion: snappy, physical, no easing softness.",
+    brief: `CONCEPT: A Lagos street-pop design system. The website feels like a screenprinted poster pasted on a danfo: loud, graphic, alive.
+TYPOGRAPHY: Condensed poster sans (Anton or Archivo Black) for all display, set uppercase with tight leading. Grotesk sans for body. No serifs.
+COLOR: Danfo yellow (#f2c200) dominant ground, ink black (#191308) for 6px frames and borders, screenprint red (#d43d17) and cobalt (#274690) as accents, cream (#f6efdc) for knockout moments.
+TEXTURE: Halftone dot fields on backgrounds, hard offset box shadows (6px, no blur), outlined knockout type.
+LAYOUT: Everything framed in thick ink borders like poster edges. Asymmetric splits, graphic illustration blocks instead of photography. Grid gaps collapse to shared borders.
+ICONOGRAPHY: Geometric mask shapes, stars, hand-drawn energy. Flat, screenprint style, slightly misregistered.
+MOTION: Instant and physical. Buttons push down 2px on press. Hovers swap background colors with no transition softness.
+VOICE: Short, loud, confident. "Six strangers. One table."`,
+    img: `[SUBJECT: a bold graphic African mask face] screenprint poster style, danfo yellow background, thick black ink outlines, red and cobalt blue misregistered print layers, halftone dot texture, flat graphic shapes, Lagos street poster energy, generous space above for condensed uppercase typography`,
+    variants: [
+      { label: "Taste", file: "/systems/danfo-pop-taste.html" },
+      { label: "Impeccable", file: "/systems/danfo-pop-impeccable.html" },
+      { label: "10 Variations", file: "/systems/danfo-pop-index.html" },
+    ],
+  },
+  {
+    id: "ephemera",
+    name: "Ephemera Archive",
+    sub: "objects x memory",
+    desc: "The night as a collection of kept objects: tickets, receipts, worn card decks, mixtapes. A museum catalog for memories that haven't happened yet.",
+    reasoning: "Your board is full of objects with memory attached: cassettes, dice, rotary phones, Filmhouse receipts, ticket stubs, Mr. Freeze. Ije's product IS future nostalgia, a night you'll want a souvenir from. This system makes that literal: every dinner produces artifacts, and the site is their archive. It's also the most ownable content engine: real objects from real tables.",
+    inspirations: ["Crayons, cassette, dice, rotary phone cutouts (board 2)", "Filmhouse cinema receipts and ticket stubs (board 6)", "Cabin Biscuits and Mr. Freeze packaging (board 4)", "Kraft paper texture packs (board 6)"],
+    vocab: ["object cutouts", "receipt typography", "specimen grid", "mono labels", "kraft accents", "archival numbering", "kept souvenirs"],
+    palette: ["#f4f2ec", "#22201b", "#c8442c", "#cbb896", "#ffffff"],
+    details: "Type: grotesk display with heavy mono usage for labels and receipts. Color: warm off-white ground, soft ink, stamp red accent, kraft brown. Layout: hairline specimen grids, rotated receipt panels. Motion: minimal, paper-like.",
+    brief: `CONCEPT: An archival design system where every night is documented through its objects. The site reads like a museum catalog crossed with a shoebox of kept tickets.
+TYPOGRAPHY: Clean grotesk (Space Grotesk) for display, monospace (IBM Plex Mono) for all labels, receipts, and metadata. Lowercase-friendly, quiet confidence.
+COLOR: Warm off-white paper (#f4f2ec), soft ink (#22201b), stamp red (#c8442c) used only for stamps and marks, kraft (#cbb896) as a material accent, white for receipt panels.
+MATERIALS: Receipt panels with dashed rules and slight rotation, perforated ticket edges, rubber stamp marks, kraft paper cells.
+LAYOUT: Specimen grids with 1px ink dividers. Objects displayed as large typographic glyphs or cutout photography with mono captions. Generous margins like an archive mat board.
+MOTION: Paper physics only: gentle settle on load, slight lift on hover. Nothing bouncy.
+VOICE: Inventory language with warmth. "1x long argument, friendly." "Paid in stories."`,
+    img: `[SUBJECT: a flat lay of kept objects: a worn card deck, a cassette tape, a paper ticket stub, dice] museum specimen photography, warm off-white background, soft even light, objects isolated and neatly spaced like an archive catalog, subtle kraft paper texture, monospace label space beneath each object, nostalgic but clean`,
+    variants: [
+      { label: "Taste", file: "/systems/ephemera-taste.html" },
+      { label: "Impeccable", file: "/systems/ephemera-impeccable.html" },
+      { label: "10 Variations", file: "/systems/ephemera-index.html" },
+    ],
+  },
+  {
+    id: "courtyard",
+    name: "Courtyard After Dark",
+    sub: "warmth x night",
+    desc: "Lagos social nights rendered as atmosphere: deep green darkness, amber string lights, long tables, no rush. The feeling of the best backyard you've ever been invited to.",
+    reasoning: "The emotional core of your board: string lights through trees, candlelit courtyards, people deep in conversation over cards and small plates, 'You know what's sexy? A real conversation.' This is what an Ije night actually feels like at 10pm. If the brand's job is to make strangers feel safe and warm before they arrive, this system does it on sight.",
+    inspirations: ["String-light courtyard and firepit scenes (board 5)", "Cafe tables and long-table meetups (board 4)", "Locale at night, card games on wood (board 7)", "'A real conversation' print (board 4)"],
+    vocab: ["amber string lights", "deep night greens", "long table warmth", "candle glow", "unhurried pacing", "wood and linen textures", "low-light photography"],
+    palette: ["#12160f", "#e8a75c", "#f2e5cf", "#9aa08c", "#1a2016"],
+    details: "Type: light humanist sans, generous line height, lowercase warmth. Color: near-black green ground, amber light accents, warm cream text. Texture: soft glows as literal string lights. Motion: slow fades, nothing sudden.",
+    brief: `CONCEPT: A night-warmth design system. The site is a courtyard at 9pm: dark, glowing, unhurried. Every element should lower the visitor's shoulders.
+TYPOGRAPHY: Light humanist sans (Outfit) with weights 300-600. Large sizes stay light-weight; boldness comes from the amber accent, not heavy type. Mono only for times.
+COLOR: Deep green-black night (#12160f), amber (#e8a75c) as the single accent used like light sources, warm cream (#f2e5cf) text, sage (#9aa08c) for secondary copy.
+LIGHT: String light dots along the top of viewports with soft radial glow. Amber used sparingly so it always reads as warmth, never as neon.
+LAYOUT: Centered-left compositions with big breathing room. Timeline structures for the arc of a night (7pm, 8pm, late). Full-bleed atmospheric photography with dark gradients for text.
+MOTION: Slow (600ms+) fades and drifts, ease-out only. Hovers brighten like turning up a dimmer.
+VOICE: Intimate, a little flirty, zero corporate. "Arrive hungry. Stay late."`,
+    img: `[SUBJECT: a long wooden dinner table in a Lagos courtyard at night, string lights overhead, candles and shared plates] atmospheric night photography, deep green darkness, warm amber string light glow, soft candlelight on faces of a diverse group mid-conversation, unhurried intimate mood, film grain, cinematic warmth`,
+    variants: [
+      { label: "Taste", file: "/systems/courtyard-taste.html" },
+      { label: "Impeccable", file: "/systems/courtyard-impeccable.html" },
+      { label: "10 Variations", file: "/systems/courtyard-index.html" },
+    ],
+  },
+  {
+    id: "papercut",
+    name: "Papercut Collage",
+    sub: "torn x layered",
+    desc: "Torn paper scraps layered into one composition. Different textures, different colors, rough edges that don't quite align. Handmade, imperfect, human.",
+    reasoning: "Your board keeps a whole texture library: papercut packs, torn collages, kraft sheets, crumpled paper. As a system it's the perfect metaphor for Ije: six mismatched people torn from different places, layered into one picture. It also ages well for content, since every event poster, recap, and story card can be a new collage from the same scrap kit.",
+    inspirations: ["Papercut texture pack and torn collage sheets (board 6)", "Kraft paper texture collections (board 6)", "Torn blue newsprint collage (board 6)", "Crumpled paper textures (board 6)"],
+    vocab: ["torn edges", "layered scraps", "kraft base", "rotated compositions", "handmade imperfection", "paper shadows", "collage storytelling"],
+    palette: ["#c9b797", "#efe9db", "#d9a91f", "#bf4f30", "#7fa093"],
+    details: "Type: heavy grotesk on paper scraps, mono for small labels. Color: kraft ground with cream, mustard, brick, and teal scraps. Every element sits on a torn-edge shape with slight rotation and paper shadow. Motion: scraps settle into place.",
+    brief: `CONCEPT: A collage design system where every UI element is a torn paper scrap. The page is a composition board, assembled by hand, proudly imperfect.
+TYPOGRAPHY: Heavy grotesk (Archivo 900) set on paper scraps, each line its own scrap with its own rotation. Mono for small archival labels.
+COLOR: Kraft (#c9b797) base ground, scraps in cream (#efe9db), mustard (#d9a91f), brick (#bf4f30), and muted teal (#7fa093). Ink (#26221a) for text on light scraps.
+EDGES: Everything gets torn edges via clip-path polygons, 1-2 degree rotations, and small hard shadows that read as paper lifting off the board.
+LAYOUT: Compositions, not grids. Overlapping scraps, deliberate misalignment, decorative scrap clusters in negative space. Mobile stacks scraps vertically but keeps rotation.
+MOTION: Scraps settle: tiny rotation correction on hover, gentle drop-in on load. Paper never bounces.
+VOICE: Warm and a little scrappy. "Different scraps. Same city. One picture."`,
+    img: `[SUBJECT: a collage of torn paper scraps in kraft, cream, mustard, brick and teal layered over each other] handmade paper collage, visible torn fiber edges, slight shadows under each scrap, kraft paper base, bold black grotesk type printed on some scraps, analog texture, imperfect and human, space for a headline scrap in the center`,
+    variants: [
+      { label: "Taste", file: "/systems/papercut-taste.html" },
+      { label: "Impeccable", file: "/systems/papercut-impeccable.html" },
+      { label: "10 Variations", file: "/systems/papercut-index.html" },
+    ],
+  },
+  {
+    id: "poster-block",
+    name: "Poster Block",
+    sub: "blocks x punch",
+    desc: "Full-bleed color blocks, massive cream display type, one line of copy per block. The Burrito Madre banner language scaled to a whole site.",
+    reasoning: "You flagged this exact section on Burrito Madre and saved the banner to your mood board: 'CHOOSE YOUR MEAL' on orange, 'JOIN THE CREW' on deep green. It works because each block makes exactly one promise in six words or less. For Ije it maps perfectly: choose your night, meet your people, take a seat. The most conversion-focused system of the five.",
+    inspirations: ["Burrito Madre banner blocks (mood board screenshot 4.31.29 PM)", "Life at Spotify color blocking (websites.txt)", "Choose your meal / Join the crew copy structure", "Cutout product photography on flat color"],
+    vocab: ["full-bleed color blocks", "massive cream type", "one promise per block", "cutout imagery", "punchy uppercase copy", "block-by-block scroll", "high conversion energy"],
+    palette: ["#e0771f", "#1e3a2a", "#f2e8da", "#1c1a15"],
+    details: "Type: condensed poster sans at massive scale, cream on color. Color: burnt orange and deep green blocks alternating with cream. Layout: each viewport is one block, one message, one action. Motion: block-snap scroll, type slides in.",
+    brief: `CONCEPT: A block-poster design system. The site is a sequence of full-bleed color blocks, each making one promise in massive cream type with one action.
+TYPOGRAPHY: Condensed poster sans (Anton) at 8-12vw for block headlines, always uppercase, always cream or ink. Supporting grotesk line kept under 10 words.
+COLOR: Burnt orange (#e0771f) and deep green (#1e3a2a) as alternating block grounds, cream (#f2e8da) for type and breather blocks, ink (#1c1a15) for contrast moments.
+IMAGERY: Cutout photography or flat graphic illustration floating on the block color, no backgrounds, slight scale exaggeration like the Pepsi-and-burrito banner.
+LAYOUT: One block = one viewport = one message = max one CTA. Alternate text-left and text-right between blocks. A cream centered block as the final CTA.
+MOTION: Scroll-snap between blocks. Headlines slide up as each block enters. CTAs invert colors on hover.
+VOICE: Command form, six words max. "Choose your night." "Meet your people." "Take a seat."`,
+    img: `[SUBJECT: appetizing Nigerian dinner dishes as clean cutouts floating on a flat burnt orange background] bold food advertising style, studio cutout photography, saturated flat color block background, massive cream condensed typography space on the left, graphic drop shadows, high energy commercial punch`,
+    variants: [
+      { label: "Taste", file: "/systems/poster-block-taste.html" },
+      { label: "Impeccable", file: "/systems/poster-block-impeccable.html" },
+    ],
+  },
+  {
+    id: "gele-studio",
+    name: "Gele Studio",
+    sub: "green x gold",
+    desc: "Editorial portrait glamour on deep green. Gele headwraps, gold jewelry, lace patterns, 70s wood-lounge warmth. Vintage Nigerian elegance shot like a fashion cover.",
+    reasoning: "Built from the portrait references you added: gele portraits against saturated green walls, gold face jewelry, pearl details, and that 70s wood-panel lounge with the green ceiling glow. It positions Ije as an occasion, not just an app. Dressing up becomes part of the product, and every dinner generates portrait-worthy content in a look nobody else in the category owns.",
+    inspirations: ["Gele portraits on green walls (your Pinterest saves)", "Gold face jewelry and aso-oke textures", "70s wood-panel lounge with green glow", "Pearl and lace styling details"],
+    vocab: ["deep green ground", "gold and bronze accents", "gele silhouettes", "lace pattern motifs", "portrait framing", "retro glamour", "italic serif elegance"],
+    palette: ["#1d4f43", "#c99a4b", "#f1e8d8", "#8a6531", "#143b32"],
+    details: "Type: high-contrast serif with true italics for display, light sans for support. Color: saturated green walls, gold and bronze, pearl cream. Imagery: studio portraits, centered subjects, hard framing. Motion: slow, dignified, gallery pacing.",
+    brief: `CONCEPT: A retro portrait-studio design system. The site feels like a Nigerian fashion editorial from a golden era: deep green walls, gold light, subjects dressed to be remembered.
+TYPOGRAPHY: High-contrast serif (Cormorant Garamond or Playfair Display) with italics as the signature move. Light humanist sans for functional text. Wide letterspacing on small caps labels.
+COLOR: Saturated deep green (#1d4f43) walls as the dominant ground, gold (#c99a4b) and bronze (#8a6531) accents, pearl cream (#f1e8d8) text. Never more than these plus a deeper green shadow.
+IMAGERY: Studio portrait photography: subjects centered, dressed up, shot against green. Lace and aso-oke patterns as background motifs. Thin gold frames around images like a gallery wall.
+LAYOUT: Formal and composed: centered portraits, symmetrical galleries, generous margins. The restraint is the luxury.
+MOTION: Slow gallery pacing: 700ms fades, gentle zooms on portraits. Nothing playful; everything dignified.
+VOICE: Elegant with warmth. "Come as you are. Leave as a portrait."`,
+    img: `[SUBJECT: an elegant Nigerian woman in a gold gele headwrap and embroidered lace against a saturated deep green wall] retro editorial portrait photography, 1970s fashion cover styling, warm golden studio light, pearl jewelry details, film grain, saturated green backdrop, dignified centered composition, space for italic serif typography`,
+    variants: [
+      { label: "Taste", file: "/systems/gele-studio-taste.html" },
+      { label: "Impeccable", file: "/systems/gele-studio-impeccable.html" },
+      { label: "10 Variations", file: "/systems/gele-studio-index.html" },
+    ],
+  },
+  {
+    id: "proof-sheet",
+    name: "Proof Sheet",
+    sub: "print x tech",
+    desc: "The print-tech paper language: crop marks, CMYK chips, proof-sheet labels, halftone plates, heavy grotesk headlines on warm paper. Design that looks like it came off a press.",
+    reasoning: "This is the bake-off aesthetic you screenshotted as the reference for this whole app, and it doubles down on the Good Structure direction you asked for: everything measured, labeled, and aligned. The print metaphor also fits Ije: every dinner is a one-run print, proofed and dated. It reads craft and intention, which is exactly the trust signal a strangers-dinner product needs.",
+    inspirations: ["The print-tech bake-off reference (your screenshot)", "Nextec structural clarity (websites.txt, good structure)", "Kraft and paper texture library (mood board)", "Halftone and registration mark print DNA"],
+    vocab: ["crop marks", "CMYK color chips", "proof labels", "halftone plates", "heavy grotesk display", "measured grids", "press-sheet metadata"],
+    palette: ["#f0ebdf", "#26221c", "#cf5b23", "#3aa6b9", "#e0b622"],
+    details: "Type: heavy grotesk (Archivo 800) for display, mono for all proof metadata. Color: warm paper, ink, burnt orange accent, CMYK chips as decoration. Layout: bordered plates with numbered cells. Motion: press-stamp presses, nothing floaty.",
+    brief: `CONCEPT: A press-proof design system. Every page is a printer's sheet: registration bar on top, crop marks in corners, content organized into labeled, numbered plates.
+TYPOGRAPHY: Heavy grotesk (Archivo Expanded 800) for headlines with tight tracking, monospace for every label, date, and measurement. Dashed underlines as the accent move.
+COLOR: Warm paper (#f0ebdf), soft ink (#26221c), burnt orange (#cf5b23) as the single accent, CMYK chips (cyan, magenta, yellow, black) appearing only in the registration bar.
+STRUCTURE: A registration bar with sheet metadata at the top of every page. Sections framed as bordered plates with mono labels breaking the border. Numbered cells with hairline dividers.
+TEXTURE: Halftone dot fields standing in for imagery, subtle paper dot grid on backgrounds, hard offset shadows on interactive elements.
+MOTION: Mechanical: buttons stamp down on press, elements snap into alignment. No easing softness.
+VOICE: Confident and precise, with print vocabulary. "Proofed. Dated. Do not distribute."`,
+    img: `[SUBJECT: a printer's proof sheet for a dinner invitation, with crop marks, CMYK registration chips and halftone dots] print production aesthetic, warm cream paper texture, heavy black grotesk typography, burnt orange accent, monospace proof annotations, precise grid alignment, flat even light, press-sheet documentation style`,
+    variants: [
+      { label: "Taste", file: "/systems/proof-sheet-taste.html" },
+      { label: "Impeccable", file: "/systems/proof-sheet-impeccable.html" },
+    ],
+  },
+  {
+    id: "index-grid",
+    name: "Index Grid",
+    sub: "order x calm",
+    desc: "The Good Structure family distilled: strict two-column module grid, numbered sections, hairline dividers, one accent color. Nothing decorative, everything legible.",
+    reasoning: "You said to lean into the Good Structure sites, and this is that language made into a system. Nextec's engineering clarity applied to a social product: matching, table, night, after, each a numbered module. For a product asking people to trust strangers, radical clarity IS the brand move. This is also the easiest system to build and maintain, and the best baseline to test the others against.",
+    inspirations: ["Nextec strict grids and numbered sections (websites.txt)", "Britain's Favourite Butterfly repeating card anatomy", "Hairline-divider editorial structure", "Swiss information design"],
+    vocab: ["numbered modules", "hairline dividers", "two-column rhythm", "single accent", "quiet confidence", "legibility first", "system over decoration"],
+    palette: ["#f5f4f0", "#1a1a18", "#2b59c3", "#6e6d66"],
+    details: "Type: one grotesk family at three weights, mono for numbers only. Color: warm off-white, near-black, one cobalt accent. Layout: 12-column grid, modules split 2x2 with hairlines. Motion: fade-up on entry, nothing else.",
+    brief: `CONCEPT: A structure-first design system where clarity is the aesthetic. The site is an index: numbered modules, strict alignment, zero decoration.
+TYPOGRAPHY: One grotesk family (Space Grotesk) at three weights doing all the work. Monospace reserved exclusively for module numbers and metadata. No italics, no serifs.
+COLOR: Warm off-white (#f5f4f0), near-black ink (#1a1a18), a single cobalt accent (#2b59c3) for numbers, links, and hover states. Gray (#6e6d66) for secondary text.
+LAYOUT: 12-column grid, hard aligned. Content modules in a 2x2 hairline-divided grid, each with number, heading, body, and one link. Hero splits 2fr/1fr with the CTA bottom-aligned.
+HIERARCHY: Achieved through size and weight only. Section order is the navigation. Every section earns its place or gets cut.
+MOTION: Fade-up on section entry, underline slides on link hover. Speed and stability are the feeling.
+VOICE: Plain, precise, no adjectives it can't prove. "One structured dinner a week. Six matched strangers."`,
+    img: `[SUBJECT: an abstract composition of numbered rectangular modules on a clean grid] Swiss information design poster, warm off-white background, near-black hairline dividers, single cobalt blue accent on module numbers, precise typographic alignment, generous whitespace, flat even lighting, engineered calm`,
+    variants: [
+      { label: "Taste", file: "/systems/index-grid-taste.html" },
+      { label: "Impeccable", file: "/systems/index-grid-impeccable.html" },
+    ],
+  },
+  {
+    id: "momoamo-spread",
+    name: "Momoamo Spread",
+    sub: "magazine x web",
+    desc: "The Momoamo language you love: overlapping editorial spreads, high-contrast serif with italic emphasis, images placed like art direction, pull quotes at spread scale.",
+    reasoning: "You called out Momoamo specifically, so this system translates its DNA for Ije: every viewport composed like a magazine spread, with the headline overlapping imagery and white space doing the luxury work. It elevates dinner with strangers into a story worth publishing, and testimonials become pull quotes, which is the most natural content format this product will ever have.",
+    inspirations: ["Momoamo asymmetric spreads (websites.txt, your favorite)", "Studio Modular type discipline", "Editorial pull-quote culture", "Fashion magazine art direction"],
+    vocab: ["overlapping spreads", "high-contrast serif", "italic emphasis", "art-directed crops", "spread-scale pull quotes", "mono captions", "white space as luxury"],
+    palette: ["#faf7f0", "#191713", "#c22e1f", "#6f6a5e"],
+    details: "Type: Playfair Display with italics for display, light sans body, mono captions. Color: paper white, ink, one editorial red. Layout: 12-column broken grid, headline overlaps imagery with multiply blend. Motion: slow clip-path image reveals.",
+    brief: `CONCEPT: A digital magazine design system. Every viewport is a composed spread: asymmetric imagery, overlapping type, editorial confidence.
+TYPOGRAPHY: High-contrast serif (Playfair Display) for headlines with italic words as the emphasis move. Light humanist sans for standfirst and body. Monospace small caps for captions and folio lines.
+COLOR: Paper white (#faf7f0), rich ink (#191713), one editorial red (#c22e1f) for italic emphasis, links, and quote highlights. Nothing else.
+LAYOUT: 12-column grid deliberately broken: a 3/4 portrait on columns 1-6, a smaller offset image on 9-12, the headline overlapping both with multiply blending. No two spreads repeat a composition.
+CONTENT: Pull quotes at spread scale with mono attribution. Standfirst paragraphs, never bullet lists. Captions under images, outside the frame.
+MOTION: Restrained: slow clip-path reveals on images, nothing on type. The layout is the show.
+VOICE: Editorial warmth. "Strangers, beautifully seated."`,
+    img: `[SUBJECT: an editorial magazine spread photograph of a beautifully set long dinner table, shot from above at an angle] high-fashion magazine photography, warm paper white background, asymmetric art-directed composition, one editorial red accent, elegant serif typography space overlapping the image, print grain, luxury restraint`,
+    variants: [
+      { label: "Taste", file: "/systems/momoamo-spread-taste.html" },
+      { label: "Impeccable", file: "/systems/momoamo-spread-impeccable.html" },
+    ],
+  },
+  {
+    id: "block-party",
+    name: "Block Party 99",
+    sub: "y2k x diaspora",
+    desc: "The Y2K diaspora thread in your board: fisheye crew shots, baggy denim, chrome and hot pink, sticker sheets and polaroids. Nostalgic, loud, extremely shareable.",
+    reasoning: "A whole corner of your mood board is 90s and 00s diaspora fashion: the fisheye group photo, baggy jeans, hair-shop portraits, trucker caps. That nostalgia is the visual language of young Lagos social media right now. This system makes Ije feel like the function everyone wants an invite to, and its sticker-and-polaroid kit is built for Instagram recaps.",
+    inspirations: ["Fisheye crew photo and Y2K fits (mood board 3)", "Hair-shop and street portraits (mood board 3)", "Sticker and chrome graphic culture", "Polaroid party documentation"],
+    vocab: ["chrome italic display", "sticker pills", "polaroid frames", "denim blue ground", "hot pink accents", "fisheye energy", "crew-first photography"],
+    palette: ["#2b4a8b", "#e8e8ee", "#e0559a", "#17161c", "#f2efe6"],
+    details: "Type: heavy italic grotesk with chrome and hard shadows. Color: denim blue ground, chrome silver, hot pink, ink outlines. Components: sticker pills, rotated polaroids, pill CTAs with press physics. Motion: snappy, springy, playful.",
+    brief: `CONCEPT: A Y2K block-party design system. The site feels like a flyer for the function of the year: chrome type, stickers everywhere, polaroids from last week's tables.
+TYPOGRAPHY: Heavy italic grotesk (Archivo 800 italic) for display with hard drop shadows, regular grotesk for body. Chrome and hot pink treatments on headline words.
+COLOR: Denim blue (#2b4a8b) ground with a subtle grid, chrome silver (#e8e8ee), hot pink (#e0559a), ink (#17161c) outlines on everything interactive, cream for text blocks.
+COMPONENTS: Sticker pills with 2px ink borders and hard shadows, rotated at random angles. Polaroid frames for photos with handwritten-style captions. Pill CTAs that physically press down.
+IMAGERY: Fisheye group shots, flash photography, candid crew energy. Photos always framed as polaroids or stickers, never bare.
+MOTION: Springy and snappy: stickers wobble on hover, buttons press with travel, polaroids straighten. Fast ease-out everywhere.
+VOICE: Group-chat casual. "Pull up Thursday. Your new crew awaits."`,
+    img: `[SUBJECT: a fisheye lens group photo of six stylish young Lagosians laughing around a dinner table, flash photography] Y2K party photography, direct flash, fisheye distortion, baggy denim and chrome jewelry fashion, hot pink and denim blue color grade, polaroid frame, sticker graphics scattered around, 1999 music video energy`,
+    variants: [
+      { label: "Taste", file: "/systems/block-party-taste.html" },
+      { label: "Impeccable", file: "/systems/block-party-impeccable.html" },
+    ],
+  },
+  {
+    id: "field-guide",
+    name: "Field Guide",
+    sub: "specimens x events",
+    desc: "Your pick for displaying events: Britain's Favourite Butterfly translated for Ije. Every event type is a collectible specimen card with identical anatomy and taxonomy-style labels.",
+    reasoning: "You chose this over the Spotify grids for event display, and the instinct is right: the butterfly site works because one perfect card anatomy repeats with charm, so the collection itself becomes the interface. Event types as species (Dinner Club, Cena communis, Common) gives Ije an ownable voice, natural collectibility (which nights have you done?), and a card system that scales to every new event type without redesign.",
+    inspirations: ["britainsfavouritebutterfly.co.uk (your selection for events)", "Natural history field guide plates", "Specimen taxonomy labels", "Butterfly voting card anatomy"],
+    vocab: ["specimen cards", "identical card anatomy", "taxonomy labels", "collection numbering", "field guide charm", "gentle hover lift", "collectible events"],
+    palette: ["#eef0e4", "#25301f", "#4a6741", "#b65c2e", "#f7f8f0"],
+    details: "Type: serif for specimen names, grotesk for UI, mono for taxonomy labels. Color: pale meadow ground, moss green, rust accent. Anatomy: plate, number, name, latin classification, fact, action. Motion: gentle card lift only.",
+    brief: `CONCEPT: A field guide design system where Ije's event types are documented as collectible species. One perfect card anatomy repeats across the whole product.
+TYPOGRAPHY: Warm serif (EB Garamond) for specimen names, clean grotesk for facts and UI, monospace for taxonomy labels and specimen numbers.
+COLOR: Pale meadow (#eef0e4) ground, deep moss ink (#25301f), moss green (#4a6741) and rust (#b65c2e) drawn from the specimens, card white for plates.
+CARD ANATOMY (never varies): illustrated plate with specimen number, common name in serif, latin-style classification with rarity (Common, Frequent, Seasonal, Rare), one field note, one action.
+VOICE OF THE SYSTEM: Naturalist language throughout. Events are species, attendance is collecting, rarity drives urgency.
+LAYOUT: Centered guide intro, then the uniform specimen grid. Detail pages read like guide entries: habitat, season, behavior.
+MOTION: Gentle hover lift with a colored shadow, immediate playful feedback on reserve. Nothing flashy; charm through consistency.`,
+    img: `[SUBJECT: a butterfly specimen card for a dinner event, illustrated wings made of dinner-table motifs] vintage natural history field guide plate, pale meadow green background, precise botanical illustration style, taxonomy label typography, specimen number in corner, museum collection framing, warm and charming, even soft light`,
+    variants: [
+      { label: "Taste", file: "/systems/field-guide-taste.html" },
+      { label: "Impeccable", file: "/systems/field-guide-impeccable.html" },
+    ],
+  },
+  {
+    id: "paper-mask",
+    name: "Paper Mask",
+    sub: "sculpture x reveal",
+    desc: "The crumpled paper masks and stone heads from your board as a brand metaphor: everyone arrives wearing a face, dinner takes it off. Museum-dark, sculptural, quietly strange.",
+    reasoning: "The mask thread is the most distinctive art direction in your whole board: toilet-roll faces, lapis heads, stone sculptures on plinths. As a system it gives Ije a concept, not just a look. The strangers-to-friends arc becomes exhibits in a museum of faces. It is the most gallery-worthy direction and the one competitors could never copy without it being obvious.",
+    inspirations: ["Crumpled paper-roll mask photos (boards 1-2)", "Stone head sculpture on plinth (board 1)", "Blue lapis mask on black (board 2)", "Mask-holding portrait photograph (board 1)"],
+    vocab: ["sculptural masks", "museum plinths", "exhibit labels", "near-black ground", "bone and terracotta", "dramatic side light", "conceptual storytelling"],
+    palette: ["#141210", "#e5ddcc", "#a8532f", "#7c8471", "#4d4437"],
+    details: "Type: light humanist sans, mono exhibit labels. Color: void black, bone, terracotta, sage. Imagery: sculpted faces lit from one side, displayed on plinths. Layout: gallery spacing, exhibit numbering. Motion: slow spotlight fades.",
+    brief: `CONCEPT: A museum-of-faces design system. The site is a dark gallery where the journey from stranger to friend is curated as exhibits.
+TYPOGRAPHY: Light humanist sans (Sora 300) for display with bold only for emphasis, monospace for exhibit labels (Exhibit I, II, III). Wide letterspacing on the wordmark.
+COLOR: Void black (#141210) ground, bone (#e5ddcc) text, terracotta (#a8532f) as the single accent, sage and stone for secondary surfaces.
+IMAGERY: Sculptural mask photography or CSS-sculpted faces: paper folds, stone textures, single-source dramatic lighting. Every image sits on a plinth with an exhibit label beneath.
+LAYOUT: Gallery pacing: one exhibit per viewport moment, generous darkness between. Hairline dividers like gallery wall seams.
+MOTION: Spotlight logic: elements fade up slowly as if lit, hovers brighten like stepping closer. 600ms minimum, ease-out.
+VOICE: Curatorial with warmth underneath. "Everyone arrives wearing a face. Dinner takes it off."`,
+    img: `[SUBJECT: a sculptural mask made of crumpled paper on a dark museum plinth] dramatic single-source side lighting, void black background, bone and terracotta tones, visible paper texture folds, museum exhibit photography, quiet and monumental, small mono exhibit label space below`,
+    variants: [
+      { label: "Taste", file: "/systems/paper-mask-taste.html" },
+      { label: "Impeccable", file: "/systems/paper-mask-impeccable.html" },
+      { label: "10 Variations", file: "/systems/paper-mask-index.html" },
+    ],
+  },
+  {
+    id: "surreal-assembly",
+    name: "Surreal Assembly",
+    sub: "parts x whole",
+    desc: "The surrealist thread: hands forming a face in the clouds, a figure assembled from floating multicolored limbs. Impossible images with wit, one per section.",
+    reasoning: "Two of the strangest, strongest images on your board are assembly metaphors: separate parts becoming one figure, hands becoming a face. That IS Ije's product: six unrelated people assembled into one table. This system owns that idea visually. It's the most conceptual and shareable direction, built for a brand that wants to be talked about.",
+    inspirations: ["Hands forming a face in clouds (board 1)", "Figure assembled from floating colored limbs (board 1)", "Sky and cloud photography (board 3)", "Surrealist poster art tradition"],
+    vocab: ["assembled figures", "floating parts", "sky grounds", "impossible images", "witty captions", "figure numbering", "one surreal moment per section"],
+    palette: ["#8fb8e0", "#f3f6f9", "#1b1d24", "#d8432f", "#e9b626"],
+    details: "Type: heavy grotesk with slight rotations. Color: sky blue ground, cloud white, ink, primary limb colors. Imagery: disassembled figures mid-assembly, captioned like diagrams. Motion: parts drift into place on scroll.",
+    brief: `CONCEPT: A surrealist assembly design system. Every key visual shows separate parts becoming a whole, because that is literally the product.
+TYPOGRAPHY: Heavy grotesk (Archivo 900) with headline lines rotated 1-2 degrees in opposite directions, mono for figure captions (Fig. 1).
+COLOR: Sky blue (#8fb8e0) gradient grounds with soft cloud shapes, ink (#1b1d24), and primary limb colors (red, yellow, green, purple) used only in illustrations.
+IMAGERY: Assembled-figure illustrations: floating limbs, stacked hands, impossible compositions. Each labeled like a scientific diagram for deadpan contrast.
+LAYOUT: One surreal moment per section, generously spaced. Content blocks on cloud-white rounded panels with hard offset shadows.
+MOTION: Parts drift and rotate subtly into assembled position as sections enter. Reduced motion shows the completed figure.
+VOICE: Deadpan wit. "Come in pieces. Leave whole."`,
+    img: `[SUBJECT: a human figure mid-assembly from floating multicolored limbs against a blue sky with clouds] surrealist poster art, painterly blue sky background, glossy colorful disembodied arms and legs converging, deadpan scientific diagram caption space, Magritte-meets-airbrush aesthetic, impossible but calm`,
+    variants: [
+      { label: "Taste", file: "/systems/surreal-assembly-taste.html" },
+      { label: "Impeccable", file: "/systems/surreal-assembly-impeccable.html" },
+    ],
+  },
+  {
+    id: "hand-painted",
+    name: "Hand-Painted",
+    sub: "brush x blessing",
+    desc: "Danfo lettering culture as a design system: brush-painted type, blessing mottoes, sign-writer colors, imperfect edges. Raw, devotional, street-honest.",
+    reasoning: "The danfo buses on your board aren't just yellow, they're covered in hand-painted blessings: THANK YOU JESUS, FOREVER GREATFUL. That lettering tradition is Lagos vernacular design at its most honest, and nobody in the social-events space would dare use it. It makes Ije feel local to its bones and gives every table a motto format made for merch and Instagram.",
+    inspirations: ["THANK YOU JESUS danfo lettering (board 7)", "FOREVER GREATFUL bus tailgate (board 7)", "Hand-painted shop signage tradition", "Sign-writer color rules: blue boards, yellow letters"],
+    vocab: ["brush lettering", "blessing mottoes", "sign-writer palette", "imperfect edges", "painted planks", "wobbly borders", "vernacular pride"],
+    palette: ["#1f3d7a", "#f5c518", "#f4f1e6", "#cf3b2a", "#17284f"],
+    details: "Type: brush-marker display (Permanent Marker) with grotesk body. Color: painted board blue, sign yellow, cream, brake-light red. Components: rotated painted planks, wobbly border radii, sticker mottoes. Motion: hand-slapped, springy.",
+    brief: `CONCEPT: A sign-writer design system painted in the danfo lettering tradition. Every headline is a blessing, every panel a painted plank.
+TYPOGRAPHY: Brush display (Permanent Marker) for all headlines and CTAs, clean grotesk for body so the brush stays special. Slight rotation on every painted element.
+COLOR: Painted board blue (#1f3d7a) ground, sign yellow (#f5c518), cream (#f4f1e6), brake-light red (#cf3b2a). Colors applied like enamel: flat, confident, slightly uneven.
+EDGES: Nothing perfectly straight: wobbly border radii (8px 16px 10px 14px), 1-2 degree rotations, hard painted shadows.
+CONTENT FORMAT: Mottoes. Section headings written as blessings and proverbs (No hurry in life, Who knows tomorrow), the product explained underneath in plain type.
+MOTION: Hand-slapped: elements rotate to straight on hover, buttons scale like a fresh sticker being pressed on.
+VOICE: Devotional joy. "Forever grateful for good company."`,
+    img: `[SUBJECT: hand-painted danfo bus tailgate lettering reading a blessing about good company] Lagos sign-writer art, brush-painted uppercase letters in yellow and white on deep blue, uneven enamel paint texture, decorative stars and flourishes, weathered edges, honest vernacular typography, photographed straight on`,
+    variants: [
+      { label: "Taste", file: "/systems/hand-painted-taste.html" },
+      { label: "Impeccable", file: "/systems/hand-painted-impeccable.html" },
+    ],
+  },
+  {
+    id: "tidescape-calm",
+    name: "Tidescape Calm",
+    sub: "boutique x slow",
+    desc: "The Tidescape and Largo warmth you loved, grounded with your wood grain and leaf textures: sand tones, oiled wood, lowercase serenity, nowhere else to be.",
+    reasoning: "You marked Tidescape 'love this' and The Largo 'love the paper like bg', and your texture library (wood grain, bark, leaf macro) belongs to the same world. This system is the hospitality promise of Ije: the dinner as a small holiday. It's also the calmest counterweight in the collection; if the loud systems test better for acquisition, this one may still win for the booking flow where trust matters most.",
+    inspirations: ["Tidescape (websites.txt, love this)", "The Largo paper backgrounds (websites.txt)", "Wood grain and bark texture library (boards 5-7)", "Leaf macro photography (board 7)"],
+    vocab: ["sand and driftwood tones", "oiled wood textures", "lowercase wordmark", "slow vertical rhythm", "grain study imagery", "linen air", "holiday pacing"],
+    palette: ["#efe8db", "#6f5b40", "#3a352b", "#8b7d64", "#7e948c"],
+    details: "Type: soft serif (Lora) for display, light sans body, mono for time markers. Color: sand, driftwood, oiled wood, sea glass. Imagery: wood grain studies, natural light. Layout: narrow centered column, big air. Motion: slow fades only.",
+    brief: `CONCEPT: A boutique-stay design system where the dinner is framed as a small holiday. Everything slow, warm, and materially honest.
+TYPOGRAPHY: Soft serif (Lora) in sentence case for headlines, light humanist sans for body, monospace only for the evening timeline (SEVEN, EIGHT, LATE). Lowercase wordmark.
+COLOR: Sand (#efe8db) ground with a faint ruled-paper texture, oiled wood (#6f5b40), warm ink (#3a352b), driftwood and sea glass as quiet accents.
+MATERIALS: Wood grain photography treated as art (grain studies with mono captions), linen and paper textures, nothing glossy.
+LAYOUT: A narrow centered column like a letter, full-width material pauses between sections, an evening timeline with hairline rules.
+MOTION: Fades of 600-800ms, nothing moves position. The site should feel like exhaling.
+VOICE: Quiet invitation. "Somewhere quiet, with people worth the quiet."`,
+    img: `[SUBJECT: a close macro study of oiled iroko wood grain with warm evening light raking across] fine art material photography, sand and driftwood palette, visible grain rivers and knots, soft directional light, calm meditative crop, gallery print quality, space for a small mono caption`,
+    variants: [
+      { label: "Taste", file: "/systems/tidescape-calm-taste.html" },
+      { label: "Impeccable", file: "/systems/tidescape-calm-impeccable.html" },
+    ],
+  },
+  {
+    id: "market-textile",
+    name: "Market Textile",
+    sub: "pattern x abundance",
+    desc: "The fabric stall energy from your board: dense ankara patterns, bolts of cloth stacked like color arguments, abundance as the aesthetic.",
+    reasoning: "The market photos on your board (ankara dresses under umbrellas, stacked patterned fabric) hold the most color density of anything you saved. As a system it says abundance and choice, which suits the event catalog perfectly: each event type is its own cloth. It's also deeply Lagos, celebratory rather than minimal, and gives Ije a pattern library that can grow forever like a real fabric stall.",
+    inspirations: ["Ankara fabric stall photos (board 4)", "Patterned dress displays under market umbrellas", "Balogun market color density", "Wax print pattern tradition"],
+    vocab: ["wax print patterns", "fabric bolts", "swatch cards", "pattern-per-event", "dense color", "market abundance", "cloth as identity"],
+    palette: ["#243a73", "#e8b400", "#c23b22", "#2c6e49", "#f5efdf"],
+    details: "Type: heavy grotesk, mono for stall labels. Color: indigo, wax yellow, red, green on cream. Patterns: CSS wax-print repeats, every event owns a cloth. Components: fabric bolt cards, swatch grids, pattern header bands. Motion: quick and lively.",
+    brief: `CONCEPT: A fabric stall design system. Every event type owns a wax-print pattern, and the interface displays them like bolts of cloth in a market.
+TYPOGRAPHY: Heavy grotesk (Archivo 900) uppercase for display, monospace for stall labels and day tags. Type sits ON the patterns via solid panels, never fighting them.
+COLOR: Indigo (#243a73), wax yellow (#e8b400), red (#c23b22), and forest green (#2c6e49) on warm cream. Full saturation, always bounded by thick ink borders.
+PATTERNS: A growing wax-print library built from CSS repeats (radial dots, diagonal stripes, checker conic). Each event type keeps its pattern everywhere it appears.
+COMPONENTS: Fabric bolt cards (tall pattern rectangles with borders), swatch cards with cloth tops and label bottoms, pattern header bands framing the page.
+MOTION: Market-quick: snappy hovers, patterns shift subtly on interaction. Energy, not chaos.
+VOICE: Celebratory. "Cut from every cloth."`,
+    img: `[SUBJECT: stacked bolts of African wax print fabric in indigo, yellow, red and green] vibrant market stall photography, dense repeating ankara patterns, fabric rolls stacked vertically, warm natural light under a market umbrella, saturated joyful color, textile texture detail, abundance composition`,
+    variants: [
+      { label: "Taste", file: "/systems/market-textile-taste.html" },
+      { label: "Impeccable", file: "/systems/market-textile-impeccable.html" },
+      { label: "10 Variations", file: "/systems/market-textile-index.html" },
+    ],
+  },
+  {
+    id: "golden-hour",
+    name: "Golden Hour Film",
+    sub: "film x memory",
+    desc: "The sun-bleached film thread: palm silhouettes, Lagos at dusk, contact sheets and frame captions. Photography-led, minimal type, warm haze over everything.",
+    reasoning: "Your board keeps returning to faded warm film: sunset palms, street scenes with sepia grades, the bikes-and-seagulls frame. This system treats every Ije night as a roll of film being developed, with heroes as full-bleed golden frames and recaps as contact sheets. It's the most photography-dependent system, which is honest: it will look best once real event photos exist, and it turns those photos into the entire brand.",
+    inspirations: ["Sunset palms and coastal dusk (board 3)", "Faded Lagos street photography (boards 3, 7)", "Bikes and seagulls film frame (board 2)", "Contact sheet and film roll culture"],
+    vocab: ["golden haze", "film grain", "contact sheets", "frame captions", "roll numbering", "light type over imagery", "dusk gradients"],
+    palette: ["#2b1f16", "#d9903f", "#e8c48e", "#f4e9d6", "#4a4030"],
+    details: "Type: extra-light humanist sans, mono frame captions. Color: dusk brown, golden amber, haze cream. Imagery: full-bleed golden-hour photography with grain, contact sheet grids. Motion: slow cross-dissolves like slides.",
+    brief: `CONCEPT: A film photography design system where every night is a developed roll. Full-bleed golden imagery carries everything; type stays out of the way.
+TYPOGRAPHY: Extra-light humanist sans (Sora 200) for display with bold used only for the payoff words, monospace for roll numbers and frame captions (07A, 12A).
+COLOR: Dusk brown (#2b1f16), golden amber (#d9903f), haze cream (#f4e9d6). All color should feel like it came from the photograph, never from the UI.
+IMAGERY: Golden-hour photography with visible grain: silhouettes, long shadows, warm haze. Heroes full-bleed with dark gradient scrims for text. Recaps as contact sheet grids with frame captions.
+LAYOUT: Image-first: the photograph is the section, copy floats at the bottom third. Contact sheets in strict grids as the counterpoint.
+MOTION: Slide-carousel logic: slow cross-dissolves between frames, nothing slides or bounces.
+VOICE: Wistful but concrete. "Some nights develop into people you keep."`,
+    img: `[SUBJECT: silhouettes of six people around an outdoor dinner table at Lagos golden hour, palm trees behind] faded film photography, heavy warm haze, visible grain, sun flare, sepia-gold color grade, long shadows, nostalgic 35mm aesthetic, dark foreground for light typography`,
+    variants: [
+      { label: "Taste", file: "/systems/golden-hour-taste.html" },
+      { label: "Impeccable", file: "/systems/golden-hour-impeccable.html" },
+    ],
+  },
+  {
+    id: "deep-scroll",
+    name: "Deep Scroll",
+    sub: "chapters x immersion",
+    desc: "The Noomo and Shane Sayers direction made practical: a chaptered scroll ride through darkness toward one lit table. Theatrical, cinematic, one story per scroll.",
+    reasoning: "You filed Noomo under 'wtf' and Shane Sayers under good storytelling. This system takes the immersive chaptered scroll from both but keeps it buildable: scroll-snap chapters, a glowing table you descend toward, copy that reads like an opening crawl. It's the direction for a launch moment or campaign page, where one strong feeling matters more than navigation.",
+    inspirations: ["storytelling.noomoagency.com (your wtf save)", "shanesayers.com cinematic pacing", "Theater blackout and spotlight logic", "Chaptered scroll narratives"],
+    vocab: ["chaptered scroll", "scroll-snap scenes", "glow against darkness", "opening crawl copy", "fixed wayfinding dots", "descent narrative", "one story per page"],
+    palette: ["#0c0e14", "#e0b45c", "#aab3c8", "#efeadf", "#131722"],
+    details: "Type: extra-light sans at cinematic scale, mono chapter numerals. Color: abyss blue-black, candle gold glow, mist. Structure: full-viewport snap chapters, fixed progress dots. Motion: scroll is the motion; glows breathe subtly.",
+    brief: `CONCEPT: A cinematic chaptered-scroll design system. The page is a descent: from the loud city, through darkness, to one lit table. One story, three chapters, one CTA.
+TYPOGRAPHY: Extra-light sans (Sora 200) at cinematic scale with bold payoff words, monospace chapter numerals (CHAPTER I). No other type events.
+COLOR: Abyss (#0c0e14) ground throughout, candle gold (#e0b45c) as the only light source, mist blue for supporting copy. Light always means the table.
+STRUCTURE: Full-viewport scroll-snap chapters. Fixed wordmark top-left, fixed progress dots right. The single CTA appears only in the final chapter.
+IMAGERY: Abstract light against darkness: a glowing orb, a lit table line with seat marks, radial warmth. Photography optional; glow composition is the identity.
+MOTION: The scroll IS the motion. Glows breathe at 4-6s cycles. Honor reduced motion by disabling snap and pulse.
+VOICE: Opening-crawl cadence. "The city has 20 million people. Behind it, one lit table."`,
+    img: `[SUBJECT: a single long dinner table glowing warm gold in a vast dark void, six empty chairs] cinematic theatrical lighting, near-black blue darkness, one warm candle-gold light source, volumetric glow, monumental empty space above, film still composition, quiet suspense before guests arrive`,
+    variants: [
+      { label: "Taste", file: "/systems/deep-scroll-taste.html" },
+      { label: "Impeccable", file: "/systems/deep-scroll-impeccable.html" },
+    ],
+  },
+  {
+    id: "spotify-social",
+    name: "Spotify Social",
+    sub: "grids x lists",
+    note: "Ije is experience focused and the Mosaic Split gives happy vibes. Colors is always a good thing. List First works best BELOW the mosaic (see V1A): mosaic shows what kinds of nights exist, list books them. V1A must work as a full landing page that explains what Ije does, playfully. V1B repositions: experience first, no friendship guarantee, MVP dinners with soon tiles, single Tally form CTA.",
+    desc: "The Life at Spotify patterns you flagged: a mixed-size color mosaic for event types plus big scannable list rows for this week's tables. Modular, people-first, energetic.",
+    reasoning: "This closes the Cultural gap: your note said 'loving the social list, love the grids too jesus too good' and nothing had used them yet. The mosaic answers 'what kinds of nights exist' at a glance, and the list rows answer 'what can I book this week' with zero friction. Even with Field Guide as your chosen events display, this system is the strongest utility layer: the two patterns together are basically Ije's browse-and-book UX solved.",
+    inspirations: ["lifeatspotify.com social lists (your note)", "Life at Spotify mixed-size grid mastery", "Color-coded content type systems", "Big scannable list row patterns"],
+    vocab: ["mixed-size mosaic", "color per event type", "big list rows", "seat-count metadata", "pill tags", "hover generosity", "browse and book"],
+    palette: ["#f4f3ef", "#191a1c", "#e2543e", "#7b6cd9", "#2e8f83"],
+    details: "Type: friendly bold sans, mono for seat counts. Color: neutral ground, each event type owns a saturated color. Components: spanning mosaic tiles, full-width list rows with pills and arrows. Motion: tiles compress, rows slide on hover.",
+    brief: `CONCEPT: A browse-and-book design system built on two patterns: a color mosaic of event types and big list rows for this week's tables.
+TYPOGRAPHY: Friendly bold sans (Outfit 800) for tile and row names, monospace for seat counts and metadata. Names set large; scannability is the feature.
+COLOR: Warm neutral ground (#f4f3ef) and ink, with each event type owning a saturated color (coral, lime, violet, teal, sun) used on its tile, its pill, and its detail page. Color is navigation.
+MOSAIC: Mixed-size grid where importance sets span: weekly flagship 2x2, regulars 1x1, monthly special 2x1. Exactly as many tiles as event types.
+LIST ROWS: Full-width rows with name, day pill in the event color, live seat count in mono, and an arrow. Hover shifts the row right and lifts the background.
+MOTION: Generous hovers: tiles compress slightly, rows slide, pills brighten. Snappy 150ms, ease-out.
+VOICE: Direct and warm. "Pick a night. We pick the people."`,
+    img: `[SUBJECT: a modular grid collage of colorful tiles showing different social dinner events with candid photography] energetic editorial grid design, mixed tile sizes, saturated coral violet teal and lime color blocks alternating with warm candid photos of people at tables, clean neutral background, playful systematic composition, community joy`,
+    variants: [
+      { label: "Taste", file: "/systems/spotify-social-taste.html" },
+      { label: "Impeccable", file: "/systems/spotify-social-impeccable.html" },
+      { label: "10 Variations", file: "/systems/spotify-social-index.html" },
+    ],
+  },
+];
+
+/* ---- auto-sync with websites.txt ----
+   New URLs added to the txt file appear automatically with a
+   category-default brief. Curated entries above always win. */
+
+const HEADING_MAP = [
+  [/story|beautiful/i, "storytelling"],
+  [/structure/i, "structure"],
+  [/editorial/i, "editorial"],
+  [/hotel|boutique/i, "hotel"],
+  [/cultur/i, "cultural"],
+  [/wtf|experiment/i, "experimental"],
+];
+
+const norm = (u) => u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/+$/, "").toLowerCase();
+
+function ensureCat(line) {
+  const key = line.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  if (!CATS[key]) CATS[key] = {
+    name: line.replace(/:$/, ""),
+    desc: "New group from websites.txt. Give it a real description and vocabulary in data.js when it earns one.",
+    vocab: [],
+  };
+  return key;
+}
+
+function parseTxt(text) {
+  const entries = new Map();
+  let cat = "experimental";
+  for (let line of text.split("\n")) {
+    line = line.trim();
+    if (!line) continue;
+    const m = line.match(/https?:\/\/\S+/);
+    if (!m) {
+      const found = HEADING_MAP.find(([re]) => re.test(line));
+      cat = found ? found[1] : ensureCat(line);
+      continue;
+    }
+    const key = norm(m[0]);
+    if (!entries.has(key)) {
+      entries.set(key, { url: m[0], cat, note: line.replace(m[0], "").replace(/^[\s\-–—]+/, "").trim() });
+    }
+  }
+  return entries;
+}
+
+const prettyName = (url) => {
+  const host = norm(url).split("/")[0].split(".")[0];
+  return host.charAt(0).toUpperCase() + host.slice(1);
+};
+
+const genericBrief = (c) => `CONCEPT: Build a site in the "${c.name}" design language. ${c.desc}
+VOCABULARY: ${c.vocab.join(", ") || "not yet defined"}
+NOTE: Auto-generated default brief. Ask Claude to study the live site and write a full brief (layout, typography, color, imagery, motion, sections), then paste it into data.js.`;
+
+const genericImg = (c) => `[SUBJECT: fill in] hero image in the "${c.name}" style: ${c.vocab.slice(0, 5).join(", ") || "match the reference site"}, generous empty space for typography`;
+
+const curatedUrls = new Set(CURATED.map((s) => norm(s.url)));
+export const SITES = [...CURATED];
+
+for (const [key, e] of parseTxt(raw)) {
+  if (curatedUrls.has(key)) continue;
+  const c = CATS[e.cat];
+  SITES.push({
+    name: prettyName(e.url),
+    url: e.url,
+    cat: e.cat,
+    sub: "auto x websites.txt",
+    note: e.note || undefined,
+    desc: `Auto-added from websites.txt under "${c.name}". ${c.desc}`,
+    tags: c.vocab.slice(0, 5),
+    brief: genericBrief(c),
+    img: genericImg(c),
+  });
+}

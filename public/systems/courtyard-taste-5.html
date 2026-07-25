@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courtyard / Taste V5 Menu Night</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--night:#12160f;--amber:#e8a75c;--warm:#f2e5cf;--soft:#9aa08c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--night);color:var(--warm);font-family:Outfit,sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:36px 16px 64px;
+    background-image:radial-gradient(700px 400px at 50% 0%, rgba(232,167,92,.12), transparent 70%)}
+  .head{width:min(640px,100%);display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+  .wordmark{font-weight:600;font-size:20px;letter-spacing:.3em}
+  .head a{color:var(--night);background:var(--amber);padding:10px 24px;border-radius:999px;text-decoration:none;
+    font-weight:500;font-size:13px}
+  .menu{width:min(640px,100%);background:#f7efdd;color:#2b2416;border-radius:4px;padding:44px 40px;
+    box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .menu .est{text-align:center;font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.3em;
+    text-transform:uppercase;color:#8a7a58}
+  .menu h1{margin-top:10px;text-align:center;font-family:"Cormorant Garamond",serif;font-weight:600;
+    font-size:clamp(34px,5vw,48px);line-height:1.1}
+  .menu h1 em{color:#a8632c}
+  .menu .rule{display:flex;align-items:center;gap:12px;margin:24px 0;color:#b3a37e}
+  .menu .rule::before,.menu .rule::after{content:"";flex:1;border-top:1px solid #d8c9a4}
+  .menu .rule span{font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.26em;text-transform:uppercase}
+  .course{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0}
+  .course .name{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600}
+  .course .dots{flex:1;border-bottom:1px dotted #b3a37e;transform:translateY(-5px)}
+  .course .note{font-size:13px;color:#6d5f42;text-align:right;max-width:20ch}
+  .menu .slot{margin:22px 0 6px;height:110px;border:2px dashed #b3a37e;border-radius:3px;display:flex;
+    align-items:center;justify-content:center;font-family:"IBM Plex Mono";font-size:10px;
+    letter-spacing:.14em;text-transform:uppercase;color:#8a7a58;text-align:center;padding:12px}
+  .menu .cta{display:block;margin:22px auto 0;width:max-content;background:#2b2416;color:#f7efdd;
+    padding:14px 36px;border-radius:2px;text-decoration:none;font-weight:500;font-size:14px;letter-spacing:.1em;
+    text-transform:uppercase}
+  .menu .cta:hover{background:#a8632c}
+</style>
+</head>
+<body>
+<div class="head"><div class="wordmark">IJE</div><a href="#">Join Thursday</a></div>
+<article class="menu">
+  <div class="est">Ije · Lagos · Thursday, 7 PM</div>
+  <h1>Menu for six strangers, <em>du soir</em></h1>
+  <div class="rule"><span>To begin</span></div>
+  <div class="course"><span class="name">Introductions</span><span class="dots"></span><span class="note">served warm, phones away</span></div>
+  <div class="course"><span class="name">Real questions</span><span class="dots"></span><span class="note">no small talk, chef's rule</span></div>
+  <div class="rule"><span>The table</span></div>
+  <div class="course"><span class="name">Shared plates</span><span class="dots"></span><span class="note">whatever the kitchen loves tonight</span></div>
+  <div class="course"><span class="name">One friendly argument</span><span class="dots"></span><span class="note">pairs well with everything</span></div>
+  <div class="rule"><span>To finish</span></div>
+  <div class="course"><span class="name">The second round</span><span class="dots"></span><span class="note">optional, inevitable</span></div>
+  <div class="course"><span class="name">The group chat</span><span class="dots"></span><span class="note">only if the table agrees</span></div>
+  <!-- HIGGSFIELD: [SUBJECT: candlelit table setting detail, linen and brass, warm low light, no people] 5:1 -->
+  <div class="slot">IMAGE SLOT · candlelit table detail · 5:1 · no people</div>
+  <a class="cta" href="#">Reserve one seat</a>
+</article>
+<script src="variants-nav.js"></script>
+</body>
+</html>

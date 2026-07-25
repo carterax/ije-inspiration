@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danfo Pop / Taste V4 Photo Ground</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--yellow:#f2c200;--ink:#191308;--red:#d43d17;--blue:#274690;--cream:#f6efdc}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Space Grotesk",sans-serif}
+  .hero{min-height:calc(88dvh - 46px);border:6px solid var(--ink);margin:16px;position:relative;
+    background:var(--blue);display:flex;flex-direction:column;justify-content:flex-end}
+  .hero .slotlbl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .hero .slotlbl i{border:3px dashed var(--cream);color:var(--cream);padding:18px 24px;font-style:normal;
+    font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+  .hero-copy{position:relative;z-index:2;padding:32px;background:linear-gradient(transparent, rgba(25,19,8,.55))}
+  .hero-copy h1{font-family:Anton;font-size:clamp(44px,7vw,96px);line-height:.94;text-transform:uppercase;
+    color:var(--cream);text-shadow:4px 4px 0 var(--ink)}
+  .hero-copy .cta{margin-top:20px;display:inline-block;background:var(--yellow);color:var(--ink);
+    font-family:Anton;font-size:18px;text-transform:uppercase;padding:14px 30px;text-decoration:none;
+    box-shadow:5px 5px 0 var(--ink)}
+  .hero-copy .cta:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .gallery{padding:8px 16px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .g{border:5px solid var(--ink);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+    text-align:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:14px}
+  .g1{background:var(--yellow)}
+  .g2{background:var(--red);color:var(--cream)}
+  .g3{background:var(--blue);color:var(--cream)}
+  .g i{border:2px dashed currentColor;padding:12px 16px;font-style:normal}
+  .bar{margin:0 16px 16px;border:5px solid var(--ink);background:var(--cream);padding:20px 24px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .bar b{font-family:Anton;font-size:clamp(20px,2.6vw,30px);text-transform:uppercase}
+  .bar b span{color:var(--red)}
+  .bar a{background:var(--ink);color:var(--cream);padding:12px 26px;text-decoration:none;font-weight:700;
+    text-transform:uppercase;font-size:13px}
+  @media(max-width:700px){.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!-- HIGGSFIELD: [SUBJECT: overhead flat lay of six empty enamel plates, six glasses, a deck of cards and candles on a wooden table, no people]
+     warm light, film grain, screenprint-friendly bold shadows, danfo yellow accents. 16:9 -->
+<section class="hero">
+  <div class="slotlbl"><i>HERO IMAGE SLOT<br>overhead: six plates, glasses, cards, candles<br>16:9 · no people</i></div>
+  <div class="hero-copy">
+    <h1>The best table in Lagos hasn't met yet.</h1>
+    <a class="cta" href="#">Get a seat</a>
+  </div>
+</section>
+<section class="gallery">
+  <!-- HIGGSFIELD: [SUBJECT: hand-painted danfo lettering close-up, no people] flat yellow screenprint, 4:3 -->
+  <div class="g g1"><i>SLOT · danfo lettering<br>4:3</i></div>
+  <!-- HIGGSFIELD: [SUBJECT: worn playing cards fanned on wood, warm light, no people] red monochrome, 4:3 -->
+  <div class="g g2"><i>SLOT · cards after a game<br>4:3</i></div>
+  <!-- HIGGSFIELD: [SUBJECT: single lit candle beside two glasses, dark ground, no people] cobalt duotone, 4:3 -->
+  <div class="g g3"><i>SLOT · candle and glasses<br>4:3</i></div>
+</section>
+<div class="bar">
+  <b>Six strangers. One evening. <span>See what happens.</span></b>
+  <a href="#">Get a seat</a>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

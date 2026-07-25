@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courtyard After Dark / Taste</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--night:#12160f;--night-2:#1a2016;--amber:#e8a75c;--warm:#f2e5cf;--soft:#9aa08c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--night);color:var(--warm);font-family:Outfit,sans-serif}
+  .lights{position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(circle 3px at 12% 8%, var(--amber) 98%, transparent),
+      radial-gradient(circle 2px at 26% 13%, #f7c98b 98%, transparent),
+      radial-gradient(circle 3px at 41% 7%, var(--amber) 98%, transparent),
+      radial-gradient(circle 2px at 57% 12%, #f7c98b 98%, transparent),
+      radial-gradient(circle 3px at 72% 6%, var(--amber) 98%, transparent),
+      radial-gradient(circle 2px at 88% 11%, #f7c98b 98%, transparent),
+      radial-gradient(600px 380px at 50% 0%, rgba(232,167,92,.16), transparent 70%)}
+  .wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:600;font-size:22px;letter-spacing:.14em}
+  nav a{color:var(--night);background:var(--amber);padding:11px 24px;border-radius:999px;text-decoration:none;
+    font-weight:500;font-size:14px}
+  nav a:hover{background:var(--warm)}
+  .hero{min-height:78dvh;display:flex;flex-direction:column;justify-content:center;padding:48px 0}
+  h1{font-size:clamp(38px,5.4vw,68px);font-weight:300;line-height:1.12;max-width:18ch}
+  h1 b{font-weight:600;color:var(--amber)}
+  .sub{margin-top:22px;font-size:17px;color:var(--soft);max-width:40ch;font-weight:300}
+  .cta{margin-top:34px;display:inline-block;width:max-content;background:var(--amber);color:var(--night);
+    padding:15px 34px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+  .cta:hover{background:var(--warm)}
+  .night-plan{padding:24px 0 88px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(242,229,207,.18)}
+  .slot{padding:36px 28px 0;border-left:1px solid rgba(242,229,207,.18)}
+  .slot:first-child{border-left:none;padding-left:0}
+  .slot .when{font-family:"IBM Plex Mono";font-size:12px;color:var(--amber);letter-spacing:.12em}
+  .slot h3{margin-top:12px;font-size:24px;font-weight:500}
+  .slot p{margin-top:10px;color:var(--soft);font-weight:300;font-size:15px;line-height:1.6}
+  @media(max-width:760px){.night-plan{grid-template-columns:1fr}.slot{border-left:none;padding-left:0;padding-top:28px}}
+</style>
+</head>
+<body>
+<div class="lights" aria-hidden="true"></div>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Join Thursday</a></nav>
+  <section class="hero">
+    <h1>You know what's sexy? <b>A real conversation.</b></h1>
+    <p class="sub">Warm nights, long tables, Lagos after dark. Six strangers who might become your people.</p>
+    <a class="cta" href="#">Join Thursday</a>
+  </section>
+  <section class="night-plan">
+    <div class="slot"><div class="when">7 PM</div><h3>Arrive hungry</h3><p>A courtyard you'd never have found. String lights on. Phones away.</p></div>
+    <div class="slot"><div class="when">8 PM</div><h3>Eat slow</h3><p>Shared plates, shared stories. The table decides where the talk goes.</p></div>
+    <div class="slot"><div class="when">LATE</div><h3>Stay late</h3><p>Cards come out. Someone orders one more round. Nobody checks the time.</p></div>
+  </section>
+</div>
+</body>
+</html>

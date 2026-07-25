@@ -19,6 +19,7 @@
     border-left:1px dashed rgba(38,34,26,.15);border-right:1px dashed rgba(38,34,26,.15);
     top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg)}
   .floats{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  @media(max-width:1023px){.floats{display:none}}
   .wrap{max-width:1080px;margin:0 auto;padding:0 32px 80px;position:relative;z-index:1}
   .float{position:absolute;left:0;top:0;width:96px;opacity:0;will-change:transform;
     filter:drop-shadow(0 8px 14px rgba(38,34,26,.28))}
@@ -204,8 +205,9 @@
   const floats = gsap.utils.toArray(".float");
   const mm = gsap.matchMedia();
 
-  mm.add({ reduce: "(prefers-reduced-motion: reduce)", ok: "(prefers-reduced-motion: no-preference)" }, (ctx) => {
-    const { reduce } = ctx.conditions;
+  mm.add({ reduce: "(prefers-reduced-motion: reduce)", desktop: "(min-width: 1024px)" }, (ctx) => {
+    const { reduce, desktop } = ctx.conditions;
+    if (!desktop) return;                                 // stickers are a desktop-only garnish
     const vw = window.innerWidth, vh = window.innerHeight;
     const contentW = Math.min(1080, vw - 64);
     const gutter = (vw - contentW) / 2;

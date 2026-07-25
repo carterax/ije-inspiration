@@ -41,6 +41,7 @@
   /* tossed stickers (GSAP): thrown from the bottom, elastic-spring into random spots
      around the footer zone, then hover gently in place forever */
   .floats{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  @media(max-width:1023px){.floats{display:none}}
   .wrap{position:relative;z-index:1}
   .float{position:absolute;left:0;top:0;width:96px;opacity:0;will-change:transform;
     filter:drop-shadow(0 8px 14px rgba(25,26,28,.28))}
@@ -129,8 +130,9 @@
   const floats = gsap.utils.toArray(".float");
   const mm = gsap.matchMedia();
 
-  mm.add({ reduce: "(prefers-reduced-motion: reduce)", ok: "(prefers-reduced-motion: no-preference)" }, (ctx) => {
-    const { reduce } = ctx.conditions;
+  mm.add({ reduce: "(prefers-reduced-motion: reduce)", desktop: "(min-width: 1024px)" }, (ctx) => {
+    const { reduce, desktop } = ctx.conditions;
+    if (!desktop) return;                                 // stickers are a desktop-only garnish
     const vw = window.innerWidth, vh = window.innerHeight;
     // stickers live in the side gutters, outside the 1080px content column,
     // so they are never covered by the cards

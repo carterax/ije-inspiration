@@ -102,7 +102,7 @@
 <div class="wrap">
   <nav><div class="wordmark">ije<i>*</i></div><a href="https://tally.so" target="_blank" rel="noopener">Join the first table</a></nav>
   <section class="hero">
-    <div class="stamp">Printed in Lagos</div>
+    <div class="stamp">May contain strangers</div>
     <h1>We're not promising you friends. <em>We're promising a great Thursday.</em></h1>
     <p class="sub">Ije puts you at a table with <b>people like you</b>, doing things you love. Everything after the plates are cleared is up to you.</p>
   </section>
@@ -186,8 +186,11 @@
 
       const D = gsap.utils.random(1.8, 2.33);
       const delay = i * gsap.utils.random(0.05, 0.12);
-      const startX = gsap.utils.clamp(4, vw - w - 4, x + gsap.utils.random(-90, 90));
-      gsap.set(el, { x: startX, y: vh + 160, rotation: rot + gsap.utils.random(-40, 40), autoAlpha: 0.9 });
+      // real-throw ingredients: launched from off to the side, tumbling fast in a
+      // random direction, spin bleeding off in flight, slight depth (scale) growth
+      const startX = gsap.utils.clamp(4, vw - w - 4, x + gsap.utils.random(-110, 110));
+      const spin = gsap.utils.random(140, 300) * (Math.random() < 0.5 ? -1 : 1);
+      gsap.set(el, { x: startX, y: vh + 160, rotation: rot + spin, scale: 0.88, autoAlpha: 0.9 });
 
       gsap.to(el, {
         y, delay, duration: D,
@@ -201,8 +204,9 @@
           });
         },
       });
-      gsap.to(el, { x, delay, duration: D, ease: "power1.inOut" });
-      gsap.to(el, { rotation: rot, delay, duration: D, ease: "power2.out" });
+      gsap.to(el, { x, delay, duration: D, ease: "power1.out" });
+      gsap.to(el, { rotation: rot, delay, duration: D, ease: "power3.out" });
+      gsap.to(el, { scale: 1, delay, duration: D * 0.7, ease: "power2.out" });
     });
     return () => gsap.killTweensOf(floats);
   });

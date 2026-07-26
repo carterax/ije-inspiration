@@ -50,20 +50,21 @@
     color:#8a8068;padding:12px;line-height:1.8;background:#efe8d6}
   .pol .cap{margin-top:10px;text-align:center;font-family:Caveat;font-weight:600;font-size:21px;color:#4a4434}
   /* the invitation */
-  .invite{margin-top:44px;background:var(--paper);border:2px solid var(--ink);border-radius:6px;
-    padding:38px 36px;position:relative;box-shadow:6px 6px 0 rgba(38,34,26,.85);max-width:640px}
+  .invite{margin-top:44px;background:var(--paper);border:2.5px solid var(--ink);border-radius:6px;
+    padding:44px 42px;position:relative;box-shadow:8px 8px 0 rgba(38,34,26,.85);max-width:686px}
   .invite::before{content:"";position:absolute;inset:8px;border:1px solid rgba(38,34,26,.25);
     border-radius:3px;pointer-events:none}
   .invite .from{font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--coral)}
-  .invite h2{margin-top:12px;font-size:clamp(26px,3.8vw,40px);font-weight:800;line-height:1.08}
+  .invite h2{margin-top:12px;font-size:clamp(29px,4.2vw,44px);font-weight:800;line-height:1.08}
   .invite .details{margin:20px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;max-width:380px}
-  .invite .d{display:flex;align-items:baseline;gap:10px;font-size:15px;font-weight:600}
+  .invite .d{display:flex;align-items:baseline;gap:10px;font-size:16px;font-weight:600}
   .invite .d b{font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.16em;text-transform:uppercase;
     color:#8a8068;font-weight:500;min-width:52px}
   .invite .seats{color:var(--coral)}
-  .invite .rsvp{display:inline-block;background:var(--coral);color:var(--ground);padding:14px 34px;
-    border-radius:999px;text-decoration:none;font-weight:800;font-size:15px;border:2px solid var(--ink);
-    box-shadow:3px 3px 0 var(--ink)}
+  .invite .rsvp{display:inline-block;background:var(--coral);color:var(--ground);padding:19px 48px;
+    border-radius:999px;text-decoration:none;font-weight:800;font-size:18px;border:3px solid var(--ink);
+    box-shadow:0 6px 0 var(--ink);letter-spacing:.01em}
+  .invite .rsvp:active{transform:translateY(4px);box-shadow:0 2px 0 var(--ink)}
   .invite .rsvp:hover{background:var(--ink)}
   .invite .ps{margin-top:14px;font-family:Caveat;font-size:22px;color:var(--teal);transform:rotate(-1deg);display:inline-block;margin-left:16px}
   .invite .corner{position:absolute;right:22px;top:22px;font-family:"IBM Plex Mono";font-size:9.5px;
@@ -100,7 +101,9 @@
   .cta h2{font-size:clamp(26px,3.8vw,42px);font-weight:800;line-height:1.08}
   .cta p{margin-top:10px;font-weight:600;color:#4a4d3a}
   .cta a{display:inline-block;margin-top:20px;background:var(--ink);color:var(--ground);
-    padding:16px 40px;border-radius:999px;text-decoration:none;font-weight:800;font-size:16px}
+    padding:19px 48px;border-radius:999px;text-decoration:none;font-weight:800;font-size:18px;
+    border:3px solid var(--ink);box-shadow:0 6px 0 rgba(38,34,26,.45)}
+  .cta a:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(38,34,26,.45)}
   .cta a:hover{background:var(--coral)}
   .cta .hand{display:block;margin-top:16px;font-size:24px;color:#5a5e40;transform:rotate(-1.4deg)}
   .colophon{margin-top:28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
@@ -154,7 +157,7 @@
       <span class="d"><b>When</b> Thursday, 7:00 PM</span>
       <span class="d"><b>Seats</b> <span class="seats">3 left</span></span>
     </div>
-    <a class="rsvp" href="https://tally.so" target="_blank" rel="noopener">Save my seat</a>
+    <a class="rsvp" href="https://tally.so" target="_blank" rel="noopener">Accept invitation</a>
     <span class="ps hand">good conversations included</span>
   </section>
   <div class="soonhead">
@@ -178,7 +181,7 @@
   <section class="cta">
     <h2>Your seat is waiting.</h2>
     <p>Tell us how you argue, what makes you laugh, what you'd never eat. We handle the rest.</p>
-    <a href="https://tally.so" target="_blank" rel="noopener">RSVP for Thursday</a>
+    <a href="https://tally.so" target="_blank" rel="noopener">Accept the invitation</a>
     <span class="hand">see you Thursday x</span>
   </section>
   <div class="colophon">

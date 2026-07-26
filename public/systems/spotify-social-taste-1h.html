@@ -20,12 +20,16 @@
      Revision: no floating stickers, no scattered background photos, no
      "wanna come" block. The deal now closes the page as the footer. */
   :root{
-    --coral:#e2543e; --lime:#d4ec4f; --violet:#7b6cd9; --teal:#2e8f83; --sun:#e8b93b;
-    --ink:#16181a; --cream:#ece5da; --white:#fff;
-    --deepgreen:#1d2a1c; --maroon:#5c2b26; --navy:#1d2851;
+    /* Ije palette */
+    --coral:#e2543e; --lime:#c6d94e; --violet:#7b6cd9; --teal:#2e8f83; --sun:#e8b93b;
+    --ink:#191a1c; --ground:#f4f3ef; --white:#fff;
+    /* dark grounds, derived from our own teal and coral */
+    --green:#10322e; --green-soft:#17453e;
+    --coral-deep:#712a1f; --coral-soft:#5a2118;
+    --violet-tint:#cac4f0;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--cream);color:var(--ink);font-family:Outfit,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{background:var(--ground);color:var(--ink);font-family:Outfit,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   .display{font-family:Archivo,sans-serif;font-weight:800;text-transform:uppercase;
     letter-spacing:-.035em;line-height:.9}
   .mono{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase}
@@ -44,10 +48,10 @@
   .cta-pill:hover{transform:translateY(-2px);background:var(--coral)}
 
   /* ============ HERO: dark ground, lime type, sliding carousel below ============ */
-  .hero{background:var(--deepgreen);color:var(--lime);padding:26px 0 66px;overflow:hidden}
+  .hero{background:var(--green);color:var(--lime);padding:26px 0 66px;overflow:hidden}
   .hero .topline{display:flex;justify-content:space-between;align-items:center}
-  .hero .topline .mono{color:rgba(212,236,79,.7)}
-  .hero .topline a{color:var(--deepgreen);background:var(--lime);text-decoration:none;font-weight:700;
+  .hero .topline .mono{color:rgba(198,217,78,.72)}
+  .hero .topline a{color:var(--green);background:var(--lime);text-decoration:none;font-weight:700;
     font-size:14px;padding:11px 22px;border-radius:999px}
   .giant{font-family:Archivo;font-weight:900;text-transform:uppercase;letter-spacing:-.045em;
     font-size:clamp(76px,16.4vw,250px);line-height:.82;margin-top:14px;
@@ -55,8 +59,8 @@
   .giant sup{font-size:.16em;font-weight:700;letter-spacing:0;margin-top:.5em}
   .hero .middle{text-align:center;max-width:760px;margin:4vh auto 0;padding:0 20px}
   .hero h1{font-size:clamp(30px,4.4vw,58px)}
-  .hero .sub{margin-top:20px;font-size:17px;line-height:1.6;color:rgba(212,236,79,.82);font-weight:500;max-width:52ch;margin-inline:auto}
-  .hero .cta-sq{margin-top:30px;background:var(--lime);color:var(--deepgreen)}
+  .hero .sub{margin-top:20px;font-size:17px;line-height:1.6;color:rgba(198,217,78,.84);font-weight:500;max-width:52ch;margin-inline:auto}
+  .hero .cta-sq{margin-top:30px;background:var(--lime);color:var(--green)}
 
   /* sliding mixed-size carousel, momoamo rhythm */
   .marquee{margin-top:74px;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw)}
@@ -65,7 +69,7 @@
   .mtrack:hover{animation-play-state:paused}
   @keyframes slide{from{transform:translateX(-50%)}to{transform:translateX(0)}}
   @media (prefers-reduced-motion: reduce){.mtrack{animation:none;transform:translateX(-50%)}}
-  .mi{flex:0 0 auto;overflow:hidden;border-radius:10px;background:#2a3a28}
+  .mi{flex:0 0 auto;overflow:hidden;border-radius:10px;background:var(--green-soft)}
   .mi img{width:100%;height:100%;object-fit:cover;display:block}
   .m1{width:clamp(220px,24vw,400px);aspect-ratio:4/5;margin-top:96px}
   .m2{width:clamp(240px,27vw,460px);aspect-ratio:5/7;margin-top:0}
@@ -74,22 +78,22 @@
   .m5{width:clamp(200px,21vw,350px);aspect-ratio:3/4;margin-top:130px}
   .m6{width:clamp(250px,28vw,470px);aspect-ratio:16/11;margin-top:16px}
 
-  /* ============ LINEUP: cream, hairline editorial list ============ */
-  .lineup{background:var(--cream);padding:104px 0 96px}
+  /* ============ LINEUP: light ground, hairline editorial list ============ */
+  .lineup{background:var(--ground);padding:104px 0 96px}
   .lineup h2{font-size:clamp(40px,7.4vw,110px);max-width:14ch}
-  .list{margin-top:56px;border-top:1px solid rgba(22,24,26,.28)}
+  .list{margin-top:56px;border-top:1px solid rgba(25,26,28,.26)}
   .row{display:grid;grid-template-columns:1fr auto auto;gap:24px;align-items:baseline;
-    padding:26px 4px;border-bottom:1px solid rgba(22,24,26,.28);text-decoration:none;color:inherit;
+    padding:26px 4px;border-bottom:1px solid rgba(25,26,28,.26);text-decoration:none;color:inherit;
     transition:padding-left .18s ease,color .18s ease}
   .row:hover{padding-left:20px;color:var(--coral)}
   .row .name{font-family:Archivo;font-weight:800;text-transform:uppercase;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.02em}
-  .row .status{font-family:Outfit;font-size:15px;color:#6b675f;font-weight:500}
-  .row .when{font-family:"IBM Plex Mono";font-size:13px;color:#6b675f;min-width:96px;text-align:right}
+  .row .status{font-family:Outfit;font-size:15px;color:#6c6e72;font-weight:500}
+  .row .when{font-family:"IBM Plex Mono";font-size:13px;color:#6c6e72;min-width:96px;text-align:right}
   .row.open .status{color:var(--coral);font-weight:700}
   .row.open .when{color:var(--ink)}
 
   /* ============ TILES: spotify rounded blocks ============ */
-  .tiles{background:var(--cream);padding:0 0 104px}
+  .tiles{background:var(--ground);padding:0 0 104px}
   .tilegrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .tile{border-radius:26px;overflow:hidden;position:relative;min-height:420px;display:flex}
   .tile.photo img{width:100%;height:100%;object-fit:cover;display:block}
@@ -98,7 +102,7 @@
     line-height:1.02;max-width:15ch;text-transform:uppercase}
   .tile.flat .btm{max-width:44ch}
   .tile.flat p{font-size:16px;line-height:1.6;font-weight:500;margin-bottom:24px}
-  .t-blue{background:#a9baf6;color:var(--ink)}
+  .t-violet{background:var(--violet-tint);color:var(--ink)}
   .t-lime{background:var(--lime);color:var(--ink)}
   .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;border-radius:26px;overflow:hidden}
   .strip .s{aspect-ratio:9/20;overflow:hidden;background:#ddd}
@@ -106,40 +110,40 @@
   @media(max-width:900px){.tilegrid{grid-template-columns:1fr}.tile{min-height:320px}
     .strip{grid-template-columns:repeat(2,1fr)}}
 
-  /* ============ RAIL: maroon, horizontal photo row with captions ============ */
-  .rail{background:var(--maroon);color:var(--coral);padding:100px 0 96px}
+  /* ============ RAIL: deep coral, horizontal photo row with captions ============ */
+  .rail{background:var(--coral-deep);color:var(--sun);padding:100px 0 96px}
   .railhead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
-  .railhead h2{font-size:clamp(34px,5.6vw,84px);max-width:16ch;color:#f0855f}
+  .railhead h2{font-size:clamp(34px,5.6vw,84px);max-width:16ch;color:var(--sun)}
   .arrows{display:flex;gap:14px}
-  .arrows button{width:54px;height:54px;border-radius:999px;border:2px solid #f0855f;background:transparent;
-    color:#f0855f;font-size:20px;cursor:pointer;font-family:"IBM Plex Mono";transition:background .15s,color .15s}
-  .arrows button:hover{background:#f0855f;color:var(--maroon)}
+  .arrows button{width:54px;height:54px;border-radius:999px;border:2px solid var(--sun);background:transparent;
+    color:var(--sun);font-size:20px;cursor:pointer;font-family:"IBM Plex Mono";transition:background .15s,color .15s}
+  .arrows button:hover{background:var(--sun);color:var(--coral-deep)}
   .track{margin-top:44px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
     scrollbar-width:none;padding-bottom:4px}
   .track::-webkit-scrollbar{display:none}
-  .card{flex:0 0 min(420px,72vw);scroll-snap-align:start;position:relative;aspect-ratio:1;overflow:hidden;background:#3c1f1c}
+  .card{flex:0 0 min(420px,72vw);scroll-snap-align:start;position:relative;aspect-ratio:1;overflow:hidden;background:var(--coral-soft)}
   .card img{width:100%;height:100%;object-fit:cover;display:block}
   .card .lab{position:absolute;left:22px;bottom:20px;right:22px;color:#fff;z-index:2}
   .card .lab b{font-family:Archivo;font-weight:800;text-transform:uppercase;font-size:18px;letter-spacing:-.01em;display:block}
   .card .lab span{font-size:14px;color:rgba(255,255,255,.86);font-weight:500}
   .card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 52%,rgba(0,0,0,.72));z-index:1}
 
-  /* ============ DEAL: navy, mint type, closes the page as the footer ============ */
-  .deal{background:var(--navy);color:#a8e6d4;padding:104px 0 0}
+  /* ============ DEAL: our green (matches the header), lime type, closes the page as the footer ============ */
+  .deal{background:var(--green);color:var(--lime);padding:104px 0 0}
   .deal h2{font-size:clamp(34px,5.4vw,80px);max-width:17ch}
-  .deal .lede{margin-top:22px;font-size:17px;line-height:1.65;max-width:46ch;color:rgba(168,230,212,.8);font-weight:500}
+  .deal .lede{margin-top:22px;font-size:17px;line-height:1.65;max-width:46ch;color:rgba(198,217,78,.8);font-weight:500}
   .terms{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-  .term{padding:0 34px;border-left:1px solid rgba(168,230,212,.3)}
+  .term{padding:0 34px;border-left:1px solid rgba(198,217,78,.28)}
   .term:first-child{padding-left:0;border-left:none}
   .term:last-child{padding-right:0}
   .term .k{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sun)}
   .term h3{margin-top:14px;font-family:Archivo;font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:-.02em;color:#fff}
   .term p{margin-top:12px;font-size:15px;line-height:1.7;color:rgba(255,255,255,.76);font-weight:500}
-  .foot{margin-top:88px;padding:30px 0 40px;border-top:1px solid rgba(168,230,212,.3);
+  .foot{margin-top:88px;padding:30px 0 40px;border-top:1px solid rgba(198,217,78,.28);
     display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-  .foot .mono{color:rgba(168,230,212,.68)}
-  .foot a{color:#a8e6d4;text-decoration:none;font-family:Archivo;font-weight:800;text-transform:uppercase;
-    font-size:15px;display:inline-flex;align-items:center;gap:12px;border-bottom:2px solid #a8e6d4;
+  .foot .mono{color:rgba(198,217,78,.7)}
+  .foot a{color:var(--lime);text-decoration:none;font-family:Archivo;font-weight:800;text-transform:uppercase;
+    font-size:15px;display:inline-flex;align-items:center;gap:12px;border-bottom:2px solid var(--lime);
     padding-bottom:5px;transition:gap .2s ease,color .2s,border-color .2s}
   .foot a:hover{gap:20px;color:var(--sun);border-color:var(--sun)}
   @media(max-width:900px){.terms{grid-template-columns:1fr;gap:36px}
@@ -201,7 +205,7 @@
   <div class="wrap">
     <div class="tilegrid">
       <div class="tile photo"><img src="img/moment-passing.jpg" alt="A Lagos courtyard dinner at golden hour"></div>
-      <div class="tile flat t-blue">
+      <div class="tile flat t-violet">
         <h3>How a table comes together</h3>
         <div class="btm">
           <p>You answer twelve questions. We match five strangers to how you talk and laugh, book the room, and send the address the morning of. You just show up hungry.</p>

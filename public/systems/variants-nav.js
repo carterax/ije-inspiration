@@ -110,6 +110,7 @@
             { v: "1d", label: "INVITATION" },
             { v: "1e", label: "PHOTO FIRST" },
             { v: "1f", label: "OPEN PLAN" },
+            { v: "1g", label: "SPREAD" },
           ] },
           { v: "2", label: "LIST FIRST", kids: [] },
           { v: "3", label: "TYPE BOARD", kids: [] },

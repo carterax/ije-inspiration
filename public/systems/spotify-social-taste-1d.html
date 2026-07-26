@@ -200,12 +200,22 @@
     CustomEase.create("popSink",  "M0,0 C0.08,0.5 0.13,0.92 0.22,1.04 C0.3,1.1 0.4,1.11 0.5,1.09 C0.68,1.05 0.88,1.01 1,1"),
     CustomEase.create("softLob",  "M0,0 C0.12,0.35 0.2,0.78 0.32,0.98 C0.42,1.05 0.54,1.06 0.64,1.05 C0.8,1.03 0.93,1.01 1,1"),
   ];
-  const floats = gsap.utils.toArray(".float");
+  // full sticker pool: a random pair gets thrown each page load
+  const POOL = ["dice","tickets","cards","candle","beachhat","sunnies","plates",
+    "burger","cola","gamepad","pizza","boombox"];
   const mm = gsap.matchMedia();
 
   mm.add({ reduce: "(prefers-reduced-motion: reduce)", desktop: "(min-width: 1024px)" }, (ctx) => {
     const { reduce, desktop } = ctx.conditions;
     if (!desktop) return;                                 // stickers are a desktop-only garnish
+    const box = document.querySelector(".floats");
+    const floats = gsap.utils.shuffle([...POOL]).slice(0, 2).map((n) => {
+      const sp = document.createElement("span");
+      sp.className = "float";
+      sp.innerHTML = `<img src="img/stk-${n}-removebg-preview.png" alt="">`;
+      box.appendChild(sp);
+      return sp;
+    });
     const vw = window.innerWidth, vh = window.innerHeight;
     const contentW = Math.min(1080, vw - 64);
     const gutter = (vw - contentW) / 2;
@@ -257,7 +267,7 @@
       gsap.to(el, { rotation: rot, delay, duration: D, ease: "power3.out" });
       gsap.to(el, { scale: 1, delay, duration: D * 0.7, ease: "power2.out" });
     });
-    return () => gsap.killTweensOf(floats);
+    return () => { gsap.killTweensOf(floats); box.innerHTML = ""; };
   });
 })();
 </script>

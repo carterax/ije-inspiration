@@ -28,9 +28,11 @@
   .wordmark{font-weight:800;font-size:24px}
   .wordmark i{font-style:normal;color:var(--coral)}
   nav .hand{font-size:19px;color:#7a725f;transform:rotate(-2deg)}
-  nav a{background:var(--coral);color:var(--ground);padding:12px 26px;border-radius:999px;text-decoration:none;
-    font-weight:700;font-size:14px;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
-  nav a:hover{background:var(--ink)}
+  nav a{background:var(--coral);color:var(--ground);padding:13px 30px;border-radius:999px;text-decoration:none;
+    font-weight:800;font-size:14px;letter-spacing:.04em;border:3px solid var(--ink);box-shadow:0 5px 0 var(--ink);
+    transition:transform .12s ease,box-shadow .12s ease,background .12s ease}
+  nav a:hover{background:var(--ink);transform:translateY(-1px);box-shadow:0 6px 0 rgba(38,34,26,.55)}
+  nav a:active{transform:translateY(4px);box-shadow:0 1px 0 var(--ink)}
   .hero{padding:48px 0 20px;max-width:700px;position:relative}
   h1{font-size:clamp(38px,5.6vw,66px);font-weight:800;line-height:1.04;letter-spacing:-.02em}
   h1 em{font-style:normal;color:var(--coral)}
@@ -121,7 +123,7 @@
   <nav>
     <div class="wordmark">ije<i>*</i></div>
     <span class="hand">hosted with care</span>
-    <a href="https://tally.so" target="_blank" rel="noopener">RSVP</a>
+    <a href="https://tally.so" target="_blank" rel="noopener">RSVP Â· it’s free</a>
   </nav>
   <section class="hero">
     <div class="stamp">May contain strangers</div>

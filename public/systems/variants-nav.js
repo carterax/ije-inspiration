@@ -108,6 +108,7 @@
             { v: "1b", label: "EXPERIENCE FIRST" },
             { v: "1c", label: "PRINTED MIX" },
             { v: "1d", label: "INVITATION" },
+            { v: "1e", label: "PHOTO FIRST" },
           ] },
           { v: "2", label: "LIST FIRST", kids: [] },
           { v: "3", label: "TYPE BOARD", kids: [] },

@@ -15,141 +15,149 @@
      before it says anything else. So every exclusivity signal is stripped:
      no (R), no "curated", no "Est. 2026", no "No. 001", no seat-scarcity
      countdown, no editorial year columns. Plain words, short lines, the
-     price said out loud.
+     price said out loud. Only Dinner exists, so only Dinner gets weight.
 
-     Wabi-sabi does the softening: soft warm white ground, muted clay and ochre,
-     organic uneven shapes instead of boxes, a hand-drawn line, nothing
-     polished or precious, generous empty space, gentle asymmetry.
+     Colour: flat ground from taste-2, deep green from V1H, lime as the one
+     accent. No orange, no cream (the orange was reading as somebody else's
+     brand). Shapes stay gently uneven (wabi-sabi) but the photos follow
+     V1H: clean 10px corners, mixed sizes, staggered, no hover pause.
 
-     Kept from V1H: the sliding photo carousel.
-     Kept from V1D: warmth, handwriting, human voice.
-     Accessibility: 18px base, high-contrast pairs, 48px+ targets,
-     visible focus rings, reduced-motion honoured. */
+     Accessibility: 18px base, high-contrast pairs, 56px targets, visible
+     focus rings, reduced-motion honoured. */
   :root{
-    --oat:#fbf9f6;        /* soft warm white, not cream */
-    --oat-deep:#f1ece4;   /* second surface, barely there */
-    --ink:#2c2822;        /* soft charcoal, never pure black */
-    --ink-soft:#5f584d;
-    --clay:#b8452f;       /* deep clay, from our coral, passes on white */
-    --clay-light:#e2543e; /* our coral, for large text only */
-    --ochre:#d99f2b;      /* from our sun */
-    --moss:#3f5e4c;       /* from our teal, grounded */
+    --ground:#f4f3ef;      /* flat neutral ground, from taste-2 */
+    --surface:#eae9e3;     /* second surface */
+    --ink:#191a1c;
+    --ink-soft:#5b5d60;
+    --green:#10322e;       /* from V1H */
+    --green-soft:#17453e;
+    --green-mid:#2e6f61;
+    --lime:#c6d94e;        /* the one accent */
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--oat);color:var(--ink);font-family:Outfit,sans-serif;font-size:18px;line-height:1.6;
+  body{background:var(--ground);color:var(--ink);font-family:Outfit,sans-serif;font-size:18px;line-height:1.6;
     -webkit-font-smoothing:antialiased;overflow-x:hidden}
   .hand{font-family:Caveat,cursive;font-weight:600}
   .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
-  .narrow{max-width:760px}
-  a:focus-visible,button:focus-visible{outline:3px solid var(--moss);outline-offset:4px;border-radius:6px}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:4px;border-radius:6px}
   img{display:block}
 
-  /* soft warm button: no hard shadow, no thick border, gently uneven corners */
+  /* soft button, gently uneven corners, no hard shadow */
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;
-    background:var(--clay);color:#fff8f0;text-decoration:none;font-weight:600;font-size:19px;
+    background:var(--green);color:#f4f3ef;text-decoration:none;font-weight:600;font-size:19px;
     padding:16px 38px;border-radius:34px 30px 32px 28px;
     transition:transform .18s ease,background .18s ease}
-  .btn:hover{background:#a03b27;transform:translateY(-2px)}
-  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(44,40,34,.35)}
-  .btn.ghost:hover{background:rgba(44,40,34,.06);color:var(--ink)}
+  .btn:hover{background:var(--green-soft);transform:translateY(-2px)}
 
-  /* top bar: nothing to announce, just a way in */
+  /* top bar */
   header{display:flex;justify-content:space-between;align-items:center;padding:26px 0;gap:16px}
   .mark{font-weight:700;font-size:25px;letter-spacing:-.01em}
-  .mark i{font-style:normal;color:var(--clay-light)}
+  .mark i{font-style:normal;color:var(--green-mid)}
   header a{color:var(--ink);text-decoration:none;font-weight:600;font-size:17px;
-    border-bottom:2px solid var(--ochre);padding-bottom:3px}
-  header a:hover{color:var(--clay)}
+    border-bottom:3px solid var(--lime);padding-bottom:3px}
+  header a:hover{color:var(--green)}
 
-  /* hero: one plain sentence, one line under it, one button */
+  /* hero */
   .hero{padding:52px 0 12px;max-width:840px}
   h1{font-size:clamp(38px,6.2vw,74px);font-weight:700;line-height:1.06;letter-spacing:-.025em}
   .squiggle{display:inline-block;position:relative}
-  .squiggle svg{position:absolute;left:-2%;bottom:-.22em;width:104%;height:.32em;overflow:visible}
-  .squiggle path{fill:none;stroke:var(--ochre);stroke-width:7;stroke-linecap:round}
+  .squiggle svg{position:absolute;left:-2%;bottom:-.2em;width:104%;height:.3em;overflow:visible}
+  .squiggle path{fill:none;stroke:var(--lime);stroke-width:8;stroke-linecap:round}
   .hero p{margin-top:22px;font-size:21px;color:var(--ink-soft);max-width:40ch}
   .hero .row{margin-top:34px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
   .hero .cost{font-size:17px;color:var(--ink-soft)}
   .hero .cost b{color:var(--ink);font-weight:600}
 
-  /* carousel, kept from V1H but softened: uneven corners, warmer gaps */
-  .marquee{margin:64px 0 0;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw)}
-  .mtrack{display:flex;align-items:center;gap:26px;width:max-content;animation:slide 52s linear infinite;padding:0 13px}
-  .mtrack:hover,.mtrack:focus-within{animation-play-state:paused}
+  /* carousel: V1H geometry, no hover pause */
+  .marquee{margin:70px 0 0;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw)}
+  .mtrack{display:flex;align-items:flex-start;gap:46px;width:max-content;
+    animation:slide 46s linear infinite;padding:0 23px}
   @keyframes slide{from{transform:translateX(-50%)}to{transform:translateX(0)}}
   @media (prefers-reduced-motion: reduce){.mtrack{animation:none;transform:translateX(-50%)}}
-  .mi{flex:0 0 auto;overflow:hidden;background:var(--oat-deep)}
+  .mi{flex:0 0 auto;overflow:hidden;border-radius:10px;background:var(--surface)}
   .mi img{width:100%;height:100%;object-fit:cover}
-  .mi:nth-child(6n+1){width:clamp(210px,23vw,360px);aspect-ratio:4/5;border-radius:48% 52% 44% 56%/8% 8% 8% 8%}
-  .mi:nth-child(6n+2){width:clamp(230px,25vw,400px);aspect-ratio:5/4;border-radius:16px 90px 16px 90px}
-  .mi:nth-child(6n+3){width:clamp(190px,20vw,320px);aspect-ratio:1;border-radius:50%}
-  .mi:nth-child(6n+4){width:clamp(220px,24vw,380px);aspect-ratio:3/4;border-radius:90px 90px 18px 18px}
-  .mi:nth-child(6n+5){width:clamp(240px,26vw,420px);aspect-ratio:16/11;border-radius:18px}
-  .mi:nth-child(6n+6){width:clamp(200px,21vw,340px);aspect-ratio:4/5;border-radius:18px 18px 90px 90px}
+  .mi:nth-child(6n+1){width:clamp(220px,24vw,400px);aspect-ratio:4/5;margin-top:96px}
+  .mi:nth-child(6n+2){width:clamp(240px,27vw,460px);aspect-ratio:5/7;margin-top:0}
+  .mi:nth-child(6n+3){width:clamp(230px,25vw,420px);aspect-ratio:4/3;margin-top:168px}
+  .mi:nth-child(6n+4){width:clamp(210px,22vw,370px);aspect-ratio:1;margin-top:48px}
+  .mi:nth-child(6n+5){width:clamp(200px,21vw,350px);aspect-ratio:3/4;margin-top:130px}
+  .mi:nth-child(6n+6){width:clamp(250px,28vw,470px);aspect-ratio:16/11;margin-top:16px}
 
-  /* the reassurances: the most important thing on the page */
+  /* the reassurances */
   .no{padding:78px 0 10px}
   .nogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
-  .n{padding-top:20px;border-top:2px solid rgba(44,40,34,.16)}
+  .n{padding-top:20px;border-top:3px solid var(--lime)}
   .n b{display:block;font-size:22px;font-weight:700;letter-spacing:-.01em}
   .n span{display:block;margin-top:6px;font-size:16.5px;color:var(--ink-soft)}
 
-  /* how it works: three short beats, hand-drawn numbers */
+  /* the Thursday, told as a timeline with photos on the beats that have them */
   .how{padding:86px 0 0}
   h2{font-size:clamp(30px,4.4vw,50px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
-  .steps{margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-  .step .num{width:62px;height:62px;display:flex;align-items:center;justify-content:center;
-    font-family:Caveat;font-weight:600;font-size:32px;color:var(--ink);
-    border:2px solid var(--ochre);border-radius:56% 44% 48% 52%/52% 48% 52% 48%}
-  .step h3{margin-top:18px;font-size:23px;font-weight:700}
-  .step p{margin-top:6px;font-size:17px;color:var(--ink-soft);max-width:30ch}
+  .beats{margin-top:46px}
+  .beat{position:relative;padding-left:158px}
+  .beat .body{position:relative;padding:0 0 52px 36px;border-left:3px solid var(--lime)}
+  .beat:last-child .body{border-left-color:transparent;padding-bottom:0}
+  /* the dot on the line */
+  .beat .body::before{content:"";position:absolute;left:-12px;top:5px;width:21px;height:21px;
+    border-radius:50%;background:var(--green);border:4px solid var(--ground)}
+  /* the subtle arrow between beats */
+  .beat .body::after{content:"";position:absolute;left:-8px;bottom:18px;width:12px;height:12px;
+    border-right:3px solid var(--lime);border-bottom:3px solid var(--lime);transform:rotate(45deg)}
+  .beat:last-child .body::after{display:none}
+  .when{position:absolute;left:-158px;top:4px;width:122px;text-align:right;
+    font-size:15px;font-weight:600;color:var(--green-mid);line-height:1.35}
+  .beat h3{font-size:clamp(24px,2.8vw,33px);font-weight:700;letter-spacing:-.018em;line-height:1.12}
+  .beat p{margin-top:9px;font-size:17.5px;color:var(--ink-soft);max-width:40ch}
+  .beat .shot{margin-top:20px;max-width:460px;aspect-ratio:16/10;overflow:hidden;
+    border-radius:10px;background:var(--surface)}
+  .beat .shot img{width:100%;height:100%;object-fit:cover}
 
-  /* the nights: only dinner exists, so only dinner gets weight */
+  /* only dinner exists, so only dinner gets weight */
   .nights{padding:90px 0 0}
   .feature{margin-top:36px;display:grid;grid-template-columns:1.05fr 1fr;gap:46px;align-items:center}
-  .feature .shot{aspect-ratio:5/4;overflow:hidden;background:var(--oat-deep);
-    border-radius:180px 180px 26px 26px}
+  .feature .shot{aspect-ratio:5/4;overflow:hidden;background:var(--surface);border-radius:10px}
   .feature .shot img{width:100%;height:100%;object-fit:cover}
-  .tag{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:var(--clay)}
-  .tag .dot{width:11px;height:11px;border-radius:50%;background:var(--clay);flex:0 0 auto}
-  .feature h3{margin-top:14px;font-size:clamp(38px,5.6vw,62px);font-weight:700;letter-spacing:-.025em;line-height:1}
+  .tag{display:inline-flex;align-items:center;font-size:15px;font-weight:600;color:var(--green);
+    background:var(--lime);padding:7px 16px;border-radius:999px}
+  .feature h3{margin-top:16px;font-size:clamp(38px,5.6vw,62px);font-weight:700;letter-spacing:-.025em;line-height:1}
   .feature .say{margin-top:16px;font-size:20px;color:var(--ink-soft);max-width:32ch}
   .feature .facts{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:17px}
   .feature .facts span{display:flex;align-items:center;gap:9px}
-  .feature .facts i{font-style:normal;color:var(--ochre);font-size:20px;line-height:1}
+  .feature .facts i{font-style:normal;color:var(--green-mid);font-size:20px;line-height:1}
   .feature .btn{margin-top:30px}
   /* everything else is still cooking, so it stays a whisper */
-  .also{margin-top:54px;padding-top:24px;border-top:1.5px solid rgba(44,40,34,.14);
+  .also{margin-top:54px;padding-top:24px;border-top:1.5px solid rgba(25,26,28,.16);
     font-size:17px;color:var(--ink-soft);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
   .also b{font-weight:600;color:var(--ink)}
-  .also .hand{font-size:22px;color:var(--moss);margin-left:4px}
+  .also .hand{font-size:22px;color:var(--green-mid);margin-left:4px}
 
-  /* honest: three one-liners, no cards */
+  /* honest: three one-liners */
   .honest{padding:90px 0 0}
   .lines{margin-top:30px}
   .line{display:grid;grid-template-columns:190px 1fr;gap:26px;padding:24px 0;
-    border-bottom:1.5px solid rgba(44,40,34,.14);align-items:baseline}
-  .line:first-child{border-top:1.5px solid rgba(44,40,34,.14)}
-  .line dt{font-size:17px;color:var(--moss);font-weight:600}
+    border-bottom:1.5px solid rgba(25,26,28,.14);align-items:baseline}
+  .line:first-child{border-top:1.5px solid rgba(25,26,28,.14)}
+  .line dt{font-size:17px;color:var(--green-mid);font-weight:600}
   .line dd{font-size:21px;font-weight:600;letter-spacing:-.01em}
 
-  /* close: quiet, warm, one way in */
-  .close{margin:96px 0 0;background:var(--moss);color:#f4efe4;
+  /* close */
+  .close{margin:96px 0 0;background:var(--green);color:#f4f3ef;
     border-radius:120px 30px 120px 30px;padding:96px 34px;text-align:center}
   .close h2{color:#fff;max-width:16ch;margin:0 auto}
-  .close p{margin-top:16px;font-size:19px;color:rgba(244,239,228,.86)}
-  .close .btn{margin-top:32px;background:var(--ochre);color:#2c2822}
-  .close .btn:hover{background:#f0b63c}
-  .close .hand{display:block;margin-top:22px;font-size:24px;color:rgba(244,239,228,.9)}
+  .close p{margin-top:16px;font-size:19px;color:rgba(244,243,239,.84)}
+  .close .btn{margin-top:32px;background:var(--lime);color:var(--green)}
+  .close .btn:hover{background:#d3e463}
+  .close .hand{display:block;margin-top:22px;font-size:24px;color:var(--lime)}
   footer{padding:34px 0 54px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
     font-size:16px;color:var(--ink-soft)}
 
   @media(max-width:900px){
     .nogrid{grid-template-columns:repeat(2,1fr)}
-    .steps{grid-template-columns:1fr}
+    .beat{padding-left:0}
+    .when{position:static;width:auto;text-align:left;display:block;margin-bottom:6px}
+    .beat .body{padding-left:28px}
     .feature{grid-template-columns:1fr;gap:30px}
-    .feature .shot{border-radius:130px 130px 24px 24px}
     .line{grid-template-columns:1fr;gap:6px}
     .close{border-radius:70px 24px 70px 24px;padding:68px 24px}
   }
@@ -202,22 +210,37 @@
   </section>
 
   <section class="how">
-    <h2>Three things, then you're in.</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
-        <h3>Tell us about you</h3>
-        <p>A few questions. Takes three minutes.</p>
+    <h2>How your Thursday goes.</h2>
+    <div class="beats">
+      <div class="beat">
+        <div class="body">
+          <span class="when">Monday</span>
+          <h3>You fill a short form</h3>
+          <p>Three minutes. Nothing weird.</p>
+        </div>
       </div>
-      <div class="step">
-        <div class="num">2</div>
-        <h3>We sort the table</h3>
-        <p>Five others, the place, the time. All handled.</p>
+      <div class="beat">
+        <div class="body">
+          <span class="when">Thursday<br>6:00 PM</span>
+          <h3>You're done for the day</h3>
+          <p>We text you the address. That's the first time you see it.</p>
+        </div>
       </div>
-      <div class="step">
-        <div class="num">3</div>
-        <h3>You show up</h3>
-        <p>Hungry. That's the only rule.</p>
+      <div class="beat">
+        <div class="body">
+          <span class="when">Thursday<br>7:00 PM</span>
+          <h3>Five strangers, one table</h3>
+          <p>Nobody knows anybody. That is the whole point.</p>
+          <div class="shot"><img src="img/moment-passing.jpg" alt="Six people sharing food around a table in Lagos"></div>
+        </div>
+      </div>
+      <div class="beat">
+        <div class="body">
+          <span class="when">Thursday<br>10:45 PM</span>
+          <h3>You're the last table there</h3>
+          <p>Maybe you found a new favourite spot. Maybe somebody asks if you're coming next week.</p>
+          <div class="shot"><img src="img/moment-aftermath.jpg" alt="A table at the end of the night, plates cleared"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -227,7 +250,7 @@
     <article class="feature">
       <div class="shot"><img src="img/moment-passing.jpg" alt="A table of people sharing food in Lagos"></div>
       <div>
-        <span class="tag"><span class="dot" aria-hidden="true"></span> Happening now</span>
+        <span class="tag">Happening now</span>
         <h3>Dinner</h3>
         <p class="say">Every Thursday. Six people who haven't met, one table, somewhere easy in Lagos.</p>
         <div class="facts">

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gele Studio / Impeccable V5 Vinyl Lounge</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--wood:#3a2a18;--green:#1d4f43}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--wood);color:var(--cream);font-family:"Chakra Petch",sans-serif;
+    background-image:repeating-linear-gradient(90deg, rgba(0,0,0,.14) 0 3px, transparent 3px 26px),
+      linear-gradient(180deg, rgba(29,79,67,.35), transparent 40%)}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 32px 72px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+  .wordmark{font-weight:700;font-size:24px;letter-spacing:.2em}
+  nav a{background:var(--amber);color:var(--ink);padding:11px 26px;border-radius:4px;text-decoration:none;
+    font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+  .hero{padding:36px 0 24px;text-align:center}
+  .hero .mono{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--amber)}
+  h1{margin-top:12px;font-size:clamp(30px,4.6vw,52px);font-weight:700;line-height:1.12;text-transform:uppercase}
+  h1 span{color:var(--amber)}
+  .sleeve{margin:28px auto 0;width:min(520px,100%);aspect-ratio:1;background:var(--green);
+    border:2px solid var(--amber);border-radius:6px;position:relative;padding:22px;display:flex;
+    flex-direction:column;justify-content:space-between}
+  .sleeve::after{content:"";position:absolute;right:-56px;top:50%;transform:translateY(-50%);
+    width:200px;height:200px;border-radius:50%;z-index:-1;
+    background:radial-gradient(circle at center, var(--amber) 0 14%, var(--ink) 15% 42%,
+      #201a10 43% 47%, var(--ink) 48% 100%)}
+  .sleeve .label{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber)}
+  .sleeve h2{font-size:clamp(24px,3.6vw,36px);font-weight:700;line-height:1.14;text-transform:uppercase}
+  .sleeve h2 em{font-style:normal;color:var(--amber)}
+  .sleeve .slot{flex:1;margin:16px 0;border:2px dashed rgba(204,136,0,.55);border-radius:4px;display:flex;
+    align-items:center;justify-content:center;text-align:center;font-family:"JetBrains Mono";font-size:10px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--amber);padding:14px;line-height:1.7}
+  .tracks{margin:34px auto 0;max-width:520px}
+  .tr{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:12px 0;
+    border-bottom:1px solid rgba(204,136,0,.3);font-size:15px}
+  .tr:last-child{border-bottom:none}
+  .tr b{font-weight:600}
+  .tr span{font-family:"JetBrains Mono";font-size:11px;color:#c9b895;letter-spacing:.1em}
+  .cta{display:block;margin:30px auto 0;width:max-content;background:var(--orange);color:var(--cream);
+    padding:15px 40px;border-radius:4px;text-decoration:none;font-weight:600;font-size:14px;
+    text-transform:uppercase;letter-spacing:.08em}
+  .cta:hover{background:var(--amber);color:var(--ink)}
+  @media(max-width:680px){.sleeve::after{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Reserve</a></nav>
+  <section class="hero">
+    <div class="mono">Side A · Thursday night</div>
+    <h1>The lounge is <span>warming up.</span></h1>
+  </section>
+  <article class="sleeve">
+    <span class="label">Ije Records · Lagos · 33 RPM</span>
+    <!-- HIGGSFIELD: [SUBJECT: 70s wood-panel lounge corner with velvet seating, warm lamp, green ceiling glow, no people]
+         retro interior photography, amber and green tones, film grain. 1:1 -->
+    <div class="slot">IMAGE SLOT · 70s wood lounge, velvet seats, green glow · 1:1 · no people</div>
+    <h2>Six strangers, <em>one long play.</em></h2>
+  </article>
+  <section class="tracks">
+    <div class="tr"><b>1. The arrival</b><span>7:00</span></div>
+    <div class="tr"><b>2. Small talk (skit, brief)</b><span>0:45</span></div>
+    <div class="tr"><b>3. Real questions</b><span>12:30</span></div>
+    <div class="tr"><b>4. The argument (friendly, extended mix)</b><span>18:20</span></div>
+    <div class="tr"><b>5. Second round (feat. everybody)</b><span>till late</span></div>
+  </section>
+  <a class="cta" href="#">Drop the needle</a>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

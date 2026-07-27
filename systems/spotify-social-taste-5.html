@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Social / Taste V5 Week Strip</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--ground:#f4f3ef;--ink:#191a1c;--coral:#e2543e;--lime:#c6d94e;--violet:#7b6cd9;--teal:#2e8f83;--sun:#e8b93b}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:Outfit,sans-serif;min-height:100dvh;
+    display:flex;flex-direction:column}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 32px}
+  .wordmark{font-weight:800;font-size:24px}
+  nav a{background:var(--ink);color:var(--ground);padding:12px 26px;border-radius:999px;text-decoration:none;
+    font-weight:700;font-size:14px}
+  .head{padding:8px 32px 20px}
+  h1{font-size:clamp(30px,4.2vw,48px);font-weight:800}
+  h1 span{color:var(--coral)}
+  .head p{margin-top:6px;color:#55565a;font-weight:500;font-size:15px}
+  .week{flex:1;display:grid;grid-template-columns:repeat(7,1fr);gap:2px;background:var(--ink);
+    border-top:3px solid var(--ink);min-height:0}
+  .day{background:var(--ground);display:flex;flex-direction:column;padding:16px 12px;min-height:300px}
+  .day .dow{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#55565a}
+  .day .rest{flex:1;display:flex;align-items:center;justify-content:center;color:#c2c1b8;font-weight:700;font-size:13px}
+  .ev{margin-top:12px;border-radius:10px;padding:12px;color:var(--ground);text-decoration:none;display:block;
+    transition:transform .12s}
+  .ev:hover{transform:translateY(-3px)}
+  .ev b{font-weight:800;font-size:15px;display:block;line-height:1.15}
+  .ev span{font-family:"IBM Plex Mono";font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+  .ev .slot{margin-top:8px;height:52px;border:2px dashed rgba(255,255,255,.55);border-radius:6px;display:flex;
+    align-items:center;justify-content:center;font-family:"IBM Plex Mono";font-size:8.5px;
+    letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:4px}
+  .e-thu{background:var(--coral)}
+  .e-fri{background:var(--teal)}
+  .e-sat1{background:var(--violet)}
+  .e-sat2{background:var(--sun);color:var(--ink)}
+  .e-sat2 .slot{border-color:rgba(25,26,28,.4)}
+  .e-sun{background:var(--lime);color:var(--ink)}
+  .e-sun .slot{border-color:rgba(25,26,28,.4)}
+  @media(max-width:900px){.week{grid-template-columns:1fr;border-top:none}.day{min-height:0}
+    .day .rest{justify-content:flex-start;padding:8px 0 0}}
+</style>
+</head>
+<body>
+<nav><div class="wordmark">ije</div><a href="#">Get a seat</a></nav>
+<div class="head">
+  <h1>One week. <span>Five ways in.</span></h1>
+  <p>The best table in Lagos hasn't met yet. Pick your day.</p>
+</div>
+<section class="week">
+  <div class="day"><span class="dow">Mon</span><div class="rest">rest</div></div>
+  <div class="day"><span class="dow">Tue</span><div class="rest">rest</div></div>
+  <div class="day"><span class="dow">Wed</span><div class="rest">group chats simmering</div></div>
+  <div class="day"><span class="dow">Thu</span>
+    <a class="ev e-thu" href="#"><b>Dinner Club</b><span>7pm · 2 left</span>
+      <!-- HIGGSFIELD: [SUBJECT: six plates overhead, coral duotone, no people] 3:1 -->
+      <div class="slot">SLOT · plates · 3:1</div></a></div>
+  <div class="day"><span class="dow">Fri</span>
+    <a class="ev e-fri" href="#"><b>Card Night</b><span>8pm · 4 left</span>
+      <!-- HIGGSFIELD: [SUBJECT: fanned cards, teal duotone, no people] 3:1 -->
+      <div class="slot">SLOT · cards · 3:1</div></a></div>
+  <div class="day"><span class="dow">Sat</span>
+    <a class="ev e-sat1" href="#"><b>Rooftop Hang</b><span>6pm · waitlist</span></a>
+    <a class="ev e-sat2" href="#"><b>Film Club</b><span>8:30pm · 3 left</span></a></div>
+  <div class="day"><span class="dow">Sun</span>
+    <a class="ev e-sun" href="#"><b>Market Crawl</b><span>10am · 6 left</span>
+      <!-- HIGGSFIELD: [SUBJECT: woven basket with fabric, lime duotone, no people] 3:1 -->
+      <div class="slot">SLOT · basket · 3:1</div></a></div>
+</section>
+<script src="variants-nav.js"></script>
+</body>
+</html>

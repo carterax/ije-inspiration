@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Papercut / Taste V5 Ransom Note</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--kraft:#c9b797;--paper:#efe9db;--ink:#26221a;--teal:#7fa093;--mustard:#d9a91f;--brick:#bf4f30;--lav:#a9a3c9}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:Archivo,sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 16px 64px;
+    background-image:radial-gradient(rgba(38,34,26,.05) 1px, transparent 1px);background-size:20px 20px}
+  .head{width:min(720px,100%);display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+  .wordmark{font-weight:900;font-size:24px;background:var(--kraft);padding:6px 14px;transform:rotate(-2deg);
+    box-shadow:2px 3px 0 rgba(38,34,26,.25)}
+  .head span{font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8f8674}
+  .note{width:min(720px,100%);background:var(--kraft);padding:44px 40px;
+    box-shadow:0 18px 50px rgba(38,34,26,.28);transform:rotate(-.6deg)}
+  .line{margin:10px 0;line-height:1.7}
+  .w{display:inline-block;font-weight:900;text-transform:uppercase;padding:6px 12px;margin:3px 2px;
+    font-size:clamp(17px,2.6vw,26px);box-shadow:2px 2px 0 rgba(38,34,26,.3)}
+  .wa{background:var(--paper);transform:rotate(-2deg)}
+  .wb{background:var(--mustard);transform:rotate(1.5deg)}
+  .wc{background:var(--teal);color:var(--paper);transform:rotate(-1deg)}
+  .wd{background:var(--brick);color:var(--paper);transform:rotate(2deg)}
+  .we{background:var(--lav);transform:rotate(-1.6deg)}
+  .wf{background:var(--ink);color:var(--paper);transform:rotate(1deg)}
+  .demand{margin-top:26px;background:var(--paper);padding:18px 20px;transform:rotate(.5deg);
+    box-shadow:2px 3px 0 rgba(38,34,26,.22);font-family:"IBM Plex Mono";font-size:12.5px;line-height:1.8}
+  .demand b{color:var(--brick)}
+  .slot{margin-top:20px;height:100px;border:3px dashed var(--ink);display:flex;align-items:center;
+    justify-content:center;text-align:center;font-family:"IBM Plex Mono";font-size:10px;
+    letter-spacing:.14em;text-transform:uppercase;color:#6d645f;padding:12px;background:rgba(239,233,219,.6)}
+  .cta{display:block;margin:26px auto 0;width:max-content;background:var(--brick);color:var(--paper);
+    font-weight:900;text-transform:uppercase;padding:16px 36px;text-decoration:none;font-size:16px;
+    transform:rotate(-1.4deg);clip-path:polygon(2% 8%, 98% 0, 100% 90%, 0 100%)}
+  .cta:hover{transform:rotate(0) scale(1.03)}
+</style>
+</head>
+<body>
+<div class="head"><div class="wordmark">IJE</div><span>Delivered under your door</span></div>
+<article class="note">
+  <div class="line">
+    <span class="w wa">We</span><span class="w wb">have</span><span class="w wc">your</span><span class="w wd">Thursday</span>
+  </div>
+  <div class="line">
+    <span class="w we">night.</span><span class="w wa">If you</span><span class="w wf">want it</span><span class="w wb">back,</span>
+  </div>
+  <div class="line">
+    <span class="w wc">come</span><span class="w wd">alone.</span><span class="w wa">Bring</span><span class="w we">appetite.</span>
+  </div>
+  <div class="demand">
+    OUR DEMANDS: one seat filled. Six strangers assembled. <b>No small talk.</b>
+    Payment accepted in stories only. The location will find you Thursday morning.
+  </div>
+  <!-- HIGGSFIELD: [SUBJECT: scattered cut-out letters, scissors and paper scraps on kraft, no people]
+       analog collage flat lay, warm light. 6:1 -->
+  <div class="slot">IMAGE SLOT · cut letters, scissors, scraps · 6:1 · no people</div>
+  <a class="cta" href="#">Comply happily</a>
+</article>
+<script src="variants-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Block Party 99 / Taste</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600;0,800;1,800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--denim:#2b4a8b;--sky:#7fa8d9;--pink:#e0559a;--chrome:#e8e8ee;--ink:#17161c;--cream:#f2efe6}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--denim);color:var(--cream);font-family:"Space Grotesk",sans-serif;overflow-x:hidden;
+    background-image:linear-gradient(rgba(23,22,28,.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(23,22,28,.16) 1px, transparent 1px);background-size:44px 44px}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+  .wordmark{font-family:Archivo;font-weight:800;font-style:italic;font-size:28px;letter-spacing:-.01em;
+    background:var(--chrome);color:var(--denim);padding:4px 16px;transform:rotate(-2deg);
+    box-shadow:0 3px 0 var(--ink);border-radius:6px}
+  nav a{background:var(--pink);color:var(--cream);padding:12px 26px;text-decoration:none;font-weight:700;
+    font-size:14px;text-transform:uppercase;letter-spacing:.05em;border-radius:999px;border:2px solid var(--ink);
+    box-shadow:0 3px 0 var(--ink)}
+  nav a:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+  .hero{padding:56px 0 40px;position:relative;min-height:64dvh}
+  h1{font-family:Archivo;font-weight:800;font-size:clamp(52px,8.4vw,116px);line-height:.96;
+    text-transform:uppercase;letter-spacing:-.02em;font-style:italic}
+  h1 .chrome{color:var(--chrome);text-shadow:0 4px 0 var(--ink)}
+  h1 .pink{color:var(--pink);text-shadow:0 4px 0 var(--ink)}
+  .sub{margin-top:24px;font-size:17px;max-width:36ch;font-weight:500;line-height:1.6;color:#dbe4f5}
+  .cta{margin-top:30px;display:inline-block;background:var(--chrome);color:var(--ink);padding:16px 34px;
+    text-decoration:none;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.05em;
+    border-radius:999px;border:2px solid var(--ink);box-shadow:0 4px 0 var(--ink)}
+  .cta:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+  .stickers{position:absolute;right:0;top:48px;width:280px;height:340px;pointer-events:none}
+  .stk{position:absolute;font-family:Archivo;font-weight:800;text-transform:uppercase;font-style:italic;
+    border:2px solid var(--ink);border-radius:999px;padding:12px 20px;box-shadow:0 3px 0 var(--ink);font-size:15px}
+  .s1{background:var(--pink);color:var(--cream);top:10px;right:110px;transform:rotate(8deg)}
+  .s2{background:var(--chrome);color:var(--denim);top:100px;right:10px;transform:rotate(-7deg)}
+  .s3{background:var(--sky);color:var(--ink);top:190px;right:80px;transform:rotate(4deg)}
+  .s4{background:var(--ink);color:var(--chrome);top:280px;right:30px;transform:rotate(-5deg)}
+  .crew{background:var(--cream);color:var(--ink);margin:40px -100vw 0;padding:56px 100vw 72px}
+  .crew h2{font-family:Archivo;font-weight:800;font-style:italic;text-transform:uppercase;
+    font-size:clamp(28px,3.8vw,44px)}
+  .crew .row{margin-top:28px;display:flex;gap:18px;flex-wrap:wrap}
+  .polaroid{flex:1 1 200px;background:#fff;border:2px solid var(--ink);border-radius:4px;padding:12px 12px 16px;
+    box-shadow:0 4px 0 var(--ink)}
+  .polaroid:nth-child(1){transform:rotate(-2deg)}
+  .polaroid:nth-child(2){transform:rotate(1.4deg)}
+  .polaroid:nth-child(3){transform:rotate(-1deg)}
+  .polaroid .ph{aspect-ratio:1;background:radial-gradient(circle at 50% 40%, var(--sky), var(--denim) 80%)}
+  .polaroid:nth-child(2) .ph{background:radial-gradient(circle at 50% 40%, var(--pink), #8b2c5e 85%)}
+  .polaroid:nth-child(3) .ph{background:radial-gradient(circle at 50% 40%, var(--chrome), #8f8fa3 85%)}
+  .polaroid p{margin-top:10px;font-weight:700;font-size:14px;text-transform:uppercase}
+  @media(max-width:860px){.stickers{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Pull up</a></nav>
+  <section class="hero">
+    <div class="stickers" aria-hidden="true">
+      <div class="stk s1">No small talk</div>
+      <div class="stk s2">6 strangers</div>
+      <div class="stk s3">Lagos only</div>
+      <div class="stk s4">Since 2026</div>
+    </div>
+    <h1><span class="chrome">Your new</span><br><span class="pink">crew</span> <span class="chrome">awaits.</span></h1>
+    <p class="sub">Dinner with six strangers who dress like your group chat and argue like your cousins.</p>
+    <a class="cta" href="#">Pull up Thursday</a>
+  </section>
+  <section class="crew">
+    <h2>Last week's tables</h2>
+    <div class="row">
+      <div class="polaroid"><div class="ph"></div><p>Yaba · The loud table</p></div>
+      <div class="polaroid"><div class="ph"></div><p>VI · The debate club</p></div>
+      <div class="polaroid"><div class="ph"></div><p>Ikeja · The quiet storm</p></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

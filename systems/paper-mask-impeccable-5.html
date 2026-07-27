@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Mask / Impeccable V5 Audio Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--void:#17130e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--void);color:var(--cream);font-family:"Chakra Petch",sans-serif}
+  .wrap{max-width:820px;margin:0 auto;padding:0 32px 72px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:700;font-size:20px;letter-spacing:.28em}
+  nav a{background:var(--amber);color:var(--ink);padding:11px 26px;border-radius:4px;text-decoration:none;
+    font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .hero{padding:40px 0 28px;text-align:center}
+  .hero .mono{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber)}
+  h1{margin-top:12px;font-size:clamp(28px,4.4vw,46px);font-weight:600;line-height:1.16}
+  h1 span{color:var(--amber)}
+  .stops{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+  .stop{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;background:#221c13;
+    border:1px solid rgba(204,136,0,.35);border-radius:10px;padding:18px 20px;text-align:left}
+  .stop .num{width:48px;height:48px;border-radius:50%;background:var(--amber);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+  .stop:nth-child(even) .num{background:var(--orange);color:var(--cream)}
+  .stop b{font-size:17px;font-weight:600;display:block}
+  .stop small{display:block;margin-top:4px;font-size:13px;color:#c9bda6;font-weight:300;line-height:1.5}
+  .stop .dur{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.12em;color:#9a8a6a;text-transform:uppercase;white-space:nowrap}
+  .slot{margin-top:22px;height:96px;border:2px dashed var(--amber);border-radius:8px;display:flex;
+    align-items:center;justify-content:center;text-align:center;font-family:"JetBrains Mono";font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:#b59468;padding:12px}
+  .cta{display:block;margin:26px auto 0;width:max-content;background:var(--orange);color:var(--cream);
+    padding:15px 38px;border-radius:4px;text-decoration:none;font-weight:600;font-size:14px;
+    letter-spacing:.1em;text-transform:uppercase}
+  .cta:hover{background:var(--amber);color:var(--ink)}
+  @media(max-width:560px){.stop{grid-template-columns:48px 1fr}.stop .dur{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Take a seat</a></nav>
+  <section class="hero">
+    <div class="mono">Audio guide · One evening</div>
+    <h1>Press play on <span>Thursday night.</span></h1>
+  </section>
+  <section class="stops">
+    <div class="stop"><span class="num">1</span>
+      <span><b>The arrival</b><small>You compose your face at the gate. Note the craftsmanship. It will not survive the evening.</small></span>
+      <span class="dur">7:00 PM</span></div>
+    <div class="stop"><span class="num">2</span>
+      <span><b>The introductions</b><small>Six masks around one table. Listen closely for the first real laugh.</small></span>
+      <span class="dur">7:20 PM</span></div>
+    <div class="stop"><span class="num">3</span>
+      <span><b>The crack</b><small>A question lands. Somewhere between the second plate and the third story, the paper folds.</small></span>
+      <span class="dur">8:40 PM</span></div>
+    <div class="stop"><span class="num">4</span>
+      <span><b>The faces underneath</b><small>The collection's centerpiece. Six of them, none on display anywhere else.</small></span>
+      <span class="dur">LATE</span></div>
+  </section>
+  <!-- HIGGSFIELD: [SUBJECT: museum audio guide handset resting beside a golden mask on dark surface, no people]
+       amber on void, single light. 8:1 -->
+  <div class="slot">IMAGE SLOT · audio guide handset beside mask · 8:1 · no people</div>
+  <a class="cta" href="#">Book stop one</a>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

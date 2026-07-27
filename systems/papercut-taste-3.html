@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Papercut / Taste V3 Type Torn</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;900&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--kraft:#c9b797;--paper:#efe9db;--ink:#26221a;--teal:#7fa093;--mustard:#d9a91f;--brick:#bf4f30}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--paper);font-family:Archivo,sans-serif}
+  .page{min-height:calc(100dvh - 46px);display:flex;flex-direction:column}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 32px}
+  .wordmark{font-weight:900;font-size:24px;background:var(--paper);color:var(--ink);padding:5px 14px;
+    transform:rotate(-2deg)}
+  nav a{background:var(--brick);color:var(--paper);padding:11px 24px;text-decoration:none;font-weight:700;
+    font-size:14px;transform:rotate(1.2deg);display:inline-block}
+  .hero{flex:1;display:flex;flex-direction:column;justify-content:center;padding:24px 32px;gap:14px}
+  .strip{display:inline-block;width:max-content;max-width:100%;font-weight:900;text-transform:uppercase;
+    line-height:1;font-size:clamp(40px,7.6vw,104px);padding:12px 26px}
+  .st1{background:var(--paper);color:var(--ink);transform:rotate(-1.6deg);
+    clip-path:polygon(0 12%, 3% 0, 98% 4%, 100% 90%, 96% 100%, 2% 96%)}
+  .st2{background:var(--mustard);color:var(--ink);transform:rotate(1.1deg);margin-left:6%;
+    clip-path:polygon(2% 0, 100% 8%, 97% 100%, 0 94%)}
+  .st3{background:var(--brick);color:var(--paper);transform:rotate(-.8deg);margin-left:2%;
+    clip-path:polygon(0 6%, 97% 0, 100% 92%, 3% 100%)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:26px 32px 40px}
+  .mono{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8f8674}
+  .cta{background:var(--teal);color:var(--ink);padding:15px 34px;text-decoration:none;font-weight:900;
+    font-size:15px;text-transform:uppercase;transform:rotate(-1deg);
+    clip-path:polygon(2% 8%, 98% 0, 100% 90%, 0 100%)}
+  .cta:hover{transform:rotate(0) scale(1.02)}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><div class="wordmark">IJE</div><a href="#">Add your piece</a></nav>
+  <section class="hero">
+    <span class="strip st1">Six strangers.</span>
+    <span class="strip st2">One evening.</span>
+    <span class="strip st3">See what happens.</span>
+  </section>
+  <div class="foot">
+    <span class="mono">Torn weekly · Lagos · Thursday 7 PM</span>
+    <a class="cta" href="#">Add your piece</a>
+  </div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

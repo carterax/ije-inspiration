@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidescape Calm / Taste</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--sand:#efe8db;--drift:#8b7d64;--ink:#3a352b;--wood:#6f5b40;--sea:#7e948c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--sand);color:var(--ink);font-family:Outfit,sans-serif;
+    background-image:linear-gradient(rgba(58,53,43,.03) 1px, transparent 1px);background-size:100% 36px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+  .wordmark{font-family:Lora,serif;font-size:24px;font-weight:500;letter-spacing:.3em;text-transform:lowercase}
+  nav a{color:var(--ink);border:1px solid var(--drift);padding:12px 28px;border-radius:999px;text-decoration:none;
+    font-size:13px;letter-spacing:.1em;font-weight:400}
+  nav a:hover{background:var(--wood);border-color:var(--wood);color:var(--sand)}
+  .hero{padding:88px 0 64px;text-align:center;max-width:640px;margin:0 auto}
+  h1{font-family:Lora,serif;font-size:clamp(34px,4.6vw,54px);font-weight:400;line-height:1.25}
+  h1 em{color:var(--wood)}
+  .sub{margin-top:22px;font-size:16px;color:#6d6555;line-height:1.75;font-weight:300}
+  .cta{margin-top:32px;display:inline-block;background:var(--wood);color:var(--sand);padding:14px 36px;
+    border-radius:999px;text-decoration:none;font-size:14px;letter-spacing:.08em}
+  .cta:hover{background:var(--sea)}
+  .pause{height:180px;margin:24px 0;position:relative;overflow:hidden;border-radius:2px;
+    background:linear-gradient(180deg,#a89a7f 0%,var(--wood) 55%,#57462f 100%)}
+  .pause::after{content:"";position:absolute;inset:0;opacity:.5;
+    background:repeating-linear-gradient(94deg, transparent 0 26px, rgba(239,232,219,.14) 26px 29px),
+      repeating-linear-gradient(91deg, transparent 0 60px, rgba(38,30,18,.2) 60px 62px)}
+  .pause span{position:absolute;bottom:14px;left:18px;font-family:"IBM Plex Mono";font-size:10.5px;
+    letter-spacing:.22em;text-transform:uppercase;color:rgba(239,232,219,.85)}
+  .rhythm{padding:48px 0 96px;max-width:640px;margin:0 auto}
+  .beat{padding:32px 0;border-top:1px solid rgba(139,125,100,.4);display:grid;grid-template-columns:90px 1fr;gap:24px}
+  .beat .t{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.16em;color:var(--sea);padding-top:6px}
+  .beat h3{font-family:Lora,serif;font-size:22px;font-weight:500}
+  .beat p{margin-top:8px;font-size:14.5px;color:#6d6555;line-height:1.7;font-weight:300}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">ije</div><a href="#">reserve</a></nav>
+  <section class="hero">
+    <h1>Somewhere quiet, with people <em>worth the quiet.</em></h1>
+    <p class="sub">A slow dinner for six strangers. Warm wood, warmer light, and nowhere else to be.</p>
+    <a class="cta" href="#">reserve a seat</a>
+  </section>
+  <div class="pause" role="img" aria-label="Warm wood grain texture"><span>grain study · iroko, oiled</span></div>
+  <section class="rhythm">
+    <div class="beat"><div class="t">SEVEN</div><div><h3>Arrive slowly</h3><p>The address comes that morning. A courtyard, a veranda, somewhere the city hushes.</p></div></div>
+    <div class="beat"><div class="t">EIGHT</div><div><h3>Eat well</h3><p>A set menu, no decisions. The kitchen takes its time and so does the table.</p></div></div>
+    <div class="beat"><div class="t">LATE</div><div><h3>Linger</h3><p>Nobody clears the table early here. The night ends when it ends.</p></div></div>
+  </section>
+</div>
+</body>
+</html>

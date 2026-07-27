@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Guide / Impeccable</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--surface:#FFFFFF;--soft:#6b7280}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:baseline;padding:20px 0;border-bottom:2px solid var(--ink)}
+  .wordmark{font-weight:700;font-size:24px}
+  nav .tag{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+  .hero{padding:56px 0 40px;text-align:center;max-width:680px;margin:0 auto}
+  h1{font-size:clamp(36px,4.8vw,58px);font-weight:700;line-height:1.08;text-transform:uppercase}
+  h1 span{color:var(--orange)}
+  .sub{margin-top:14px;font-size:16px;color:#4b5563;line-height:1.6}
+  .cta{margin-top:24px;display:inline-block;background:var(--amber);color:var(--ink);padding:13px 30px;
+    border-radius:4px;text-decoration:none;font-weight:600;font-size:14px}
+  .cta:hover{background:var(--orange);color:var(--cream)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;padding:20px 0 80px}
+  .spec{background:var(--surface);border:2px solid var(--ink);border-radius:8px;padding:16px;
+    display:flex;flex-direction:column;transition:transform .15s ease}
+  .spec:hover{transform:translateY(-4px)}
+  .spec .plate{aspect-ratio:4/3;border-radius:4px;position:relative;overflow:hidden;background:var(--cream)}
+  .spec .wing{position:absolute;left:50%;top:50%;width:56%;aspect-ratio:1.5;transform:translate(-50%,-50%)}
+  .spec .wing::before,.spec .wing::after{content:"";position:absolute;top:0;width:50%;height:100%;border-radius:60% 60% 45% 45%}
+  .spec .wing::before{left:0;transform:rotate(-14deg);background:var(--amber)}
+  .spec .wing::after{right:0;transform:rotate(14deg);background:var(--orange)}
+  .spec:nth-child(2) .wing::before{background:var(--orange)}.spec:nth-child(2) .wing::after{background:#8a5c00}
+  .spec:nth-child(3) .wing::before{background:#8a5c00}.spec:nth-child(3) .wing::after{background:var(--amber)}
+  .spec:nth-child(4) .wing::before{background:var(--ink)}.spec:nth-child(4) .wing::after{background:var(--orange)}
+  .spec .no{position:absolute;top:8px;left:10px;font-family:"JetBrains Mono";font-size:10px;color:var(--soft)}
+  .spec h3{margin-top:14px;font-size:21px;font-weight:600}
+  .spec .latin{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-top:2px}
+  .spec p{margin-top:10px;font-size:13.5px;color:#4b5563;line-height:1.5;flex:1}
+  .spec a{margin-top:14px;display:block;text-align:center;background:var(--ink);padding:10px;border-radius:4px;
+    text-decoration:none;color:var(--cream);font-weight:600;font-size:13px}
+  .spec a:hover{background:var(--orange)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><div class="tag">A field guide to Lagos nights</div></nav>
+  <section class="hero">
+    <h1>Which night <span>are you?</span></h1>
+    <p class="sub">Six species of evening, all native to Lagos. Collect them with strangers who become less strange by dessert.</p>
+    <a class="cta" href="#">Start collecting</a>
+  </section>
+  <section class="grid">
+    <div class="spec"><div class="plate"><span class="no">No. 01</span><div class="wing"></div></div>
+      <h3>Dinner Club</h3><div class="latin">Cena communis · Common</div>
+      <p>Found weekly at long tables. Feeds on shared plates and better questions.</p><a href="#">Reserve this night</a></div>
+    <div class="spec"><div class="plate"><span class="no">No. 02</span><div class="wing"></div></div>
+      <h3>Card Night</h3><div class="latin">Ludus nocturnus · Frequent</div>
+      <p>Competitive but friendly. Known to extend hours past midnight.</p><a href="#">Reserve this night</a></div>
+    <div class="spec"><div class="plate"><span class="no">No. 03</span><div class="wing"></div></div>
+      <h3>Rooftop Hang</h3><div class="latin">Altitudo aurea · Seasonal</div>
+      <p>Appears at sunset. Thrives on skyline views and slow drinks.</p><a href="#">Reserve this night</a></div>
+    <div class="spec"><div class="plate"><span class="no">No. 04</span><div class="wing"></div></div>
+      <h3>Market Crawl</h3><div class="latin">Mercatus errans · Rare</div>
+      <p>A daytime species. Travels in packs through fabric and food stalls.</p><a href="#">Reserve this night</a></div>
+  </section>
+</div>
+</body>
+</html>

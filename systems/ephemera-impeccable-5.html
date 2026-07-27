@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ephemera / Impeccable V5 Ticket Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--soft:#6b7280}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--cream);font-family:"Chakra Petch",sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 16px 64px}
+  .head{width:min(760px,100%);display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+  .wordmark{font-weight:700;font-size:24px}
+  .head span{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+  h1{width:min(760px,100%);font-size:clamp(32px,5vw,54px);line-height:1.06;font-weight:700;
+    text-transform:uppercase;margin-bottom:28px}
+  h1 span{color:var(--amber)}
+  .book{width:min(760px,100%);display:flex;flex-direction:column;gap:14px}
+  .tik{background:var(--cream);color:var(--ink);border-radius:8px;display:grid;
+    grid-template-columns:110px 1fr auto;overflow:hidden;position:relative}
+  .tik::after{content:"";position:absolute;left:110px;top:0;bottom:0;border-left:2px dashed rgba(17,24,39,.35)}
+  .tik .end{background:var(--amber);display:flex;align-items:center;justify-content:center;
+    font-family:"JetBrains Mono";font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    writing-mode:vertical-rl;transform:rotate(180deg);padding:14px 0}
+  .tik:nth-child(even) .end{background:var(--orange);color:var(--cream)}
+  .tik .mid{padding:18px 22px}
+  .tik .mid b{font-size:19px;font-weight:700;text-transform:uppercase}
+  .tik .mid small{display:block;margin-top:4px;font-size:13px;color:#4b5563}
+  .tik .mid .mono{margin-top:8px;font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--orange)}
+  .tik a{align-self:center;margin:0 20px;background:var(--ink);color:var(--cream);padding:12px 22px;
+    border-radius:4px;text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase;white-space:nowrap}
+  .tik a:hover{background:var(--orange)}
+  .slotrow{width:min(760px,100%);margin-top:22px;border:2px dashed var(--amber);border-radius:6px;height:90px;
+    display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono";font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--amber);text-align:center;padding:12px}
+  @media(max-width:620px){.tik{grid-template-columns:1fr}.tik::after{display:none}
+    .tik .end{writing-mode:horizontal-tb;transform:none;padding:10px}
+    .tik a{margin:0 20px 18px}}
+</style>
+</head>
+<body>
+<div class="head"><div class="wordmark">IJE</div><span>Ticket book · This week</span></div>
+<h1>Admit one stranger. <span>Five ways in.</span></h1>
+<section class="book">
+  <article class="tik"><span class="end">Admit One</span>
+    <div class="mid"><b>Dinner Club, Ikoyi</b><small>Six seats, set menu, better questions.</small>
+      <span class="mono">THU 19:00 · Table 7 · 2 seats left</span></div>
+    <a href="#">Claim</a></article>
+  <article class="tik"><span class="end">Admit One</span>
+    <div class="mid"><b>Card Night, Yaba</b><small>Competitive but friendly. Runs late.</small>
+      <span class="mono">FRI 20:00 · Table 3 · 4 seats left</span></div>
+    <a href="#">Claim</a></article>
+  <article class="tik"><span class="end">Admit One</span>
+    <div class="mid"><b>Rooftop Hang, VI</b><small>Sunset first, talk after.</small>
+      <span class="mono">SAT 18:00 · Roof · Waitlist</span></div>
+    <a href="#">Claim</a></article>
+  <article class="tik"><span class="end">Admit One</span>
+    <div class="mid"><b>Film Club, Landmark</b><small>One screening, one long argument after.</small>
+      <span class="mono">SAT 20:30 · Row F · 3 seats left</span></div>
+    <a href="#">Claim</a></article>
+  <article class="tik"><span class="end">Admit One</span>
+    <div class="mid"><b>Market Crawl, Balogun</b><small>Daylight edition. Wear walking shoes.</small>
+      <span class="mono">SUN 10:00 · Gate 1 · 6 seats left</span></div>
+    <a href="#">Claim</a></article>
+</section>
+<!-- HIGGSFIELD: [SUBJECT: a paper ticket book with perforated stubs, warm light, no people] brand asset. 8:1 -->
+<div class="slotrow">IMAGE SLOT · perforated ticket book texture · 8:1 · no people</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

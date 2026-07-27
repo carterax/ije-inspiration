@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Papercut Collage / Taste</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--kraft:#c9b797;--paper:#efe9db;--ink:#26221a;--teal:#7fa093;--mustard:#d9a91f;--brick:#bf4f30;--lav:#a9a3c9}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--kraft);color:var(--ink);font-family:Archivo,sans-serif;overflow-x:hidden;
+    background-image:linear-gradient(rgba(38,34,26,.05) 1px, transparent 1px);background-size:100% 28px}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:900;font-size:24px;background:var(--paper);padding:6px 14px;transform:rotate(-2deg);
+    box-shadow:2px 3px 0 rgba(38,34,26,.25)}
+  nav a{background:var(--ink);color:var(--paper);padding:11px 24px;text-decoration:none;font-weight:700;font-size:14px;
+    transform:rotate(1.4deg);display:inline-block}
+  nav a:hover{transform:rotate(0deg)}
+  .hero{padding:64px 0 40px;position:relative;min-height:66dvh}
+  .scrap{position:relative;display:inline-block;padding:10px 22px;margin:6px 0}
+  .s1{background:var(--paper);transform:rotate(-1.6deg);clip-path:polygon(1% 8%, 99% 0, 100% 88%, 2% 100%)}
+  .s2{background:var(--mustard);transform:rotate(1.2deg);clip-path:polygon(0 0, 100% 6%, 98% 100%, 1% 92%)}
+  .s3{background:var(--teal);color:var(--paper);transform:rotate(-.8deg);clip-path:polygon(2% 0, 100% 4%, 99% 94%, 0 100%)}
+  h1{font-size:clamp(40px,6.4vw,84px);font-weight:900;line-height:1.04;text-transform:uppercase;letter-spacing:-.01em}
+  .sub{margin-top:26px;font-size:17px;max-width:38ch;font-weight:500;background:var(--paper);display:inline-block;
+    padding:14px 18px;transform:rotate(.6deg);box-shadow:2px 3px 0 rgba(38,34,26,.2)}
+  .cta{margin-top:30px;display:inline-block;background:var(--brick);color:var(--paper);font-weight:900;
+    text-transform:uppercase;padding:16px 32px;text-decoration:none;font-size:16px;transform:rotate(-1deg);
+    clip-path:polygon(2% 6%, 98% 0, 100% 92%, 0 100%)}
+  .cta:hover{transform:rotate(0deg) scale(1.02)}
+  .bits{position:absolute;right:0;top:70px;width:280px;height:320px;pointer-events:none}
+  .bit{position:absolute;box-shadow:2px 3px 0 rgba(38,34,26,.18)}
+  .b1{width:120px;height:150px;background:var(--lav);right:90px;top:0;transform:rotate(6deg);
+    clip-path:polygon(4% 2%, 98% 0, 100% 96%, 0 100%)}
+  .b2{width:90px;height:90px;background:var(--brick);right:20px;top:90px;transform:rotate(-8deg);
+    clip-path:polygon(0 6%, 96% 0, 100% 94%, 6% 100%)}
+  .b3{width:150px;height:100px;background:var(--paper);right:60px;top:200px;transform:rotate(3deg);
+    clip-path:polygon(2% 0, 100% 8%, 96% 100%, 0 94%)}
+  .pieces{padding:32px 0 80px}
+  .pieces h2{font-size:clamp(26px,3.4vw,40px);font-weight:900;text-transform:uppercase;margin-bottom:30px;
+    display:inline-block;background:var(--paper);padding:8px 18px;transform:rotate(-1deg)}
+  .row{display:flex;flex-wrap:wrap;gap:22px}
+  .piece{flex:1 1 220px;padding:22px;min-height:150px;box-shadow:3px 4px 0 rgba(38,34,26,.2)}
+  .piece:nth-child(1){background:var(--paper);transform:rotate(-1.2deg);clip-path:polygon(1% 4%, 99% 0, 100% 96%, 0 100%)}
+  .piece:nth-child(2){background:var(--teal);color:var(--paper);transform:rotate(1deg);clip-path:polygon(0 0, 100% 4%, 98% 100%, 2% 96%)}
+  .piece:nth-child(3){background:var(--mustard);transform:rotate(-.6deg);clip-path:polygon(2% 2%, 98% 0, 100% 98%, 0 96%)}
+  .piece .mono{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.14em;opacity:.75}
+  .piece h3{margin-top:10px;font-size:22px;font-weight:900;text-transform:uppercase}
+  .piece p{margin-top:8px;font-size:14px;line-height:1.55;font-weight:500}
+  @media(max-width:800px){.bits{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Add your piece</a></nav>
+  <section class="hero">
+    <div class="bits" aria-hidden="true"><div class="bit b1"></div><div class="bit b2"></div><div class="bit b3"></div></div>
+    <h1>
+      <span class="scrap s1">Different scraps.</span><br>
+      <span class="scrap s2">Same city.</span><br>
+      <span class="scrap s3">One picture.</span>
+    </h1>
+    <p class="sub">Six strangers pieced together over dinner in Lagos. The edges don't have to match. That's the point.</p>
+    <br><a class="cta" href="#">Add your piece</a>
+  </section>
+  <section class="pieces">
+    <h2>Torn from last week</h2>
+    <div class="row">
+      <div class="piece"><div class="mono">Overheard</div><h3>"Wait, you too?"</h3><p>Two strangers, same hometown street. Found out at the jollof course.</p></div>
+      <div class="piece"><div class="mono">Kept</div><h3>The wine label</h3><p>Signed by the whole table. Someone framed it. We respect it.</p></div>
+      <div class="piece"><div class="mono">Started</div><h3>A group chat</h3><p>Named after an inside joke from minute twenty. Still active.</p></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

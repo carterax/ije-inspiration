@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Social - All 10 Variations</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#16130e;color:#cfc6b4;font-family:"JetBrains Mono",monospace;padding:0 24px 48px}
+  header{display:flex;justify-content:space-between;align-items:center;padding:18px 0;
+    border-bottom:1px solid #2e2820;margin-bottom:28px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+  header b{color:#f6efdc;font-size:14px}
+  header b i{color:#cf5b23;font-style:normal}
+  header span{color:#8a8172}
+  h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#cf5b23;margin:26px 0 14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+  a.cell{display:block;border:1px solid #2e2820;text-decoration:none;color:inherit;background:#0f0d09;
+    transition:border-color .15s}
+  a.cell:hover{border-color:#cf5b23}
+  .thumb{aspect-ratio:16/10;overflow:hidden;position:relative}
+  .thumb iframe{width:400%;height:400%;transform:scale(.25);transform-origin:top left;border:0;
+    pointer-events:none;background:#fff}
+  .cap{display:flex;justify-content:space-between;padding:10px 12px;font-size:10.5px;
+    letter-spacing:.1em;text-transform:uppercase;border-top:1px solid #2e2820}
+  .cap b{color:#f6efdc}
+  .cap span{color:#8a8172}
+</style>
+</head>
+<body>
+<header>
+  <b>IJE <i>·</i> SPOTIFY SOCIAL</b>
+  <span>10 directions · keys 1-5 inside any variant · T/I switches skill</span>
+</header>
+<h2>Taste</h2>
+<div class="grid" id="taste"></div>
+<h2>Impeccable</h2>
+<div class="grid" id="impeccable"></div>
+<script>
+const CELLS = {
+  taste: [["1","Mosaic Split"],["1a","Mosaic · List ★"],["1b","Experience First ★"],["1c","Printed Mix ★"],["1d","Invitation ★"],["1e","Photo First ★"],["1f","Open Plan ★"],["1g","Spread ★"],["1h","Colour Blocks ★"],["1i","Come As You Are ★"],["2","List First"],["3","Type Board"],["4","Photo Tiles"],["5","Week Strip"]],
+  impeccable: [["1","Mosaic Split"],["2","List First"],["3","Type Board"],["4","Photo Tiles"],["5","Seat Map"]],
+};
+for (const skill of ["taste","impeccable"]) {
+  document.getElementById(skill).innerHTML = CELLS[skill].map(([v,label])=>{
+    const f = `spotify-social-${skill}-${v}.html`;
+    return `<a class="cell" href="${f}">
+      <div class="thumb"><iframe loading="lazy" src="${f}" tabindex="-1" scrolling="no"></iframe></div>
+      <div class="cap"><b>V${v.toUpperCase()}</b><span>${label}</span></div></a>`;
+  }).join("");
+}
+</script>
+</body>
+</html>

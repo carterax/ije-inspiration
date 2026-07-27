@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Mask / Taste V4 Photo Plinths</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--void:#141210;--bone:#e5ddcc;--terra:#a8532f;--sage:#7c8471}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--void);color:var(--bone);font-family:Sora,sans-serif}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 32px 64px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+  .wordmark{font-weight:600;font-size:20px;letter-spacing:.3em}
+  nav a{border:1px solid var(--bone);color:var(--bone);padding:11px 26px;text-decoration:none;font-size:13px;
+    letter-spacing:.12em;text-transform:uppercase}
+  nav a:hover{background:var(--bone);color:var(--void)}
+  .heroslot{margin:20px 0 0;aspect-ratio:21/9;border:2px dashed rgba(229,221,204,.4);display:flex;
+    align-items:center;justify-content:center;text-align:center;font-family:"IBM Plex Mono";font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:#8a8172;padding:16px}
+  .caption{display:flex;justify-content:space-between;padding:12px 2px 0;font-family:"IBM Plex Mono";
+    font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a8172}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding:40px 0 28px}
+  h1{font-size:clamp(28px,4vw,46px);font-weight:300;line-height:1.2;max-width:22ch}
+  h1 b{font-weight:600}
+  .head a{background:var(--terra);color:var(--bone);padding:14px 32px;text-decoration:none;font-size:13px;
+    letter-spacing:.14em;text-transform:uppercase;font-weight:600;flex-shrink:0}
+  .row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .plinth{display:flex;flex-direction:column;align-items:center}
+  .plinth .slot{width:100%;aspect-ratio:3/4;border:2px dashed rgba(229,221,204,.4);display:flex;
+    align-items:center;justify-content:center;text-align:center;font-family:"IBM Plex Mono";font-size:10px;
+    letter-spacing:.12em;text-transform:uppercase;color:#8a8172;padding:14px}
+  .plinth .base{width:70%;height:34px;background:linear-gradient(180deg,#241f19,var(--void));
+    border-top:1px solid rgba(229,221,204,.25)}
+  .plinth p{margin-top:10px;font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;color:#8a8172;text-align:center}
+  @media(max-width:800px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Take a seat</a></nav>
+  <!-- HIGGSFIELD: [SUBJECT: row of six crumpled paper masks on plinths in a dark gallery, single light source raking across, no people]
+       void black, bone paper, monumental museum mood. 21:9 -->
+  <div class="heroslot">HERO IMAGE SLOT · six paper masks on plinths, raking light · 21:9 · no people</div>
+  <div class="caption"><span>Permanent collection · Lagos</span><span>Six masks, checked at the door</span></div>
+  <div class="head">
+    <h1>Every table starts as a gallery. <b>Then it becomes a kitchen.</b></h1>
+    <a href="#">Take a seat</a>
+  </div>
+  <section class="row">
+    <!-- HIGGSFIELD per plinth: single sculpted object, dramatic single-source light, dark ground, no people -->
+    <div class="plinth"><div class="slot">SLOT · stone head, side lit · 3:4</div><div class="base"></div><p>The professional</p></div>
+    <div class="plinth"><div class="slot">SLOT · blue lapis mask · 3:4</div><div class="base"></div><p>The cool one</p></div>
+    <div class="plinth"><div class="slot">SLOT · paper mask mid-unfold · 3:4</div><div class="base"></div><p>The one who cracked first</p></div>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Social / Taste V1H Colour Blocks</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Outfit:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* V1H (owner's brief, from real screenshots): momoamo x Life at Spotify,
+     keeping V1B's playfulness but reading as an EXPERIENCE site.
+
+     FROM MOMOAMO: every section is its own saturated colour with one bright
+     contrasting type colour. Enormous tight uppercase display. A sliding
+     mixed-size photo carousel under the hero copy. A horizontal photo row
+     with caption overlays and arrow controls. An editorial hairline list
+     (name / status / date). Squared CTA with arrow.
+
+     FROM SPOTIFY: big rounded tiles, flat colour tiles with the headline top
+     and a black pill-arrow CTA bottom, tall narrow photo strips in a row.
+
+     Revision: no floating stickers, no scattered background photos, no
+     "wanna come" block. The deal now closes the page as the footer. */
+  :root{
+    /* Ije palette */
+    --coral:#e2543e; --lime:#c6d94e; --violet:#7b6cd9; --teal:#2e8f83; --sun:#e8b93b;
+    --ink:#191a1c; --ground:#f4f3ef; --white:#fff;
+    /* dark grounds, derived from our own teal and coral */
+    --green:#10322e; --green-soft:#17453e;
+    --coral-deep:#712a1f; --coral-soft:#5a2118;
+    --violet-tint:#cac4f0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:Outfit,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .display{font-family:Archivo,sans-serif;font-weight:800;text-transform:uppercase;
+    letter-spacing:-.035em;line-height:.9}
+  .mono{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+  .wrap{max-width:1300px;margin:0 auto;padding:0 34px;position:relative}
+
+  /* squared arrow CTA, momoamo */
+  .cta-sq{display:inline-flex;align-items:center;gap:14px;text-decoration:none;font-family:Archivo;
+    font-weight:800;text-transform:uppercase;font-size:16px;letter-spacing:.01em;padding:18px 30px;
+    transition:transform .15s ease,filter .15s ease}
+  .cta-sq:hover{transform:translateY(-2px);filter:brightness(1.06)}
+  .cta-sq span{font-family:"IBM Plex Mono";font-weight:400;font-size:18px}
+  /* pill arrow CTA, spotify */
+  .cta-pill{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--white);
+    text-decoration:none;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px;
+    transition:transform .15s ease,background .15s ease}
+  .cta-pill:hover{transform:translateY(-2px);background:var(--coral)}
+
+  /* ============ HERO: dark ground, lime type, sliding carousel below ============ */
+  .hero{background:var(--green);color:var(--lime);padding:26px 0 66px;overflow:hidden}
+  .hero .topline{display:flex;justify-content:space-between;align-items:center}
+  .hero .topline .mono{color:rgba(198,217,78,.72)}
+  .hero .topline a{color:var(--green);background:var(--lime);text-decoration:none;font-weight:700;
+    font-size:14px;padding:11px 22px;border-radius:999px}
+  .giant{font-family:Archivo;font-weight:900;text-transform:uppercase;letter-spacing:-.045em;
+    font-size:clamp(76px,16.4vw,250px);line-height:.82;margin-top:14px;
+    display:flex;align-items:flex-start;justify-content:center}
+  .giant sup{font-size:.16em;font-weight:700;letter-spacing:0;margin-top:.5em}
+  .hero .middle{text-align:center;max-width:760px;margin:4vh auto 0;padding:0 20px}
+  .hero h1{font-size:clamp(30px,4.4vw,58px)}
+  .hero .sub{margin-top:20px;font-size:17px;line-height:1.6;color:rgba(198,217,78,.84);font-weight:500;max-width:52ch;margin-inline:auto}
+  .hero .cta-sq{margin-top:30px;background:var(--lime);color:var(--green)}
+
+  /* sliding mixed-size carousel, momoamo rhythm */
+  .marquee{margin-top:74px;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw)}
+  .mtrack{display:flex;align-items:flex-start;gap:46px;width:max-content;
+    animation:slide 46s linear infinite;padding:0 23px}
+  .mtrack:hover{animation-play-state:paused}
+  @keyframes slide{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  @media (prefers-reduced-motion: reduce){.mtrack{animation:none;transform:translateX(-50%)}}
+  .mi{flex:0 0 auto;overflow:hidden;border-radius:10px;background:var(--green-soft)}
+  .mi img{width:100%;height:100%;object-fit:cover;display:block}
+  .m1{width:clamp(220px,24vw,400px);aspect-ratio:4/5;margin-top:96px}
+  .m2{width:clamp(240px,27vw,460px);aspect-ratio:5/7;margin-top:0}
+  .m3{width:clamp(230px,25vw,420px);aspect-ratio:4/3;margin-top:168px}
+  .m4{width:clamp(210px,22vw,370px);aspect-ratio:1;margin-top:48px}
+  .m5{width:clamp(200px,21vw,350px);aspect-ratio:3/4;margin-top:130px}
+  .m6{width:clamp(250px,28vw,470px);aspect-ratio:16/11;margin-top:16px}
+
+  /* ============ LINEUP: light ground, hairline editorial list ============ */
+  .lineup{background:var(--ground);padding:104px 0 96px}
+  .lineup h2{font-size:clamp(40px,7.4vw,110px);max-width:14ch}
+  .list{margin-top:56px;border-top:1px solid rgba(25,26,28,.26)}
+  .row{display:grid;grid-template-columns:1fr auto auto;gap:24px;align-items:baseline;
+    padding:26px 4px;border-bottom:1px solid rgba(25,26,28,.26);text-decoration:none;color:inherit;
+    transition:padding-left .18s ease,color .18s ease}
+  .row:hover{padding-left:20px;color:var(--coral)}
+  .row .name{font-family:Archivo;font-weight:800;text-transform:uppercase;font-size:clamp(20px,2.4vw,30px);letter-spacing:-.02em}
+  .row .status{font-family:Outfit;font-size:15px;color:#6c6e72;font-weight:500}
+  .row .when{font-family:"IBM Plex Mono";font-size:13px;color:#6c6e72;min-width:96px;text-align:right}
+  .row.open .status{color:var(--coral);font-weight:700}
+  .row.open .when{color:var(--ink)}
+
+  /* ============ TILES: spotify rounded blocks ============ */
+  .tiles{background:var(--ground);padding:0 0 104px}
+  .tilegrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .tile{border-radius:26px;overflow:hidden;position:relative;min-height:420px;display:flex}
+  .tile.photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .tile.flat{flex-direction:column;justify-content:space-between;padding:40px 38px}
+  .tile.flat h3{font-family:Archivo;font-weight:800;font-size:clamp(26px,3vw,40px);letter-spacing:-.025em;
+    line-height:1.02;max-width:15ch;text-transform:uppercase}
+  .tile.flat .btm{max-width:44ch}
+  .tile.flat p{font-size:16px;line-height:1.6;font-weight:500;margin-bottom:24px}
+  .t-violet{background:var(--violet-tint);color:var(--ink)}
+  .t-lime{background:var(--lime);color:var(--ink)}
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;border-radius:26px;overflow:hidden}
+  .strip .s{aspect-ratio:9/20;overflow:hidden;background:#ddd}
+  .strip .s img{width:100%;height:100%;object-fit:cover;display:block}
+  @media(max-width:900px){.tilegrid{grid-template-columns:1fr}.tile{min-height:320px}
+    .strip{grid-template-columns:repeat(2,1fr)}}
+
+  /* ============ RAIL: deep coral, horizontal photo row with captions ============ */
+  .rail{background:var(--coral-deep);color:var(--sun);padding:100px 0 96px}
+  .railhead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+  .railhead h2{font-size:clamp(34px,5.6vw,84px);max-width:16ch;color:var(--sun)}
+  .arrows{display:flex;gap:14px}
+  .arrows button{width:54px;height:54px;border-radius:999px;border:2px solid var(--sun);background:transparent;
+    color:var(--sun);font-size:20px;cursor:pointer;font-family:"IBM Plex Mono";transition:background .15s,color .15s}
+  .arrows button:hover{background:var(--sun);color:var(--coral-deep)}
+  .track{margin-top:44px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding-bottom:4px}
+  .track::-webkit-scrollbar{display:none}
+  .card{flex:0 0 min(420px,72vw);scroll-snap-align:start;position:relative;aspect-ratio:1;overflow:hidden;background:var(--coral-soft)}
+  .card img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .lab{position:absolute;left:22px;bottom:20px;right:22px;color:#fff;z-index:2}
+  .card .lab b{font-family:Archivo;font-weight:800;text-transform:uppercase;font-size:18px;letter-spacing:-.01em;display:block}
+  .card .lab span{font-size:14px;color:rgba(255,255,255,.86);font-weight:500}
+  .card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 52%,rgba(0,0,0,.72));z-index:1}
+
+  /* ============ DEAL: our green (matches the header), lime type, closes the page as the footer ============ */
+  .deal{background:var(--green);color:var(--lime);padding:104px 0 0}
+  .deal h2{font-size:clamp(34px,5.4vw,80px);max-width:17ch}
+  .deal .lede{margin-top:22px;font-size:17px;line-height:1.65;max-width:46ch;color:rgba(198,217,78,.8);font-weight:500}
+  .terms{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .term{padding:0 34px;border-left:1px solid rgba(198,217,78,.28)}
+  .term:first-child{padding-left:0;border-left:none}
+  .term:last-child{padding-right:0}
+  .term .k{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sun)}
+  .term h3{margin-top:14px;font-family:Archivo;font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:-.02em;color:#fff}
+  .term p{margin-top:12px;font-size:15px;line-height:1.7;color:rgba(255,255,255,.76);font-weight:500}
+  .foot{margin-top:88px;padding:30px 0 40px;border-top:1px solid rgba(198,217,78,.28);
+    display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .foot .mono{color:rgba(198,217,78,.7)}
+  .foot a{color:var(--lime);text-decoration:none;font-family:Archivo;font-weight:800;text-transform:uppercase;
+    font-size:15px;display:inline-flex;align-items:center;gap:12px;border-bottom:2px solid var(--lime);
+    padding-bottom:5px;transition:gap .2s ease,color .2s,border-color .2s}
+  .foot a:hover{gap:20px;color:var(--sun);border-color:var(--sun)}
+  @media(max-width:900px){.terms{grid-template-columns:1fr;gap:36px}
+    .term{padding:0!important;border-left:none!important}}
+</style>
+</head>
+<body>
+
+<!-- HERO: momoamo colour block, giant wordmark, sliding carousel below the copy -->
+<section class="hero">
+  <div class="wrap">
+    <div class="topline">
+      <span class="mono">Lagos, Nigeria</span>
+      <a href="https://tally.so" target="_blank" rel="noopener">Get a seat</a>
+    </div>
+    <div class="giant">IJE<sup>&reg;</sup></div>
+    <div class="middle">
+      <h1 class="display">Your next good evening starts here</h1>
+      <p class="sub">Six strangers, one table, things you already love doing. We don't promise you friends. We promise the evening.</p>
+      <a class="cta-sq" href="https://tally.so" target="_blank" rel="noopener">Get a seat <span>&rarr;</span></a>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="mtrack">
+      <div class="mi m1"><img src="img/moment-passing.jpg" alt="" style="object-position:60% 40%"></div>
+      <div class="mi m2"><img src="img/moment-clink.jpg" alt="" style="object-position:35% 55%"></div>
+      <div class="mi m3"><img src="img/moment-aftermath.jpg" alt="" style="object-position:50% 50%"></div>
+      <div class="mi m4"><img src="img/moment-clink.jpg" alt="" style="object-position:70% 30%"></div>
+      <div class="mi m5"><img src="img/moment-aftermath.jpg" alt="" style="object-position:25% 65%"></div>
+      <div class="mi m6"><img src="img/moment-passing.jpg" alt="" style="object-position:15% 50%"></div>
+      <div class="mi m1"><img src="img/moment-passing.jpg" alt="" style="object-position:60% 40%"></div>
+      <div class="mi m2"><img src="img/moment-clink.jpg" alt="" style="object-position:35% 55%"></div>
+      <div class="mi m3"><img src="img/moment-aftermath.jpg" alt="" style="object-position:50% 50%"></div>
+      <div class="mi m4"><img src="img/moment-clink.jpg" alt="" style="object-position:70% 30%"></div>
+      <div class="mi m5"><img src="img/moment-aftermath.jpg" alt="" style="object-position:25% 65%"></div>
+      <div class="mi m6"><img src="img/moment-passing.jpg" alt="" style="object-position:15% 50%"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LINEUP: momoamo hairline list -->
+<section class="lineup">
+  <div class="wrap">
+    <h2 class="display">Nights on<br>the calendar</h2>
+    <div class="list">
+      <a class="row open" href="https://tally.so" target="_blank" rel="noopener">
+        <span class="name">Dinner Club</span><span class="status">now boarding</span><span class="when">Thursdays</span></a>
+      <a class="row" href="#"><span class="name">Beach Day</span><span class="status">coming soon</span><span class="when">2026</span></a>
+      <a class="row" href="#"><span class="name">Card Night</span><span class="status">coming soon</span><span class="when">2026</span></a>
+      <a class="row" href="#"><span class="name">Rooftop Hang</span><span class="status">coming soon</span><span class="when">2026</span></a>
+      <a class="row" href="#"><span class="name">Film Club</span><span class="status">coming soon</span><span class="when">2027</span></a>
+      <a class="row" href="#"><span class="name">Market Crawl</span><span class="status">coming soon</span><span class="when">2027</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TILES: spotify rounded blocks -->
+<section class="tiles">
+  <div class="wrap">
+    <div class="tilegrid">
+      <div class="tile photo"><img src="img/moment-passing.jpg" alt="A Lagos courtyard dinner at golden hour"></div>
+      <div class="tile flat t-violet">
+        <h3>How a table comes together</h3>
+        <div class="btm">
+          <p>You answer twelve questions. We match five strangers to how you talk and laugh, book the room, and send the address the morning of. You just show up hungry.</p>
+          <a class="cta-pill" href="https://tally.so" target="_blank" rel="noopener">Start the form <span>&rarr;</span></a>
+        </div>
+      </div>
+      <div class="tile flat t-lime">
+        <h3>Dinners now. Everything else next.</h3>
+        <div class="btm">
+          <p>Thursdays in Victoria Island are live. Beach days, card nights and rooftops are drafted, and the form is where you vote for which one gets built first.</p>
+          <a class="cta-pill" href="https://tally.so" target="_blank" rel="noopener">Cast your vote <span>&rarr;</span></a>
+        </div>
+      </div>
+      <div class="strip">
+        <div class="s"><img src="img/moment-clink.jpg" alt="" style="object-position:30% 50%"></div>
+        <div class="s"><img src="img/moment-aftermath.jpg" alt="" style="object-position:60% 40%"></div>
+        <div class="s"><img src="img/moment-passing.jpg" alt="" style="object-position:40% 60%"></div>
+        <div class="s"><img src="img/moment-clink.jpg" alt="" style="object-position:70% 30%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RAIL: momoamo horizontal photo row with captions -->
+<section class="rail">
+  <div class="wrap">
+    <div class="railhead">
+      <h2 class="display">An Ije night is...</h2>
+      <div class="arrows">
+        <button type="button" data-dir="-1" aria-label="Previous">&larr;</button>
+        <button type="button" data-dir="1" aria-label="Next">&rarr;</button>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="track" id="track">
+      <div class="card"><img src="img/moment-passing.jpg" alt="Hands reaching across a Lagos dinner table">
+        <div class="lab"><b>Six seats, one table</b><span>Never a room full of name tags</span></div></div>
+      <div class="card"><img src="img/moment-clink.jpg" alt="A private beach day in Lagos">
+        <div class="lab"><b>Somewhere good, already booked</b><span>Address lands the morning of</span></div></div>
+      <div class="card"><img src="img/moment-aftermath.jpg" alt="A Lagos table after dessert">
+        <div class="lab"><b>Nobody watching the clock</b><span>The night ends when it ends</span></div></div>
+      <div class="card"><img src="img/moment-passing.jpg" alt="A Lagos dinner in progress">
+        <div class="lab"><b>Better questions than "what do you do"</b><span>Small talk stays at the door</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEAL: navy block, mint type, closes the page -->
+<section class="deal">
+  <div class="wrap">
+    <h2 class="display">The deal, with no fine print</h2>
+    <p class="lede">We are an experiences company, not a friendship app. Here is exactly what that means.</p>
+    <div class="terms">
+      <div class="term"><span class="k">We guarantee</span><h3>A genuinely good evening</h3>
+        <p>Good spot, good plan, five people matched to how you talk and laugh. That part is on us.</p></div>
+      <div class="term"><span class="k">If it clicks</span><h3>Keep them, through us</h3>
+        <p>Loved your table? Tell us. We'll seat you together again. No awkward number-asking required.</p></div>
+      <div class="term"><span class="k">If it doesn't</span><h3>Tell us. We do our thing.</h3>
+        <p>No hard feelings, no repeat seating. Your next table gets matched smarter because you said so.</p></div>
+    </div>
+    <div class="foot">
+      <span class="mono">Ije &middot; Curated experiences &middot; Lagos</span>
+      <a href="https://tally.so" target="_blank" rel="noopener">Get a seat <span>&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<script>
+// momoamo-style rail arrows
+document.querySelectorAll(".arrows button").forEach((b) => {
+  b.addEventListener("click", () => {
+    const t = document.getElementById("track");
+    t.scrollBy({ left: (t.querySelector(".card").offsetWidth + 14) * +b.dataset.dir, behavior: "smooth" });
+  });
+});
+</script>
+<script src="variants-nav.js"></script>
+</body>
+</html>

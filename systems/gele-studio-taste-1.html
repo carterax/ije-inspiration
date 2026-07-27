@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gele Studio / Taste V1 Split Portrait</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#1d4f43;--deep:#143b32;--gold:#c99a4b;--bronze:#8a6531;--pearl:#f1e8d8}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--green);color:var(--pearl);font-family:Outfit,sans-serif;
+    background-image:radial-gradient(1200px 800px at 30% 20%, rgba(241,232,216,.06), transparent 60%)}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 36px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+  .wordmark{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600;letter-spacing:.24em}
+  nav a{color:var(--deep);background:var(--gold);padding:12px 28px;text-decoration:none;font-weight:500;
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  nav a:hover{background:var(--pearl)}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;min-height:76dvh;padding:32px 0 56px}
+  h1{font-family:"Cormorant Garamond",serif;font-size:clamp(44px,6vw,82px);font-weight:500;line-height:1.08}
+  h1 em{font-style:italic;color:var(--gold)}
+  .sub{margin-top:22px;font-size:16px;font-weight:300;color:#cfddd3;max-width:38ch;line-height:1.7}
+  .cta{margin-top:34px;display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:15px 36px;
+    text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+  .cta:hover{background:var(--gold);color:var(--deep)}
+  .frame{justify-self:center;width:min(100%,400px);border:1px solid var(--gold);padding:12px;background:var(--deep)}
+  .imgslot{aspect-ratio:4/5;border:2px dashed rgba(201,154,75,.55);display:flex;align-items:center;
+    justify-content:center;text-align:center;font-family:Outfit;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--gold);padding:20px;line-height:1.8}
+  .frame p{margin-top:12px;text-align:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9db3a7}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Reserve</a></nav>
+  <section class="hero">
+    <div>
+      <h1>Come as you are. <em>Leave as a portrait.</em></h1>
+      <p class="sub">Six strangers, dressed like it matters. Deep green rooms, gold light. The best table in Lagos hasn't met yet.</p>
+      <a class="cta" href="#">Reserve a seat</a>
+    </div>
+    <div class="frame">
+      <!-- HIGGSFIELD: [SUBJECT: a gold gele headwrap tied and displayed on a stand against a saturated deep green wall, no people]
+           retro editorial still life, warm golden studio light, film grain, dignified composition. 4:5 -->
+      <div class="imgslot">IMAGE SLOT<br>gold gele on a stand, green wall<br>4:5 · no people</div>
+      <p>Study in green and gold</p>
+    </div>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

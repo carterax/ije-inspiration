@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Social / Impeccable V5 Seat Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--soft:#6b7280}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 32px 72px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:700;font-size:24px}
+  nav a{background:var(--ink);color:var(--cream);padding:12px 26px;border-radius:999px;text-decoration:none;
+    font-weight:600;font-size:14px}
+  .hero{padding:24px 0 8px;text-align:center;max-width:640px;margin:0 auto}
+  h1{font-size:clamp(30px,4.4vw,50px);font-weight:700;line-height:1.08}
+  h1 span{color:var(--orange)}
+  .hero p{margin-top:10px;color:#4b5563;font-size:16px}
+  .tables{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;padding:28px 0}
+  .tbl{background:#fff;border-radius:12px;padding:24px;border-top:5px solid var(--amber)}
+  .tbl:nth-child(2){border-top-color:var(--orange)}
+  .tbl:nth-child(3){border-top-color:var(--ink)}
+  .tbl h3{font-weight:700;font-size:19px;text-transform:uppercase}
+  .tbl .mono{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+  .map{margin:20px auto;width:200px;position:relative;aspect-ratio:2/1}
+  .map .board{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:140px;height:44px;
+    background:var(--cream);border:2px solid var(--ink);border-radius:8px}
+  .seat{position:absolute;width:26px;height:26px;border-radius:50%;border:2px solid var(--ink);
+    display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono";font-size:9px;font-weight:600}
+  .taken{background:var(--ink);color:var(--cream)}
+  .open{background:var(--amber);cursor:pointer}
+  .open:hover{background:var(--orange);color:var(--cream)}
+  .s1{left:16px;top:0}.s2{left:87px;top:0}.s3{right:16px;top:0}
+  .s4{left:16px;bottom:0}.s5{left:87px;bottom:0}.s6{right:16px;bottom:0}
+  .tbl .legend{display:flex;justify-content:center;gap:18px;font-family:"JetBrains Mono";font-size:10px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+  .tbl .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;font-style:normal}
+  .tbl .legend .a i{background:var(--amber)}
+  .tbl .legend .b i{background:var(--ink)}
+  .tbl .cta{display:block;margin-top:18px;text-align:center;background:var(--orange);color:var(--cream);
+    padding:12px;border-radius:6px;text-decoration:none;font-weight:600;font-size:13px;text-transform:uppercase}
+  .tbl .cta:hover{background:var(--amber);color:var(--ink)}
+  .note{text-align:center;font-family:"JetBrains Mono";font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Get a seat</a></nav>
+  <section class="hero">
+    <h1>Six chairs. <span>Pick yours.</span></h1>
+    <p>Filled seats are strangers already in. Amber seats are waiting for you.</p>
+  </section>
+  <section class="tables">
+    <article class="tbl">
+      <div class="mono">Thu 7pm · Ikoyi</div><h3>Dinner Club</h3>
+      <div class="map"><div class="board"></div>
+        <span class="seat taken s1">✓</span><span class="seat taken s2">✓</span><span class="seat open s3">?</span>
+        <span class="seat taken s4">✓</span><span class="seat open s5">?</span><span class="seat taken s6">✓</span></div>
+      <div class="legend"><span class="a"><i></i>Open</span><span class="b"><i></i>Taken</span></div>
+      <a class="cta" href="#">Take seat 3 or 5</a>
+    </article>
+    <article class="tbl">
+      <div class="mono">Fri 8pm · Yaba</div><h3>Card Night</h3>
+      <div class="map"><div class="board"></div>
+        <span class="seat taken s1">✓</span><span class="seat open s2">?</span><span class="seat open s3">?</span>
+        <span class="seat open s4">?</span><span class="seat taken s5">✓</span><span class="seat open s6">?</span></div>
+      <div class="legend"><span class="a"><i></i>Open</span><span class="b"><i></i>Taken</span></div>
+      <a class="cta" href="#">Four seats open</a>
+    </article>
+    <article class="tbl">
+      <div class="mono">Sat 6pm · VI</div><h3>Rooftop Hang</h3>
+      <div class="map"><div class="board"></div>
+        <span class="seat taken s1">✓</span><span class="seat taken s2">✓</span><span class="seat taken s3">✓</span>
+        <span class="seat taken s4">✓</span><span class="seat taken s5">✓</span><span class="seat taken s6">✓</span></div>
+      <div class="legend"><span class="a"><i></i>Open</span><span class="b"><i></i>Taken</span></div>
+      <a class="cta" href="#">Join the waitlist</a>
+    </article>
+  </section>
+  <p class="note">Every ✓ is a real person who said yes before meeting anyone.</p>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

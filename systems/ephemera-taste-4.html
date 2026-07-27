@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ephemera / Taste V4 Photo Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#f4f2ec;--ink:#22201b;--soft:#6d685e;--stamp:#c8442c;--kraft:#cbb896}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:"Space Grotesk",sans-serif}
+  .page{max-width:1200px;margin:0 auto;padding:0 32px 64px}
+  nav{display:flex;justify-content:space-between;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--ink)}
+  .wordmark{font-weight:700;font-size:22px}
+  nav a{color:var(--ink);font-weight:500;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+  .hero{margin:28px 0;border:1px solid var(--ink);background:#fff;padding:14px}
+  .heroslot{aspect-ratio:21/9;border:2px dashed var(--soft);display:flex;align-items:center;justify-content:center;
+    font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);
+    text-align:center;padding:16px}
+  .hero .cap{display:flex;justify-content:space-between;padding:12px 4px 0;font-family:"IBM Plex Mono";
+    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin:16px 0 24px}
+  h1{font-size:clamp(32px,4.4vw,52px);line-height:1.06;font-weight:700;max-width:20ch}
+  h1 em{font-style:normal;color:var(--stamp)}
+  .head a{background:var(--ink);color:var(--paper);padding:14px 30px;text-decoration:none;font-weight:500;flex-shrink:0}
+  .head a:hover{background:var(--stamp)}
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .ph{border:1px solid var(--ink);background:#fff;padding:10px}
+  .ph .slot{aspect-ratio:4/5;border:2px dashed var(--soft);display:flex;align-items:center;justify-content:center;
+    font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
+    text-align:center;padding:10px}
+  .ph p{margin-top:8px;font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--soft)}
+  @media(max-width:820px){.strip{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><div class="wordmark">Ije</div><a href="#">Claim a seat</a></nav>
+  <!-- HIGGSFIELD: [SUBJECT: overhead flat lay of six empty plates, six glasses, deck of cards, candles and a folded note on a wooden table, no people]
+       warm archival light, film grain, kraft and cream tones. 21:9 -->
+  <section class="hero">
+    <div class="heroslot">HERO IMAGE SLOT · overhead: six plates, glasses, cards, candles, folded note · 21:9 · no people</div>
+    <div class="cap"><span>Plate 01 · The set table</span><span>Thursday, before anyone arrives</span></div>
+  </section>
+  <div class="head">
+    <h1>The evidence of good evenings, <em>filed weekly.</em></h1>
+    <a href="#">Claim a seat</a>
+  </div>
+  <section class="strip">
+    <!-- HIGGSFIELD per slot: single-object archival photo, warm even light, textured paper ground, no people -->
+    <div class="ph"><div class="slot">SLOT · movie tickets on table · 4:5</div><p>Film club</p></div>
+    <div class="ph"><div class="slot">SLOT · cards mid-game · 4:5</div><p>Card night</p></div>
+    <div class="ph"><div class="slot">SLOT · candle and two glasses · 4:5</div><p>Dinner club</p></div>
+    <div class="ph"><div class="slot">SLOT · rain on restaurant window · 4:5</div><p>Stayed late</p></div>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

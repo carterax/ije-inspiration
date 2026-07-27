@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Momoamo Spread / Impeccable</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--soft:#6b7280}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 36px}
+  nav{display:flex;justify-content:space-between;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--ink)}
+  .wordmark{font-weight:700;font-size:24px}
+  nav .issue{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+  nav a{color:var(--ink);font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+  nav a:hover{color:var(--orange)}
+  .spread{position:relative;display:grid;grid-template-columns:repeat(12,1fr);padding:48px 0 88px;min-height:76dvh}
+  .img-a{grid-column:1/7;grid-row:1;aspect-ratio:3/4;max-height:58dvh;border-radius:6px;
+    background:linear-gradient(155deg,var(--orange),#7d3413 75%)}
+  .img-b{grid-column:9/13;grid-row:1;margin-top:15vh;aspect-ratio:3/4;max-height:42dvh;border-radius:6px;
+    background:linear-gradient(200deg,var(--amber),#8a5c00 78%)}
+  .headline{grid-column:4/12;grid-row:1;align-self:center;z-index:2;margin-left:-6%}
+  h1{font-size:clamp(46px,6.8vw,96px);font-weight:700;line-height:1.02;text-transform:uppercase;
+    text-shadow:0 2px 0 var(--cream)}
+  h1 span{color:var(--orange)}
+  .standfirst{grid-column:4/9;grid-row:2;margin-top:36px;font-size:17px;font-weight:300;line-height:1.7;color:#4b5563}
+  .standfirst .cta{display:inline-block;margin-top:20px;background:var(--orange);color:var(--cream);
+    padding:13px 28px;border-radius:4px;text-decoration:none;font-weight:600;font-size:14px}
+  .standfirst .cta:hover{background:var(--amber);color:var(--ink)}
+  .quote{background:var(--ink);color:var(--cream);margin:0 -100vw;padding:72px 100vw}
+  .quote blockquote{font-size:clamp(24px,3.2vw,40px);line-height:1.35;font-weight:300;max-width:26ch}
+  .quote blockquote b{color:var(--amber);font-weight:600}
+  .quote cite{display:block;margin-top:18px;font-style:normal;font-family:"JetBrains Mono";font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:#9ca3af}
+  @media(max-width:820px){
+    .spread{display:block;padding-bottom:48px}
+    .img-b{display:none}
+    .headline{margin:24px 0 0}
+    .standfirst{margin-top:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><div class="issue">Issue 01 · Lagos</div><a href="#">Get a seat</a></nav>
+  <section class="spread">
+    <div class="img-a" role="img" aria-label="Editorial image placeholder"></div>
+    <div class="headline"><h1>Strangers, <span>beautifully</span> seated.</h1></div>
+    <div class="img-b" role="img" aria-label="Editorial detail placeholder"></div>
+    <div class="standfirst">
+      <p>Every Thursday, Ije sets one long table for six people who have never met. The food is good. The company is the point.</p>
+      <a class="cta" href="#">Request your seat</a>
+    </div>
+  </section>
+</div>
+<section class="quote">
+  <div class="wrap" style="padding:0">
+    <blockquote>"I came for the jollof. I stayed for the argument about <b>whether Lagos or Accra</b> throws the better party."</blockquote>
+    <cite>Tobi A. · Table No. 12, Ikoyi</cite>
+  </div>
+</section>
+</body>
+</html>

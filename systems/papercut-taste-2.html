@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Papercut / Taste V2 Scrap Board</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--kraft:#c9b797;--paper:#efe9db;--ink:#26221a;--teal:#7fa093;--mustard:#d9a91f;--brick:#bf4f30;--lav:#a9a3c9}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--kraft);color:var(--ink);font-family:Archivo,sans-serif;
+    background-image:linear-gradient(rgba(38,34,26,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(38,34,26,.06) 1px, transparent 1px);background-size:52px 52px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px 72px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:900;font-size:24px;background:var(--paper);padding:6px 14px;transform:rotate(-2deg);
+    box-shadow:2px 3px 0 rgba(38,34,26,.25)}
+  nav a{background:var(--ink);color:var(--paper);padding:11px 24px;text-decoration:none;font-weight:700;
+    font-size:14px;transform:rotate(1.2deg);display:inline-block}
+  .intro{padding:36px 0 30px;max-width:560px}
+  h1{font-size:clamp(34px,4.8vw,56px);font-weight:900;line-height:1.05;text-transform:uppercase;
+    background:var(--paper);display:inline;box-decoration-break:clone;-webkit-box-decoration-break:clone;
+    padding:4px 12px;box-shadow:2px 3px 0 rgba(38,34,26,.22)}
+  h1 em{font-style:normal;color:var(--brick)}
+  .board{display:flex;flex-wrap:wrap;gap:22px}
+  .note{flex:1 1 240px;padding:22px;min-height:160px;box-shadow:3px 4px 0 rgba(38,34,26,.2);position:relative}
+  .note::before{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(2deg);
+    width:70px;height:18px;background:rgba(239,233,219,.7);border:1px solid rgba(38,34,26,.15)}
+  .note:nth-child(1){background:var(--paper);transform:rotate(-1.4deg);clip-path:polygon(1% 4%, 99% 0, 100% 96%, 0 100%)}
+  .note:nth-child(2){background:var(--teal);color:var(--paper);transform:rotate(1deg);clip-path:polygon(0 0, 100% 4%, 98% 100%, 2% 96%)}
+  .note:nth-child(3){background:var(--mustard);transform:rotate(-.6deg);clip-path:polygon(2% 2%, 98% 0, 100% 98%, 0 96%)}
+  .note:nth-child(4){background:var(--lav);transform:rotate(1.4deg);clip-path:polygon(0 3%, 100% 0, 97% 100%, 1% 97%)}
+  .note:nth-child(5){background:var(--paper);transform:rotate(-1deg);clip-path:polygon(1% 0, 100% 5%, 99% 100%, 0 95%)}
+  .note:nth-child(6){background:var(--brick);color:var(--paper);transform:rotate(.8deg);clip-path:polygon(0 0, 99% 3%, 100% 97%, 2% 100%)}
+  .note .mono{font-family:"IBM Plex Mono";font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;opacity:.75}
+  .note h3{margin-top:8px;font-size:20px;font-weight:900;text-transform:uppercase}
+  .note p{margin-top:8px;font-size:13.5px;line-height:1.55;font-weight:500}
+  .end{margin-top:34px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .end b{font-size:19px;font-weight:900;text-transform:uppercase;background:var(--paper);padding:8px 14px;
+    transform:rotate(-.8deg);display:inline-block;box-shadow:2px 3px 0 rgba(38,34,26,.2)}
+  .end a{background:var(--brick);color:var(--paper);font-weight:900;text-transform:uppercase;padding:14px 30px;
+    text-decoration:none;font-size:14px;transform:rotate(1deg);clip-path:polygon(2% 6%, 98% 0, 100% 92%, 0 100%)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Add your piece</a></nav>
+  <section class="intro"><h1>The board of <em>torn-off moments.</em></h1></section>
+  <section class="board">
+    <div class="note"><div class="mono">Overheard</div><h3>"Wait, you too?"</h3><p>Two strangers, same hometown street. Found out at the jollof course.</p></div>
+    <div class="note"><div class="mono">Kept</div><h3>The wine label</h3><p>Signed by the whole table. Someone framed it.</p></div>
+    <div class="note"><div class="mono">Started</div><h3>A group chat</h3><p>Named after an inside joke from minute twenty. Still active.</p></div>
+    <div class="note"><div class="mono">Settled</div><h3>The great suya debate</h3><p>Yaba vs Ikeja. Three rounds. No survivors.</p></div>
+    <div class="note"><div class="mono">Promised</div><h3>Same time next month</h3><p>They kept it. Fourteen dinners and counting.</p></div>
+    <div class="note"><div class="mono">Torn for you</div><h3>Your moment here</h3><p>Thursday. Six strangers. One blank scrap waiting.</p></div>
+  </section>
+  <div class="end">
+    <b>The best table in Lagos hasn't met yet.</b>
+    <a href="#">Add your piece</a>
+  </div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

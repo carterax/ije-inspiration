@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courtyard / Impeccable V4 Photo Dusk</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--dusk:#2a1509}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--dusk);color:var(--cream);font-family:"Chakra Petch",sans-serif}
+  .hero{min-height:calc(82dvh - 46px);position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+    border:2px solid var(--amber);margin:14px;border-radius:10px;overflow:hidden}
+  .heroslot{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .heroslot i{border:2px dashed var(--amber);color:var(--amber);padding:18px 24px;font-style:normal;
+    font-family:"JetBrains Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+  .hero nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;
+    padding:20px 28px;z-index:2}
+  .wordmark{font-weight:700;font-size:20px;letter-spacing:.24em}
+  .hero nav a{background:var(--amber);color:var(--ink);padding:10px 22px;border-radius:4px;text-decoration:none;
+    font-weight:600;font-size:13px}
+  .hero-copy{position:relative;z-index:2;padding:28px;background:linear-gradient(transparent, rgba(42,21,9,.9))}
+  .hero-copy h1{font-size:clamp(28px,4.2vw,50px);font-weight:700;line-height:1.1;max-width:20ch;text-transform:uppercase}
+  .hero-copy h1 span{color:var(--amber)}
+  .hero-copy a{margin-top:16px;display:inline-block;background:var(--orange);color:var(--cream);
+    padding:13px 30px;border-radius:4px;text-decoration:none;font-weight:600;font-size:14px}
+  .hero-copy a:hover{background:var(--amber);color:var(--ink)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:4px 14px 14px}
+  .g{aspect-ratio:4/3;border-radius:8px;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:14px;background:#3a1f0d}
+  .g i{border:2px dashed var(--amber);color:var(--amber);padding:12px 16px;font-style:normal;
+    font-family:"JetBrains Mono";font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+  .bar{margin:0 14px 14px;background:var(--cream);color:var(--ink);border-radius:8px;padding:20px 24px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .bar b{font-weight:700;font-size:clamp(16px,2.1vw,21px);text-transform:uppercase}
+  .bar b span{color:var(--orange)}
+  .bar a{background:var(--orange);color:var(--cream);padding:12px 26px;border-radius:4px;text-decoration:none;
+    font-weight:600;font-size:13px}
+  .bar a:hover{background:var(--amber);color:var(--ink)}
+  @media(max-width:700px){.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!-- HIGGSFIELD: [SUBJECT: long dinner table in a courtyard at night, string lights overhead, candles, six empty chairs, no people]
+     warm amber glow on deep dusk, film grain. 16:9 -->
+<section class="hero">
+  <div class="heroslot"><i>HERO IMAGE SLOT<br>courtyard table at night, string lights, six empty chairs<br>16:9 · no people</i></div>
+  <nav><div class="wordmark">IJE</div><a href="#">Join Thursday</a></nav>
+  <div class="hero-copy">
+    <h1>The best table in Lagos <span>hasn't met yet.</span></h1>
+    <a href="#">Join Thursday</a>
+  </div>
+</section>
+<section class="gallery">
+  <!-- HIGGSFIELD: [SUBJECT: string lights through tree branches at night, no people] amber grade. 4:3 -->
+  <div class="g"><i>SLOT · string lights through trees<br>4:3</i></div>
+  <!-- HIGGSFIELD: [SUBJECT: candle beside two wine glasses on linen, warm low light, no people] 4:3 -->
+  <div class="g"><i>SLOT · candle and two glasses<br>4:3</i></div>
+  <!-- HIGGSFIELD: [SUBJECT: rain on a warm-lit restaurant window at night, no people] 4:3 -->
+  <div class="g"><i>SLOT · rain on the window<br>4:3</i></div>
+</section>
+<div class="bar">
+  <b>Six strangers. One evening. <span>See what happens.</span></b>
+  <a href="#">Join Thursday</a>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

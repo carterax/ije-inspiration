@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Social / Taste V1G Spread</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* V1G (owner's brief): built off V1B. Momoamo x Life at Spotify.
+     From momoamo AS IT IS NOW (it was redesigned since the moodboard was
+     saved): warm neutral restraint, uppercase editorial headlines, italics
+     used sparingly for emphasis, full-width image bands alternating with
+     text sections, three-column principle cards, arrow-forward CTAs,
+     generous vertical spacing.
+     From Life at Spotify: colour-coded modular photo tiles, conversational
+     metaphor copy, one confident CTA.
+     No paper texture. Positioning unchanged. */
+  :root{--ground:#f4f1ec;--card:#fffdf9;--ink:#1f1e1b;--soft:#6b675f;--line:#e0dbd1;--gold:#a8875a;
+    --coral:#e2543e;--teal:#2e8f83;--violet:#7b6cd9;--lime:#c6d94e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:Outfit,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 30px}
+  .narrow{max-width:900px}
+  .floats{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  @media(max-width:1023px){.floats{display:none}}
+  .float{position:absolute;left:0;top:0;width:96px;opacity:0;will-change:transform;
+    filter:drop-shadow(0 10px 18px rgba(31,30,27,.2))}
+  .float img{width:100%;display:block}
+  .page{position:relative;z-index:1}
+
+  /* nav */
+  nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+  .wordmark{font-weight:800;font-size:24px;letter-spacing:.02em;text-transform:uppercase}
+  .wordmark i{font-style:normal;color:var(--coral)}
+  nav .right{display:flex;align-items:center;gap:26px}
+  nav .loc{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+  nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.1em;
+    text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:3px;transition:color .15s,border-color .15s}
+  nav a:hover{color:var(--coral);border-color:var(--coral)}
+
+  /* editorial opening */
+  .open{padding:96px 0 72px}
+  .kicker{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+  h1{margin-top:26px;font-size:clamp(40px,6.2vw,80px);font-weight:800;line-height:1.02;
+    text-transform:uppercase;letter-spacing:-.015em;max-width:20ch}
+  h1 em{font-style:italic;font-weight:500;text-transform:none;letter-spacing:-.01em;color:var(--gold)}
+  .standfirst{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:860px}
+  .standfirst p{font-size:17px;line-height:1.7;color:var(--soft);font-weight:500}
+  .standfirst p em{font-style:italic;color:var(--ink)}
+  .arrow{margin-top:36px;display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);
+    font-weight:700;font-size:17px;letter-spacing:.06em;text-transform:uppercase;
+    border-bottom:2px solid var(--ink);padding-bottom:8px;transition:gap .2s ease,color .2s,border-color .2s}
+  .arrow span{font-family:"IBM Plex Mono";font-weight:400}
+  .arrow:hover{gap:20px;color:var(--coral);border-color:var(--coral)}
+
+  /* full-width image band, momoamo rhythm */
+  .band{position:relative;margin:0;height:min(70vh,620px);overflow:hidden}
+  .band img{width:100%;height:100%;object-fit:cover;display:block}
+  .band .plate{position:absolute;left:30px;bottom:26px;font-family:"IBM Plex Mono";font-size:10.5px;
+    letter-spacing:.2em;text-transform:uppercase;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.6);line-height:2}
+  .bandfull{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw}
+
+  /* three principles, momoamo's signature card row */
+  .sec{padding:92px 0}
+  .sechead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;
+    padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:44px}
+  .sechead h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;text-transform:uppercase;letter-spacing:-.01em;
+    line-height:1.08;max-width:20ch}
+  .sechead h2 em{font-style:italic;font-weight:500;text-transform:none;color:var(--gold)}
+  .sechead .no{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+  .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .pr{padding:0 34px;border-left:1px solid var(--line)}
+  .pr:first-child{padding-left:0;border-left:none}
+  .pr:last-child{padding-right:0}
+  .pr .n{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.16em;color:var(--gold)}
+  .pr h3{margin-top:16px;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:-.005em}
+  .pr p{margin-top:12px;font-size:15.5px;line-height:1.7;color:var(--soft);font-weight:500}
+  .pr p em{font-style:italic;color:var(--ink)}
+
+  /* experiences: spotify tiles, momoamo restraint */
+  .tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+  .tile{grid-column:span 3;text-decoration:none;color:inherit;display:block;transition:transform .2s ease}
+  .tile:hover{transform:translateY(-4px)}
+  .tile .ph{position:relative;overflow:hidden;background:#e6ded0;aspect-ratio:4/3}
+  .tile .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .tile .tag{position:absolute;left:0;top:0;z-index:2;font-family:"IBM Plex Mono";font-size:10px;
+    letter-spacing:.16em;text-transform:uppercase;padding:8px 16px;background:var(--card);color:var(--ink)}
+  .tile.live .tag{background:var(--coral);color:#fff}
+  .tile .body{padding:20px 0 0;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+  .tile h3{font-size:23px;font-weight:700;text-transform:uppercase;letter-spacing:-.005em}
+  .tile .note{margin-top:6px;font-size:15px;color:var(--soft);font-weight:500;font-style:italic}
+  .tile .when{font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--soft);text-align:right;white-space:nowrap;line-height:2}
+  .tile .when b{color:var(--coral);font-weight:500}
+  .tile.soon .ph img{filter:grayscale(.45) opacity(.86)}
+  .third{grid-column:span 2}
+  .third .ph{aspect-ratio:1}
+  .third h3{font-size:19px}
+  .voteblock{grid-column:span 2;background:var(--violet);color:#fff;padding:28px;display:flex;
+    flex-direction:column;justify-content:space-between;min-height:100%}
+  .voteblock h3{font-size:21px;font-weight:700;text-transform:uppercase;max-width:14ch;line-height:1.15}
+  .voteblock p{margin-top:10px;font-size:14.5px;color:rgba(255,255,255,.86);line-height:1.6}
+  .voteblock .go{margin-top:26px;font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+
+  /* pull quote, editorial signature */
+  .quote{padding:96px 0;text-align:center;max-width:26ch;margin:0 auto}
+  .quote blockquote{font-size:clamp(28px,4vw,46px);font-weight:500;font-style:italic;line-height:1.24;
+    letter-spacing:-.01em}
+  .quote cite{display:block;margin-top:26px;font-style:normal;font-family:"IBM Plex Mono";font-size:11px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+
+  /* the deal */
+  .terms{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .term{padding:0 34px;border-left:1px solid var(--line)}
+  .term:first-child{padding-left:0;border-left:none}
+  .term:last-child{padding-right:0}
+  .term .k{font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+  .k1{color:var(--coral)}.k2{color:var(--teal)}.k3{color:var(--violet)}
+  .term h3{margin-top:14px;font-size:20px;font-weight:700;text-transform:uppercase}
+  .term p{margin-top:10px;font-size:15px;line-height:1.7;color:var(--soft);font-weight:500}
+
+  /* closing */
+  .close{background:var(--ink);color:var(--ground);padding:104px 30px;text-align:center;
+    margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw}
+  .close .kicker{color:var(--lime)}
+  .close h2{margin-top:22px;font-size:clamp(32px,4.8vw,62px);font-weight:800;text-transform:uppercase;
+    line-height:1.03;letter-spacing:-.02em}
+  .close h2 em{font-style:italic;font-weight:500;text-transform:none;color:var(--lime)}
+  .close p{margin-top:20px;font-size:17px;color:rgba(244,241,236,.7);max-width:44ch;margin-inline:auto;font-weight:500}
+  .close .arrow{color:var(--ground);border-color:var(--ground);margin-top:34px}
+  .close .arrow:hover{color:var(--lime);border-color:var(--lime)}
+  footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:34px 0 48px;
+    font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+
+  @media(max-width:900px){
+    .standfirst{grid-template-columns:1fr;gap:18px}
+    .principles,.terms{grid-template-columns:1fr;gap:34px}
+    .pr,.term{padding:0!important;border-left:none!important}
+    .tiles{grid-template-columns:1fr}
+    .tile,.third,.voteblock{grid-column:span 1}
+    .band{height:52vh}
+  }
+</style>
+</head>
+<body>
+<div class="floats" aria-hidden="true"></div>
+<div class="page">
+  <div class="wrap">
+    <nav>
+      <div class="wordmark">Ije<i>*</i></div>
+      <div class="right">
+        <span class="loc">Lagos, Nigeria</span>
+        <a href="https://tally.so" target="_blank" rel="noopener">Get a seat</a>
+      </div>
+    </nav>
+
+    <section class="open">
+      <div class="kicker">Curated experiences · Est. 2026</div>
+      <h1>An evening worth <em>leaving the house for.</em></h1>
+      <div class="standfirst">
+        <p>Ije seats you with people like you, doing things you already love. Six strangers, one table, somewhere good in Lagos.</p>
+        <p>We don't promise you friends. We promise the evening. <em>Everything after the plates are cleared is up to you.</em></p>
+      </div>
+      <a class="arrow" href="https://tally.so" target="_blank" rel="noopener">Get a seat <span>&rarr;</span></a>
+    </section>
+  </div>
+
+  <div class="band bandfull">
+    <img src="img/moment-passing.jpg" alt="A Lagos courtyard dinner at golden hour, hands reaching across the table">
+    <div class="plate">Thursday, 7:14 PM<br>Victoria Island</div>
+  </div>
+
+  <div class="wrap">
+    <section class="sec">
+      <div class="sechead">
+        <h2>How a table <em>comes together</em></h2>
+        <span class="no">01 / The method</span>
+      </div>
+      <div class="principles">
+        <div class="pr"><div class="n">I.</div><h3>You tell us who you are</h3>
+          <p>Twelve questions on how you argue, what makes you laugh, and <em>whether pineapple belongs anywhere near rice.</em></p></div>
+        <div class="pr"><div class="n">II.</div><h3>We set the table</h3>
+          <p>Five matched strangers, one booked room, a set menu. <em>The address arrives the morning of.</em></p></div>
+        <div class="pr"><div class="n">III.</div><h3>You show up hungry</h3>
+          <p>Eat, argue kindly, stay too late. <em>Contacts swap only if the whole table wants them to.</em></p></div>
+      </div>
+    </section>
+
+    <section class="sec" style="padding-top:0">
+      <div class="sechead">
+        <h2>What's on <em>the table</em></h2>
+        <span class="no">02 / The nights</span>
+      </div>
+      <div class="tiles">
+        <a class="tile live" href="https://tally.so" target="_blank" rel="noopener">
+          <div class="ph"><span class="tag">Now boarding</span>
+            <img src="img/moment-aftermath.jpg" alt="A Lagos table mid-evening, plates and cards"></div>
+          <div class="body">
+            <div><h3>Dinner Club</h3><div class="note">where it all starts</div></div>
+            <div class="when">Thursdays<br><b>3 seats left</b></div>
+          </div>
+        </a>
+        <a class="tile soon" href="#">
+          <div class="ph"><span class="tag">Soon</span>
+            <img src="img/moment-clink.jpg" alt="A private beach day in Lagos"></div>
+          <div class="body">
+            <div><h3>Beach Day</h3><div class="note">sunscreen not included</div></div>
+            <div class="when">Landmark<br>Coming soon</div>
+          </div>
+        </a>
+        <a class="tile soon third" href="#">
+          <div class="ph"><span class="tag">Soon</span>
+            <img src="img/moment-passing.jpg" alt="A game night table in Lagos"></div>
+          <div class="body">
+            <div><h3>Card Night</h3><div class="note">runs late, always</div></div>
+          </div>
+        </a>
+        <a class="tile soon third" href="#">
+          <div class="ph"><span class="tag">Soon</span>
+            <img src="img/moment-aftermath.jpg" alt="A rooftop table in Lagos"></div>
+          <div class="body">
+            <div><h3>Rooftop</h3><div class="note">sunset first, talk after</div></div>
+          </div>
+        </a>
+        <div class="voteblock">
+          <div><h3>Which one first?</h3>
+            <p>Film club and market crawl are drafted too. The most-wanted night gets built next.</p></div>
+          <span class="go">Say so on the form &rarr;</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="band bandfull">
+    <img src="img/moment-clink.jpg" alt="A private beach day on a Lagos beach">
+    <div class="plate">Sunday, 4:40 PM<br>Landmark</div>
+  </div>
+
+  <div class="wrap">
+    <section class="quote">
+      <blockquote>"I came for the jollof. I stayed for the argument about it."</blockquote>
+      <cite>Table No. 12 · Ikoyi</cite>
+    </section>
+
+    <section class="sec" style="padding-top:0">
+      <div class="sechead">
+        <h2>The deal, <em>with no fine print</em></h2>
+        <span class="no">03 / The promise</span>
+      </div>
+      <div class="terms">
+        <div class="term"><span class="k k1">We guarantee</span><h3>A genuinely good evening</h3>
+          <p>Good spot, good plan, five people matched to how you talk and laugh. That part is on us.</p></div>
+        <div class="term"><span class="k k2">If it clicks</span><h3>Keep them, through us</h3>
+          <p>Loved your table? Tell us. We'll seat you together again. No awkward number-asking required.</p></div>
+        <div class="term"><span class="k k3">If it doesn't</span><h3>Tell us. We do our thing.</h3>
+          <p>No hard feelings, no repeat seating. Your next table gets matched smarter because you said so.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="close">
+    <div class="kicker">Thursday, 7:00 PM</div>
+    <h2>There is a seat <em>with your name on it.</em></h2>
+    <p>Tell us how you argue, what makes you laugh, what you'd never eat. We handle the rest.</p>
+    <a class="arrow" href="https://tally.so" target="_blank" rel="noopener">Get a seat <span>&rarr;</span></a>
+  </section>
+
+  <div class="wrap">
+    <footer>
+      <span>Ije · Curated experiences · Lagos</span>
+      <span>See you Thursday</span>
+    </footer>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+<script>
+(() => {
+  gsap.registerPlugin(CustomEase);
+  const THROWS = [
+    CustomEase.create("lobHang",  "M0,0 C0.1,0.45 0.16,0.88 0.28,1.02 C0.38,1.08 0.5,1.09 0.6,1.07 C0.75,1.04 0.9,1.01 1,1"),
+    CustomEase.create("popSink",  "M0,0 C0.08,0.5 0.13,0.92 0.22,1.04 C0.3,1.1 0.4,1.11 0.5,1.09 C0.68,1.05 0.88,1.01 1,1"),
+    CustomEase.create("softLob",  "M0,0 C0.12,0.35 0.2,0.78 0.32,0.98 C0.42,1.05 0.54,1.06 0.64,1.05 C0.8,1.03 0.93,1.01 1,1"),
+  ];
+  const POOL = ["dice","tickets","cards","candle","beachhat","sunnies","plates",
+    "burger","cola","gamepad","pizza","boombox"];
+  const mm = gsap.matchMedia();
+
+  mm.add({ reduce: "(prefers-reduced-motion: reduce)", desktop: "(min-width: 1024px)" }, (ctx) => {
+    const { reduce, desktop } = ctx.conditions;
+    if (!desktop) return;
+    const box = document.querySelector(".floats");
+    const floats = gsap.utils.shuffle([...POOL]).slice(0, 2).map((n) => {
+      const sp = document.createElement("span");
+      sp.className = "float";
+      sp.innerHTML = `<img src="img/stk-${n}-removebg-preview.png" alt="">`;
+      box.appendChild(sp);
+      return sp;
+    });
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const contentW = Math.min(1240, vw - 60);
+    const gutter = (vw - contentW) / 2;
+    const slots = gsap.utils.shuffle([{ side: "L", depth: 1 }, { side: "R", depth: 0.4 }]);
+
+    floats.forEach((el, i) => {
+      const { side, depth } = slots[i];
+      const w = gsap.utils.random(72, 108);
+      let x;
+      if (gutter >= w + 20) {
+        const g = gutter - w - 10;
+        x = side === "L"
+          ? (depth === 1 ? gsap.utils.random(6, Math.max(7, g * 0.45)) : gsap.utils.random(g * 0.55, g))
+          : (depth === 1 ? vw - w - gsap.utils.random(6, Math.max(7, g * 0.45)) : vw - w - gsap.utils.random(g * 0.55, g));
+      } else {
+        x = side === "L" ? gsap.utils.random(2, 8) : vw - w - gsap.utils.random(2, 8);
+      }
+      const y = vh * (0.92 - 0.2 * (depth + gsap.utils.random(-0.25, 0.25)) + gsap.utils.random(-0.03, 0.03));
+      const rot = gsap.utils.random(-10, 10);
+
+      el.style.width = w + "px";
+      gsap.set(el, { x, y, rotation: rot, autoAlpha: reduce ? 0.85 : 0 });
+      if (reduce) return;
+
+      const D = gsap.utils.random(1.8, 2.33);
+      const delay = i * gsap.utils.random(0.05, 0.12);
+      const startX = gsap.utils.clamp(4, vw - w - 4, x + gsap.utils.random(-110, 110));
+      const spin = gsap.utils.random(140, 300) * (Math.random() < 0.5 ? -1 : 1);
+      gsap.set(el, { x: startX, y: vh + 160, rotation: rot + spin, scale: 0.88, autoAlpha: 0.9 });
+
+      gsap.to(el, {
+        y, delay, duration: D,
+        ease: gsap.utils.random(THROWS),
+        onComplete: () => {
+          gsap.to(el, {
+            y: "+=" + gsap.utils.random(8, 14),
+            rotation: "+=" + gsap.utils.random(2, 4),
+            duration: gsap.utils.random(4.5, 7),
+            ease: "sine.inOut", yoyo: true, repeat: -1,
+          });
+        },
+      });
+      gsap.to(el, { x, delay, duration: D, ease: "power1.out" });
+      gsap.to(el, { rotation: rot, delay, duration: D, ease: "power3.out" });
+      gsap.to(el, { scale: 1, delay, duration: D * 0.7, ease: "power2.out" });
+    });
+    return () => { gsap.killTweensOf(floats); box.innerHTML = ""; };
+  });
+})();
+</script>
+<script src="variants-nav.js"></script>
+</body>
+</html>

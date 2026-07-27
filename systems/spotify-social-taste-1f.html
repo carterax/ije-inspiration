@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Social / Taste V1F Open Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* V1F (owner's brief): built off V1B, LESS PAPER. Take the Life at Spotify
+     approach instead: clean light ground with no texture, big photography
+     tiles, generous whitespace, one conversational metaphor running through
+     the section headers (they use band/stage, we use the table).
+     Positioning unchanged: experience first, no friendship guarantee,
+     dinners live + the rest coming, one Tally CTA. */
+  :root{--ground:#f7f6f3;--ink:#191a1c;--soft:#5f6167;--line:#e4e2dc;
+    --coral:#e2543e;--teal:#2e8f83;--violet:#7b6cd9;--lime:#c6d94e;--sun:#e8b93b}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:Outfit,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .floats{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  @media(max-width:1023px){.floats{display:none}}
+  .float{position:absolute;left:0;top:0;width:96px;opacity:0;will-change:transform;
+    filter:drop-shadow(0 10px 18px rgba(25,26,28,.18))}
+  .float img{width:100%;display:block}
+  .page{position:relative;z-index:1}
+
+  /* nav */
+  nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+  .wordmark{font-weight:800;font-size:25px;letter-spacing:-.01em}
+  .wordmark i{font-style:normal;color:var(--coral)}
+  .navlinks{display:flex;align-items:center;gap:28px}
+  .navlinks span{font-weight:600;font-size:15px;color:var(--soft)}
+  nav a.cta{background:var(--ink);color:var(--ground);padding:13px 28px;border-radius:999px;
+    text-decoration:none;font-weight:700;font-size:15px;transition:background .15s ease,transform .15s ease}
+  nav a.cta:hover{background:var(--coral);transform:translateY(-1px)}
+
+  /* hero: type only, big air */
+  .hero{padding:78px 0 56px;max-width:900px}
+  .eyebrow{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--coral)}
+  h1{margin-top:20px;font-size:clamp(42px,6.6vw,84px);font-weight:800;line-height:1.02;letter-spacing:-.03em}
+  h1 em{font-style:normal;color:var(--coral)}
+  .hero .sub{margin-top:22px;font-size:19px;line-height:1.6;max-width:52ch;color:var(--soft);font-weight:500}
+  .hero .row{margin-top:34px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .btn{background:var(--ink);color:var(--ground);padding:17px 38px;border-radius:999px;text-decoration:none;
+    font-weight:700;font-size:17px;display:inline-block;transition:background .15s ease,transform .15s ease}
+  .btn:hover{background:var(--coral);transform:translateY(-2px)}
+  .hero .row small{font-size:14px;color:var(--soft);font-weight:500}
+
+  /* full-bleed photo band */
+  .band{margin:12px 0 0;border-radius:14px;overflow:hidden;aspect-ratio:21/9;position:relative;background:#e4dac6}
+  .band img{width:100%;height:100%;object-fit:cover;display:block}
+  .band .cap{position:absolute;left:24px;bottom:22px;background:rgba(25,26,28,.72);color:#fff;
+    backdrop-filter:blur(6px);padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px}
+
+  /* section heading pattern */
+  .sec{padding:84px 0 0}
+  .sechead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:30px}
+  .sechead h2{font-size:clamp(30px,4.2vw,50px);font-weight:800;letter-spacing:-.02em;line-height:1.05;max-width:18ch}
+  .sechead p{font-size:16px;color:var(--soft);max-width:38ch;font-weight:500;line-height:1.6}
+
+  /* how it works: clean numbered cards, colour as label not decoration */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .step{background:#fff;border-radius:14px;padding:30px 28px;border:1px solid var(--line)}
+  .step .n{width:38px;height:38px;border-radius:999px;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:16px;color:#fff}
+  .s1 .n{background:var(--coral)}.s2 .n{background:var(--violet)}.s3 .n{background:var(--teal)}
+  .step h3{margin-top:18px;font-size:21px;font-weight:700}
+  .step p{margin-top:8px;font-size:15px;line-height:1.6;color:var(--soft);font-weight:500}
+  .step .mono{margin-top:16px;display:inline-block;font-family:"IBM Plex Mono";font-size:11px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--soft);border:1px solid var(--line);
+    border-radius:999px;padding:6px 14px}
+
+  /* experiences: mixed-size photo tiles */
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .tile{border-radius:14px;overflow:hidden;position:relative;display:block;text-decoration:none;color:inherit;
+    background:#fff;border:1px solid var(--line);transition:transform .18s ease}
+  .tile:hover{transform:translateY(-4px)}
+  .tile .ph{position:relative;overflow:hidden;background:#e4dac6}
+  .tile .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .tile .pill{position:absolute;left:14px;top:14px;z-index:2;font-family:"IBM Plex Mono";font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px;
+    background:#fff;color:var(--ink);font-weight:500}
+  .tile.live .pill{background:var(--coral);color:#fff}
+  .tile .body{padding:20px 22px 24px}
+  .tile h3{font-size:22px;font-weight:800;letter-spacing:-.01em}
+  .tile p{margin-top:6px;font-size:15px;color:var(--soft);font-weight:500;line-height:1.55}
+  .tile .meta{margin-top:14px;display:flex;justify-content:space-between;align-items:center;
+    font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+  .tile .meta b{color:var(--coral);font-weight:500}
+  .big{grid-column:span 2;grid-row:span 2}
+  .big .ph{aspect-ratio:16/10}
+  .big h3{font-size:30px}
+  .big p{font-size:16px}
+  .wide{grid-column:span 2}
+  .wide .ph{aspect-ratio:16/7}
+  .tile.soon .ph img{filter:grayscale(.5) opacity(.82)}
+  .flat{grid-column:span 2;border-radius:14px;padding:30px 28px;border:none;color:#fff;display:flex;
+    flex-direction:column;justify-content:space-between;min-height:190px;background:var(--violet)}
+  .flat h3{font-size:26px;font-weight:800;max-width:16ch}
+  .flat p{color:rgba(255,255,255,.85);font-size:15px;margin-top:8px}
+  .flat .go{margin-top:auto;font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+
+  /* the deal: plain rows, no cards */
+  .deal{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+  .term{padding:30px 30px 34px 0;border-right:1px solid var(--line)}
+  .term:last-child{border-right:none;padding-right:0}
+  .term:not(:first-child){padding-left:30px}
+  .term .k{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .t1 .k{color:var(--coral)}.t2 .k{color:var(--teal)}.t3 .k{color:var(--violet)}
+  .term h3{margin-top:12px;font-size:22px;font-weight:700;letter-spacing:-.01em}
+  .term p{margin-top:8px;font-size:15px;line-height:1.6;color:var(--soft);font-weight:500}
+
+  /* closing */
+  .close{margin:90px 0 0;background:var(--ink);border-radius:18px;padding:76px 40px;text-align:center;color:var(--ground)}
+  .close h2{font-size:clamp(32px,4.6vw,58px);font-weight:800;letter-spacing:-.02em;line-height:1.04}
+  .close h2 em{font-style:normal;color:var(--lime)}
+  .close p{margin-top:16px;font-size:17px;color:rgba(247,246,243,.72);max-width:46ch;margin-left:auto;
+    margin-right:auto;font-weight:500}
+  .close a{display:inline-block;margin-top:28px;background:var(--lime);color:var(--ink);padding:18px 44px;
+    border-radius:999px;text-decoration:none;font-weight:800;font-size:18px;transition:transform .15s ease,background .15s ease}
+  .close a:hover{background:#fff;transform:translateY(-2px)}
+  .close small{display:block;margin-top:16px;font-family:"IBM Plex Mono";font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:rgba(247,246,243,.5)}
+  footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:34px 0 46px;
+    font-size:14px;color:var(--soft);font-weight:500}
+
+  @media(max-width:900px){
+    .steps,.deal{grid-template-columns:1fr}
+    .term{border-right:none;border-bottom:1px solid var(--line);padding:26px 0!important}
+    .grid{grid-template-columns:1fr}
+    .big,.wide,.flat{grid-column:span 1;grid-row:auto}
+  }
+</style>
+</head>
+<body>
+<div class="floats" aria-hidden="true"></div>
+<div class="page">
+  <div class="wrap">
+    <nav>
+      <div class="wordmark">ije<i>*</i></div>
+      <div class="navlinks">
+        <span>Lagos</span>
+        <a class="cta" href="https://tally.so" target="_blank" rel="noopener">Get a seat</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow">Experiences, not introductions</div>
+      <h1>Come for the evening. <em>Stay for whoever shows up.</em></h1>
+      <p class="sub">Ije puts you at a table with people like you, doing things you already love. We're not promising you friends. We're promising a night worth leaving the house for.</p>
+      <div class="row">
+        <a class="btn" href="https://tally.so" target="_blank" rel="noopener">Get a seat</a>
+        <small>Takes 3 minutes. First dinners seating now.</small>
+      </div>
+    </section>
+
+    <div class="band">
+      <img src="img/moment-passing.jpg" alt="A Lagos courtyard dinner at golden hour, hands reaching across the table">
+      <span class="cap">Thursday, Victoria Island</span>
+    </div>
+
+    <section class="sec">
+      <div class="sechead">
+        <h2>How a table comes together</h2>
+        <p>You answer a few questions. We do the seating. Nobody has to organise anything.</p>
+      </div>
+      <div class="steps">
+        <div class="step s1"><div class="n">1</div><h3>Tell us who you are</h3>
+          <p>How you argue, what makes you laugh, whether pineapple belongs anywhere near rice.</p>
+          <span class="mono">3 minutes</span></div>
+        <div class="step s2"><div class="n">2</div><h3>We set the table</h3>
+          <p>Five matched strangers, one booked spot. The address lands the morning of.</p>
+          <span class="mono">We handle it</span></div>
+        <div class="step s3"><div class="n">3</div><h3>Show up hungry</h3>
+          <p>Eat, argue kindly, stay too late. Swap contacts only if the whole table wants to.</p>
+          <span class="mono">The easy part</span></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sechead">
+        <h2>What's on the table</h2>
+        <p>Dinners are live now. The rest are being built, and you get a vote.</p>
+      </div>
+      <div class="grid">
+        <a class="tile live big" href="https://tally.so" target="_blank" rel="noopener">
+          <div class="ph"><span class="pill">Now boarding</span>
+            <img src="img/moment-aftermath.jpg" alt="A Lagos table mid-evening, plates and cards"></div>
+          <div class="body">
+            <h3>Dinner Club</h3>
+            <p>Six seats, one long table, a set menu and better questions than "what do you do".</p>
+            <div class="meta"><span>Thursdays · Victoria Island</span><b>3 seats left</b></div>
+          </div>
+        </a>
+        <a class="tile soon wide" href="#">
+          <div class="ph"><span class="pill">Soon</span>
+            <img src="img/moment-clink.jpg" alt="A private beach day in Lagos"></div>
+          <div class="body">
+            <h3>Beach Day</h3>
+            <p>Small chops, a cooler, somebody's speaker. Sunscreen not included.</p>
+            <div class="meta"><span>Landmark</span><span>Coming soon</span></div>
+          </div>
+        </a>
+        <div class="flat">
+          <div><h3>Want one of these first?</h3>
+            <p>Tell us on the form. The most-wanted night gets built next.</p></div>
+          <span class="go">Card night · Rooftop · Film club · Market crawl →</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sechead">
+        <h2>The deal, with no fine print</h2>
+        <p>Three things we can actually promise you.</p>
+      </div>
+      <div class="deal">
+        <div class="term t1"><span class="k">We guarantee</span><h3>A genuinely good evening</h3>
+          <p>Good spot, good plan, five people matched to how you talk and laugh. That part is on us.</p></div>
+        <div class="term t2"><span class="k">If it clicks</span><h3>Keep them, through us</h3>
+          <p>Loved your table? Tell us. We'll seat you together again. No awkward number-asking required.</p></div>
+        <div class="term t3"><span class="k">If it doesn't</span><h3>Tell us. We do our thing.</h3>
+          <p>No hard feelings, no repeat seating. Your next table gets matched smarter because you said so.</p></div>
+      </div>
+    </section>
+
+    <section class="close">
+      <h2>There's a seat with <em>your name on it.</em></h2>
+      <p>Tell us how you argue, what makes you laugh, what you'd never eat. We handle the rest.</p>
+      <a href="https://tally.so" target="_blank" rel="noopener">Get a seat</a>
+      <small>3 minutes · First dinners seating now</small>
+    </section>
+
+    <footer>
+      <span>Ije · Curated experiences in Lagos</span>
+      <span>See you Thursday.</span>
+    </footer>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+<script>
+(() => {
+  gsap.registerPlugin(CustomEase);
+  const THROWS = [
+    CustomEase.create("lobHang",  "M0,0 C0.1,0.45 0.16,0.88 0.28,1.02 C0.38,1.08 0.5,1.09 0.6,1.07 C0.75,1.04 0.9,1.01 1,1"),
+    CustomEase.create("popSink",  "M0,0 C0.08,0.5 0.13,0.92 0.22,1.04 C0.3,1.1 0.4,1.11 0.5,1.09 C0.68,1.05 0.88,1.01 1,1"),
+    CustomEase.create("softLob",  "M0,0 C0.12,0.35 0.2,0.78 0.32,0.98 C0.42,1.05 0.54,1.06 0.64,1.05 C0.8,1.03 0.93,1.01 1,1"),
+  ];
+  const POOL = ["dice","tickets","cards","candle","beachhat","sunnies","plates",
+    "burger","cola","gamepad","pizza","boombox"];
+  const mm = gsap.matchMedia();
+
+  mm.add({ reduce: "(prefers-reduced-motion: reduce)", desktop: "(min-width: 1024px)" }, (ctx) => {
+    const { reduce, desktop } = ctx.conditions;
+    if (!desktop) return;
+    const box = document.querySelector(".floats");
+    const floats = gsap.utils.shuffle([...POOL]).slice(0, 2).map((n) => {
+      const sp = document.createElement("span");
+      sp.className = "float";
+      sp.innerHTML = `<img src="img/stk-${n}-removebg-preview.png" alt="">`;
+      box.appendChild(sp);
+      return sp;
+    });
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const contentW = Math.min(1180, vw - 56);
+    const gutter = (vw - contentW) / 2;
+    const slots = gsap.utils.shuffle([{ side: "L", depth: 1 }, { side: "R", depth: 0.4 }]);
+
+    floats.forEach((el, i) => {
+      const { side, depth } = slots[i];
+      const w = gsap.utils.random(76, 112);
+      let x;
+      if (gutter >= w + 24) {
+        const g = gutter - w - 12;
+        x = side === "L"
+          ? (depth === 1 ? gsap.utils.random(8, Math.max(9, g * 0.45)) : gsap.utils.random(g * 0.55, g))
+          : (depth === 1 ? vw - w - gsap.utils.random(8, Math.max(9, g * 0.45)) : vw - w - gsap.utils.random(g * 0.55, g));
+      } else {
+        x = side === "L" ? gsap.utils.random(2, 10) : vw - w - gsap.utils.random(2, 10);
+      }
+      const y = vh * (0.92 - 0.2 * (depth + gsap.utils.random(-0.25, 0.25)) + gsap.utils.random(-0.03, 0.03));
+      const rot = gsap.utils.random(-10, 10);
+
+      el.style.width = w + "px";
+      gsap.set(el, { x, y, rotation: rot, autoAlpha: reduce ? 0.85 : 0 });
+      if (reduce) return;
+
+      const D = gsap.utils.random(1.8, 2.33);
+      const delay = i * gsap.utils.random(0.05, 0.12);
+      const startX = gsap.utils.clamp(4, vw - w - 4, x + gsap.utils.random(-110, 110));
+      const spin = gsap.utils.random(140, 300) * (Math.random() < 0.5 ? -1 : 1);
+      gsap.set(el, { x: startX, y: vh + 160, rotation: rot + spin, scale: 0.88, autoAlpha: 0.9 });
+
+      gsap.to(el, {
+        y, delay, duration: D,
+        ease: gsap.utils.random(THROWS),
+        onComplete: () => {
+          gsap.to(el, {
+            y: "+=" + gsap.utils.random(8, 14),
+            rotation: "+=" + gsap.utils.random(2, 4),
+            duration: gsap.utils.random(4.5, 7),
+            ease: "sine.inOut", yoyo: true, repeat: -1,
+          });
+        },
+      });
+      gsap.to(el, { x, delay, duration: D, ease: "power1.out" });
+      gsap.to(el, { rotation: rot, delay, duration: D, ease: "power3.out" });
+      gsap.to(el, { scale: 1, delay, duration: D * 0.7, ease: "power2.out" });
+    });
+    return () => { gsap.killTweensOf(floats); box.innerHTML = ""; };
+  });
+})();
+</script>
+<script src="variants-nav.js"></script>
+</body>
+</html>

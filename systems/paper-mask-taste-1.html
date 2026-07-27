@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Mask / Taste V1 Split Exhibit</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--void:#141210;--bone:#e5ddcc;--terra:#a8532f;--sage:#7c8471;--stone:#4d4437}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--void);color:var(--bone);font-family:Sora,sans-serif}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+  .wordmark{font-weight:600;font-size:20px;letter-spacing:.3em}
+  nav a{border:1px solid var(--bone);color:var(--bone);padding:11px 26px;text-decoration:none;font-size:13px;
+    letter-spacing:.12em;text-transform:uppercase}
+  nav a:hover{background:var(--bone);color:var(--void)}
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;min-height:76dvh;padding:40px 0}
+  h1{font-size:clamp(32px,4.4vw,54px);font-weight:300;line-height:1.2}
+  h1 b{font-weight:600}
+  .sub{margin-top:18px;font-size:15px;color:#a79e8c;line-height:1.7;max-width:38ch;font-weight:300}
+  .cta{margin-top:30px;display:inline-block;background:var(--terra);color:var(--bone);padding:14px 32px;
+    text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .cta:hover{background:var(--bone);color:var(--void)}
+  .plinth{justify-self:center;width:min(100%,380px);display:flex;flex-direction:column;align-items:center}
+  .imgslot{width:100%;aspect-ratio:3/4;border:2px dashed rgba(229,221,204,.4);display:flex;align-items:center;
+    justify-content:center;text-align:center;font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:#8a8172;padding:20px}
+  .base{margin-top:-2px;width:78%;height:46px;background:linear-gradient(180deg,#241f19,var(--void));
+    border-top:1px solid rgba(229,221,204,.25)}
+  .label{margin-top:14px;font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8a8172}
+  @media(max-width:800px){.hero{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Take a seat</a></nav>
+  <section class="hero">
+    <div>
+      <h1>Everyone arrives wearing a face. <b>Dinner takes it off.</b></h1>
+      <p class="sub">Six strangers. One evening in Lagos. See what happens when the masks come down.</p>
+      <a class="cta" href="#">Take a seat</a>
+    </div>
+    <div class="plinth">
+      <!-- HIGGSFIELD: [SUBJECT: sculptural mask made of crumpled paper on a dark museum plinth, no people]
+           single-source side lighting, void black background, bone paper folds, monumental quiet. 3:4 -->
+      <div class="imgslot">IMAGE SLOT<br>crumpled paper mask on plinth<br>3:4 · dramatic side light</div>
+      <div class="base"></div>
+      <div class="label">Exhibit I · The face you came with</div>
+    </div>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

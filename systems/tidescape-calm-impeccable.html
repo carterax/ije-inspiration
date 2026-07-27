@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidescape Calm / Impeccable</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--soft:#6b7280}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif;
+    background-image:linear-gradient(rgba(17,24,39,.03) 1px, transparent 1px);background-size:100% 36px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+  .wordmark{font-size:22px;font-weight:500;letter-spacing:.3em;text-transform:lowercase}
+  nav a{color:var(--ink);border:1px solid var(--amber);padding:12px 28px;border-radius:999px;text-decoration:none;
+    font-size:13px;letter-spacing:.08em}
+  nav a:hover{background:var(--amber);color:var(--ink)}
+  .hero{padding:80px 0 56px;text-align:center;max-width:640px;margin:0 auto}
+  h1{font-size:clamp(32px,4.4vw,50px);font-weight:300;line-height:1.28}
+  h1 b{font-weight:600;color:var(--orange)}
+  .sub{margin-top:20px;font-size:16px;color:var(--soft);line-height:1.75;font-weight:300}
+  .cta{margin-top:30px;display:inline-block;background:var(--orange);color:var(--cream);padding:14px 36px;
+    border-radius:999px;text-decoration:none;font-size:14px;letter-spacing:.06em;font-weight:500}
+  .cta:hover{background:var(--amber);color:var(--ink)}
+  .pause{height:170px;margin:24px 0;position:relative;overflow:hidden;border-radius:6px;
+    background:linear-gradient(180deg,#e0a94e 0%,var(--amber) 55%,#8a5c00 100%)}
+  .pause::after{content:"";position:absolute;inset:0;opacity:.4;
+    background:repeating-linear-gradient(94deg, transparent 0 26px, rgba(247,240,227,.2) 26px 29px)}
+  .pause span{position:absolute;bottom:14px;left:18px;font-family:"JetBrains Mono";font-size:10.5px;
+    letter-spacing:.22em;text-transform:uppercase;color:rgba(247,240,227,.9)}
+  .rhythm{padding:40px 0 88px;max-width:640px;margin:0 auto}
+  .beat{padding:30px 0;border-top:1px solid rgba(204,136,0,.4);display:grid;grid-template-columns:90px 1fr;gap:24px}
+  .beat .t{font-family:"JetBrains Mono";font-size:11px;letter-spacing:.16em;color:var(--orange);padding-top:5px}
+  .beat h3{font-size:21px;font-weight:600}
+  .beat p{margin-top:8px;font-size:14.5px;color:var(--soft);line-height:1.7;font-weight:300}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">ije</div><a href="#">reserve</a></nav>
+  <section class="hero">
+    <h1>Somewhere quiet, with people <b>worth the quiet.</b></h1>
+    <p class="sub">A slow dinner for six strangers. Warm wood, warmer light, and nowhere else to be.</p>
+    <a class="cta" href="#">reserve a seat</a>
+  </section>
+  <div class="pause" role="img" aria-label="Warm amber grain texture"><span>grain study · amber, oiled</span></div>
+  <section class="rhythm">
+    <div class="beat"><div class="t">SEVEN</div><div><h3>Arrive slowly</h3><p>The address comes that morning. A courtyard, a veranda, somewhere the city hushes.</p></div></div>
+    <div class="beat"><div class="t">EIGHT</div><div><h3>Eat well</h3><p>A set menu, no decisions. The kitchen takes its time and so does the table.</p></div></div>
+    <div class="beat"><div class="t">LATE</div><div><h3>Linger</h3><p>Nobody clears the table early here. The night ends when it ends.</p></div></div>
+  </section>
+</div>
+</body>
+</html>

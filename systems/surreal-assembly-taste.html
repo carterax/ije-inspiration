@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surreal Assembly / Taste</title>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@500;700;800&family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--sky:#8fb8e0;--cloud:#f3f6f9;--ink:#1b1d24;--red:#d8432f;--yellow:#e9b626;--green:#3f7d4e;--purple:#6a4f9e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{color:var(--ink);font-family:Archivo,sans-serif;
+    background:linear-gradient(180deg,#a9c9e8 0%,var(--sky) 45%,#c6d9ec 100%)}
+  .cloudband{position:fixed;inset:0;pointer-events:none;opacity:.8;
+    background:radial-gradient(340px 120px at 15% 22%, var(--cloud) 58%, transparent 62%),
+      radial-gradient(280px 100px at 78% 12%, var(--cloud) 58%, transparent 62%),
+      radial-gradient(420px 140px at 60% 78%, rgba(243,246,249,.8) 58%, transparent 62%)}
+  .wrap{position:relative;max-width:1120px;margin:0 auto;padding:0 32px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:900;font-size:24px;letter-spacing:.02em}
+  nav a{background:var(--ink);color:var(--cloud);padding:12px 26px;text-decoration:none;font-weight:700;
+    font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:999px}
+  nav a:hover{background:var(--red)}
+  .hero{min-height:74dvh;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:32px 0}
+  h1{font-size:clamp(42px,6.2vw,84px);font-weight:900;line-height:1;letter-spacing:-.02em}
+  h1 span{display:inline-block}
+  h1 .t1{transform:rotate(-2deg);color:var(--ink)}
+  h1 .t2{transform:rotate(1.4deg);color:var(--red)}
+  .sub{margin-top:22px;font-size:16px;font-weight:500;max-width:36ch;line-height:1.6;color:#2e3340}
+  .cta{margin-top:30px;display:inline-block;background:var(--red);color:var(--cloud);padding:15px 32px;
+    text-decoration:none;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.06em;
+    border-radius:999px;box-shadow:0 5px 0 var(--ink)}
+  .cta:active{transform:translateY(3px);box-shadow:0 2px 0 var(--ink)}
+  .figure{position:relative;aspect-ratio:1;max-height:56dvh;justify-self:center;width:min(100%,400px)}
+  .limb{position:absolute;border-radius:999px}
+  .arm1{width:38%;height:13%;background:var(--yellow);top:16%;left:6%;transform:rotate(34deg);
+    border-radius:999px 999px 999px 20px}
+  .arm2{width:34%;height:12%;background:var(--green);top:30%;right:2%;transform:rotate(-22deg)}
+  .torso{width:34%;height:40%;background:var(--ink);top:26%;left:33%;border-radius:46% 46% 40% 40%}
+  .head{width:22%;aspect-ratio:1;background:var(--purple);top:6%;left:39%;border-radius:50%}
+  .leg1{width:14%;height:42%;background:var(--red);bottom:0;left:26%;transform:rotate(14deg);
+    border-radius:999px 999px 30px 999px}
+  .leg2{width:13%;height:36%;background:#2b62a8;bottom:2%;right:24%;transform:rotate(-18deg)}
+  .hand{width:12%;aspect-ratio:1;background:var(--cloud);border:3px solid var(--ink);border-radius:50%;top:8%;right:12%}
+  .cap{position:absolute;bottom:-34px;left:0;font-family:"IBM Plex Mono";font-size:10.5px;
+    letter-spacing:.2em;text-transform:uppercase;color:#3d4350}
+  .manifesto{background:var(--cloud);border-radius:20px;padding:44px 40px;margin-bottom:80px;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:32px;box-shadow:0 8px 0 rgba(27,29,36,.25)}
+  .part h3{font-weight:800;font-size:19px;text-transform:uppercase}
+  .part h3::before{content:"";display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:10px}
+  .part:nth-child(1) h3::before{background:var(--red)}
+  .part:nth-child(2) h3::before{background:var(--yellow)}
+  .part:nth-child(3) h3::before{background:var(--green)}
+  .part p{margin-top:10px;font-size:14px;color:#3d4350;line-height:1.6;font-weight:500}
+  @media(max-width:820px){.hero{grid-template-columns:1fr}.manifesto{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cloudband" aria-hidden="true"></div>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Assemble</a></nav>
+  <section class="hero">
+    <div>
+      <h1><span class="t1">Come in</span><br><span class="t2">pieces.</span><br><span class="t1">Leave whole.</span></h1>
+      <p class="sub">Six strangers assembled into one very good table. Lagos, Thursdays, impossible until it happens.</p>
+      <a class="cta" href="#">Assemble Thursday</a>
+    </div>
+    <div class="figure" role="img" aria-label="Figure assembled from floating colorful limbs">
+      <div class="limb arm1"></div><div class="limb arm2"></div><div class="limb torso"></div>
+      <div class="limb head"></div><div class="limb leg1"></div><div class="limb leg2"></div><div class="limb hand"></div>
+      <div class="cap">Fig. 1 · A table, mid-assembly</div>
+    </div>
+  </section>
+  <section class="manifesto">
+    <div class="part"><h3>The parts</h3><p>A doctor, a DJ, someone's cousin, a quiet genius, two wild cards. None of them matching.</p></div>
+    <div class="part"><h3>The joint</h3><p>Dinner. The one activity where mismatched parts hold together beautifully.</p></div>
+    <div class="part"><h3>The whole</h3><p>By midnight the table has one shared story and six versions of it. All true.</p></div>
+  </section>
+</div>
+</body>
+</html>

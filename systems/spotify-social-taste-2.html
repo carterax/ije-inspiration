@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Social / Taste V2 List First</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--ground:#f4f3ef;--ink:#191a1c;--coral:#e2543e;--lime:#c6d94e;--violet:#7b6cd9;--teal:#2e8f83;--sun:#e8b93b}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:Outfit,sans-serif}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px 72px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .wordmark{font-weight:800;font-size:24px}
+  nav a{background:var(--ink);color:var(--ground);padding:12px 26px;border-radius:999px;text-decoration:none;
+    font-weight:700;font-size:14px}
+  .hero{padding:32px 0 20px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  h1{font-size:clamp(34px,4.8vw,58px);font-weight:800;line-height:1.04}
+  h1 span{color:var(--coral)}
+  .hero .mono{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#55565a}
+  .row{display:flex;justify-content:space-between;align-items:center;padding:26px 10px;border-top:3px solid var(--ink);
+    text-decoration:none;color:var(--ink);transition:background .12s,padding-left .12s}
+  .row:last-of-type{border-bottom:3px solid var(--ink)}
+  .row:hover{background:#fff;padding-left:22px}
+  .row .name{font-weight:800;font-size:clamp(24px,3.6vw,40px);letter-spacing:-.01em}
+  .row .name small{display:block;font-weight:500;font-size:14px;color:#55565a;margin-top:4px;letter-spacing:0}
+  .row .meta{display:flex;gap:16px;align-items:center;flex-shrink:0}
+  .row .pill{font-size:12px;font-weight:700;padding:7px 16px;border-radius:999px;color:var(--ground)}
+  .r1 .pill{background:var(--coral)}
+  .r2 .pill{background:var(--teal)}
+  .r3 .pill{background:var(--violet)}
+  .r4 .pill{background:var(--sun);color:var(--ink)}
+  .r5 .pill{background:var(--ink)}
+  .row .mono{font-family:"IBM Plex Mono";font-size:11px;color:#55565a}
+  .row .arrow{font-size:24px;font-weight:800}
+  .slotband{margin-top:28px;height:110px;border:2px dashed #a9a89f;border-radius:12px;display:flex;
+    align-items:center;justify-content:center;font-family:"IBM Plex Mono";font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:#55565a;text-align:center;padding:12px}
+  @media(max-width:640px){.row{flex-direction:column;align-items:flex-start;gap:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">ije</div><a href="#">Get a seat</a></nav>
+  <section class="hero">
+    <h1>This week <span>in Lagos.</span></h1>
+    <span class="mono">Tap a night · Seats live</span>
+  </section>
+  <a class="row r1" href="#"><span class="name">Dinner Club, Ikoyi<small>Six seats, set menu, better questions.</small></span>
+    <span class="meta"><span class="pill">Thu 7pm</span><span class="mono">2 seats left</span><span class="arrow">→</span></span></a>
+  <a class="row r2" href="#"><span class="name">Card Night, Yaba<small>Competitive but friendly. Runs late.</small></span>
+    <span class="meta"><span class="pill">Fri 8pm</span><span class="mono">4 seats left</span><span class="arrow">→</span></span></a>
+  <a class="row r3" href="#"><span class="name">Rooftop Hang, VI<small>Sunset first, talk after.</small></span>
+    <span class="meta"><span class="pill">Sat 6pm</span><span class="mono">Waitlist</span><span class="arrow">→</span></span></a>
+  <a class="row r4" href="#"><span class="name">Film Club, Landmark<small>One screening, one long argument after.</small></span>
+    <span class="meta"><span class="pill">Sat 8:30pm</span><span class="mono">3 seats left</span><span class="arrow">→</span></span></a>
+  <a class="row r5" href="#"><span class="name">Market Crawl, Balogun<small>Daylight edition. Wear walking shoes.</small></span>
+    <span class="meta"><span class="pill">Sun 10am</span><span class="mono">6 seats left</span><span class="arrow">→</span></span></a>
+  <!-- HIGGSFIELD: [SUBJECT: row of five objects on a shelf: plate, cards, wine glass, film ticket, woven basket, no people]
+       each object lit in its event color (coral, teal, violet, sun, ink), clean neutral ground. 10:1 -->
+  <div class="slotband">IMAGE SLOT · five objects, one per night, color coded · 10:1 · no people</div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

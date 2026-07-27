@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market Textile / Taste V3 Type Wax</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--indigo:#243a73;--waxy:#e8b400;--waxr:#c23b22;--waxg:#2c6e49;--cream:#f5efdf;--ink:#1c1817}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--indigo);color:var(--cream);font-family:Archivo,sans-serif}
+  .page{min-height:calc(100dvh - 46px);display:flex;flex-direction:column}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:20px 32px}
+  .wordmark{font-weight:900;font-size:26px}.wordmark span{color:var(--waxy)}
+  nav a{background:var(--waxy);color:var(--ink);padding:12px 26px;text-decoration:none;font-weight:800;
+    font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+  nav a:hover{background:var(--cream)}
+  .pat{height:34px;background:repeating-conic-gradient(from 45deg, var(--waxy) 0 25%, transparent 0 50%) 0 0/34px 34px}
+  .hero{flex:1;display:flex;flex-direction:column;justify-content:center;padding:36px 32px}
+  h1{font-weight:900;text-transform:uppercase;line-height:.94;font-size:clamp(52px,10.5vw,150px)}
+  h1 .a{color:var(--cream)}
+  h1 .b{color:var(--waxy)}
+  h1 .c{color:transparent;-webkit-text-stroke:3px var(--cream)}
+  .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;
+    padding:28px 32px 36px}
+  .sub{font-size:15px;font-weight:600;text-transform:uppercase;max-width:32ch;letter-spacing:.02em}
+  .cta{background:var(--waxr);color:var(--cream);padding:16px 36px;text-decoration:none;font-weight:900;
+    font-size:15px;text-transform:uppercase;letter-spacing:.08em;box-shadow:5px 5px 0 var(--ink)}
+  .cta:active{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+  .pat2{height:34px;background:repeating-radial-gradient(circle at 50% 0%, var(--waxr) 0 8px, transparent 8px 18px)}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><div class="wordmark">IJE<span>*</span></div><a href="#">Find your table</a></nav>
+  <div class="pat" aria-hidden="true"></div>
+  <section class="hero">
+    <h1>
+      <span class="a">Six patterns.</span><br>
+      <span class="b">One table.</span><br>
+      <span class="c">Somehow it matches.</span>
+    </h1>
+  </section>
+  <div class="foot">
+    <p class="sub">Strangers cut from every cloth. Lagos, weekly.</p>
+    <a class="cta" href="#">Find your table</a>
+  </div>
+  <div class="pat2" aria-hidden="true"></div>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poster Block / Taste</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--orange:#e0771f;--green:#1e3a2a;--cream:#f2e8da;--ink:#1c1a15}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Space Grotesk",sans-serif;color:var(--cream);background:var(--cream)}
+  .block{min-height:88dvh;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;
+    padding:48px clamp(24px,6vw,80px);gap:40px;position:relative;overflow:hidden}
+  .block::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;
+    background:radial-gradient(circle at 80% 20%, currentColor 0 2px, transparent 2px);background-size:26px 26px}
+  h2,h1{font-family:Anton;font-size:clamp(52px,8vw,120px);line-height:.95;text-transform:uppercase;letter-spacing:.01em}
+  .kick{font-size:15px;font-weight:500;letter-spacing:.02em;margin-top:24px;max-width:30ch;text-transform:uppercase}
+  .cta{margin-top:32px;display:inline-block;border:3px solid currentColor;padding:14px 30px;text-decoration:none;
+    color:inherit;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:14px}
+  .cta:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+  .art{aspect-ratio:1;max-height:56dvh;justify-self:center;width:min(100%,420px);position:relative}
+  .b-orange{background:var(--orange)}
+  .b-orange .art .plate{position:absolute;inset:6%;border-radius:50%;background:var(--cream)}
+  .b-orange .art .plate::after{content:"";position:absolute;inset:12%;border-radius:50%;border:3px dashed var(--orange)}
+  .b-orange .art .chop{position:absolute;top:46%;left:-4%;width:108%;height:8%;background:var(--ink);transform:rotate(-18deg)}
+  .b-green{background:var(--green)}
+  .b-green .art .chair{position:absolute;left:16%;bottom:10%;width:14%;height:60%;background:var(--cream)}
+  .b-green .art .chair::after{content:"";position:absolute;top:0;left:100%;width:380%;height:14%;background:var(--cream)}
+  .b-green .art .chair2{position:absolute;right:16%;bottom:10%;width:14%;height:36%;background:var(--orange)}
+  .banner{background:var(--cream);color:var(--ink);text-align:center;padding:72px 24px}
+  .banner h2{font-size:clamp(40px,6vw,88px)}
+  .banner h2 span{color:var(--orange)}
+  .banner .cta{border-color:var(--ink);margin-top:28px}
+  .banner .cta:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .banner p{margin-top:18px;font-size:15px;text-transform:uppercase;font-weight:500;letter-spacing:.04em}
+  @media(max-width:800px){.block{grid-template-columns:1fr;min-height:70dvh}.art{max-height:32dvh}}
+</style>
+</head>
+<body>
+<section class="block b-orange">
+  <div>
+    <h1>Choose<br>your night</h1>
+    <p class="kick">For those who know what they want.</p>
+    <a class="cta" href="#">See the lineup</a>
+  </div>
+  <div class="art" role="img" aria-label="Graphic plate illustration"><div class="plate"></div><div class="chop"></div></div>
+</section>
+<section class="block b-green">
+  <div>
+    <h2>Meet<br>your people</h2>
+    <p class="kick">Your chosen family. People who get you.</p>
+  </div>
+  <div class="art" role="img" aria-label="Graphic table illustration"><div class="chair"></div><div class="chair2"></div></div>
+</section>
+<section class="banner">
+  <h2>Take a <span>seat</span></h2>
+  <p>Thursday. 7 PM. Somewhere good in Lagos.</p>
+  <a class="cta" href="#">Get a seat</a>
+</section>
+</body>
+</html>

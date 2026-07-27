@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danfo Pop / Taste V5 Bus Ticket</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--yellow:#f2c200;--ink:#191308;--red:#d43d17;--blue:#274690;--cream:#f6efdc}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--blue);font-family:"Space Grotesk",sans-serif;color:var(--ink);
+    display:flex;align-items:flex-start;justify-content:center;padding:40px 16px 60px;
+    background-image:radial-gradient(rgba(246,239,220,.08) 1.5px, transparent 1.5px);background-size:16px 16px}
+  .ticket{width:min(880px,100%);background:var(--cream);border:5px solid var(--ink);position:relative}
+  .ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:34px;height:34px;
+    background:var(--blue);border:5px solid var(--ink);border-radius:50%;margin-top:-17px}
+  .ticket::before{left:-22px;clip-path:inset(0 0 0 45%)}
+  .ticket::after{right:-22px;clip-path:inset(0 45% 0 0)}
+  .head{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;
+    border-bottom:5px solid var(--ink);background:var(--yellow)}
+  .wordmark{font-family:Anton;font-size:30px}.wordmark span{color:var(--red)}
+  .head .mono{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+  .route{padding:34px 30px;border-bottom:3px dashed var(--ink)}
+  .route h1{font-family:Anton;text-transform:uppercase;font-size:clamp(38px,6vw,72px);line-height:.96}
+  .route h1 em{font-style:normal;color:var(--red)}
+  .route .arrow{color:var(--blue)}
+  .legs{padding:8px 30px}
+  .leg{display:grid;grid-template-columns:70px 1fr auto;gap:18px;align-items:center;padding:18px 0;
+    border-bottom:2px solid rgba(25,19,8,.2);font-weight:700;text-transform:uppercase}
+  .leg:last-child{border-bottom:none}
+  .leg .t{font-family:"IBM Plex Mono";font-size:12px;color:var(--red)}
+  .leg .what{font-size:17px}
+  .leg .what small{display:block;font-weight:500;font-size:12px;color:#5d5342;text-transform:none;margin-top:2px}
+  .leg .fare{font-family:"IBM Plex Mono";font-size:11px;color:#5d5342}
+  .stub{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:24px 30px;
+    border-top:5px solid var(--ink);background:var(--cream)}
+  .stub .imgslot{border:3px dashed var(--ink);padding:14px 18px;font-size:10.5px;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;text-align:center;color:#5d5342}
+  .stub a{background:var(--red);color:var(--cream);font-family:Anton;font-size:20px;text-transform:uppercase;
+    padding:16px 36px;text-decoration:none;box-shadow:6px 6px 0 var(--ink)}
+  .stub a:active{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+  .stamp{position:absolute;right:26px;top:98px;border:3px solid var(--red);color:var(--red);
+    font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.2em;padding:8px 12px;transform:rotate(-8deg);
+    text-transform:uppercase}
+  @media(max-width:640px){.stub{grid-template-columns:1fr}.stamp{display:none}}
+</style>
+</head>
+<body>
+<article class="ticket">
+  <div class="head">
+    <div class="wordmark">IJE<span>*</span></div>
+    <span class="mono">Ticket No. 001 · Not transferable · Keep this</span>
+  </div>
+  <div class="stamp">One seat only</div>
+  <div class="route">
+    <h1>Stranger <span class="arrow">→</span> <em>Friend.</em><br>Via dinner.</h1>
+  </div>
+  <div class="legs">
+    <div class="leg"><span class="t">19:00</span><span class="what">Board at the table<small>Address drops the morning of. Somewhere good.</small></span><span class="fare">SEAT 1/6</span></div>
+    <div class="leg"><span class="t">19:20</span><span class="what">First stop: real questions<small>No "what do you do." We give the table better fuel.</small></span><span class="fare">NO SMALL TALK</span></div>
+    <div class="leg"><span class="t">21:00</span><span class="what">Express to the second round<small>Cards come out. Someone orders more. Standard.</small></span><span class="fare">OPTIONAL, INEVITABLE</span></div>
+    <div class="leg"><span class="t">LATE</span><span class="what">Final stop: the group chat<small>Only if the whole table opts in.</small></span><span class="fare">FREE</span></div>
+  </div>
+  <div class="stub">
+    <!-- HIGGSFIELD: [SUBJECT: paper bus ticket texture with perforated edge and ink stamp, no people]
+         brand asset, cream paper grain, red stamp ink. 3:1 -->
+    <div class="imgslot">IMAGE SLOT · ticket paper texture with stamp · 3:1</div>
+    <a href="#">Claim this seat</a>
+  </div>
+</article>
+<script src="variants-nav.js"></script>
+</body>
+</html>

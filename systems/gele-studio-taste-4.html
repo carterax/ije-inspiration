@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gele Studio / Taste V4 Photo Editorial</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--green:#1d4f43;--deep:#143b32;--gold:#c99a4b;--pearl:#f1e8d8}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--green);color:var(--pearl);font-family:Outfit,sans-serif}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 36px 72px}
+  nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+  .wordmark{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:600;letter-spacing:.24em}
+  nav a{color:var(--deep);background:var(--gold);padding:12px 28px;text-decoration:none;font-weight:500;
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+  .heroframe{border:1px solid var(--gold);padding:12px;background:var(--deep)}
+  .heroslot{aspect-ratio:21/9;border:2px dashed rgba(201,154,75,.5);display:flex;align-items:center;
+    justify-content:center;text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);padding:16px;line-height:1.8}
+  .caption{display:flex;justify-content:space-between;padding:12px 4px 2px;font-size:10px;
+    letter-spacing:.2em;text-transform:uppercase;color:#9db3a7}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;padding:40px 0 30px}
+  h1{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,4.6vw,54px);font-weight:500;line-height:1.14;max-width:20ch}
+  h1 em{font-style:italic;color:var(--gold)}
+  .head a{border:1px solid var(--gold);color:var(--gold);padding:14px 34px;text-decoration:none;
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;flex-shrink:0}
+  .head a:hover{background:var(--gold);color:var(--deep)}
+  .row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .pl{border:1px solid var(--gold);padding:10px;background:var(--deep)}
+  .pl .slot{aspect-ratio:4/5;border:2px dashed rgba(201,154,75,.5);display:flex;align-items:center;
+    justify-content:center;text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);padding:14px;line-height:1.7}
+  .pl p{margin-top:9px;text-align:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#9db3a7}
+  @media(max-width:800px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><div class="wordmark">IJE</div><a href="#">Reserve</a></nav>
+  <!-- HIGGSFIELD: [SUBJECT: a long dinner table dressed in gold aso-oke runner, brass candlesticks, six empty green velvet chairs, saturated green wall, no people]
+       retro editorial photography, warm golden studio light, film grain, 70s glamour. 21:9 -->
+  <div class="heroframe">
+    <div class="heroslot">HERO IMAGE SLOT<br>gold-dressed table, six velvet chairs, green wall<br>21:9 · no people</div>
+    <div class="caption"><span>Issue 01 · The table</span><span>Set for six, photographed at seven</span></div>
+  </div>
+  <div class="head">
+    <h1>An evening styled like <em>a cover shoot.</em></h1>
+    <a href="#">Reserve a seat</a>
+  </div>
+  <!-- HIGGSFIELD per plate: styling still life on saturated green, warm gold light, film grain, no people -->
+  <section class="row">
+    <div class="pl"><div class="slot">SLOT · gele tied on stand, gold fabric</div><p>The headpiece</p></div>
+    <div class="pl"><div class="slot">SLOT · pearls and gold rings on velvet tray</div><p>The jewelry</p></div>
+    <div class="pl"><div class="slot">SLOT · two glasses, brass candlestick, green wall</div><p>The last hour</p></div>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courtyard / Taste V4 Photo Dusk</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--night:#12160f;--amber:#e8a75c;--warm:#f2e5cf;--soft:#9aa08c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--night);color:var(--warm);font-family:Outfit,sans-serif}
+  .hero{min-height:calc(84dvh - 46px);position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+    border:1px solid rgba(232,167,92,.4);margin:14px;border-radius:10px;overflow:hidden}
+  .heroslot{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .heroslot i{border:2px dashed rgba(232,167,92,.6);color:var(--amber);padding:18px 24px;font-style:normal;
+    font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+  .hero nav{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;
+    padding:20px 28px;z-index:2}
+  .wordmark{font-weight:600;font-size:20px;letter-spacing:.24em}
+  .hero nav a{color:var(--night);background:var(--amber);padding:10px 22px;border-radius:999px;text-decoration:none;
+    font-weight:500;font-size:13px}
+  .hero-copy{position:relative;z-index:2;padding:28px;background:linear-gradient(transparent, rgba(18,22,15,.85))}
+  .hero-copy h1{font-size:clamp(30px,4.4vw,52px);font-weight:300;line-height:1.18;max-width:20ch}
+  .hero-copy h1 b{font-weight:600;color:var(--amber)}
+  .hero-copy a{margin-top:18px;display:inline-block;background:var(--amber);color:var(--night);
+    padding:13px 30px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:4px 14px 14px}
+  .g{aspect-ratio:4/3;border:1px solid rgba(232,167,92,.4);border-radius:8px;display:flex;align-items:center;
+    justify-content:center;text-align:center;padding:14px;background:#171c13}
+  .g i{border:2px dashed rgba(232,167,92,.5);color:var(--amber);padding:12px 16px;font-style:normal;
+    font-family:"IBM Plex Mono";font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+  .bar{margin:0 14px 14px;border:1px solid rgba(232,167,92,.4);border-radius:8px;padding:20px 24px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .bar b{font-weight:500;font-size:clamp(17px,2.2vw,22px)}
+  .bar b span{color:var(--amber)}
+  .bar a{background:var(--amber);color:var(--night);padding:12px 26px;border-radius:999px;text-decoration:none;
+    font-weight:600;font-size:13px}
+  @media(max-width:700px){.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!-- HIGGSFIELD: [SUBJECT: long wooden dinner table in a Lagos courtyard at night, string lights overhead, candles lit, six empty chairs, no people]
+     deep green darkness, warm amber glow, film grain, cinematic. 16:9 -->
+<section class="hero">
+  <div class="heroslot"><i>HERO IMAGE SLOT<br>courtyard table at night, string lights, six empty chairs<br>16:9 · no people</i></div>
+  <nav><div class="wordmark">IJE</div><a href="#">Join Thursday</a></nav>
+  <div class="hero-copy">
+    <h1>The best table in Lagos <b>hasn't met yet.</b></h1>
+    <a href="#">Join Thursday</a>
+  </div>
+</section>
+<section class="gallery">
+  <!-- HIGGSFIELD: [SUBJECT: string lights through tree branches at night, no people] amber on green-black. 4:3 -->
+  <div class="g"><i>SLOT · string lights through trees<br>4:3</i></div>
+  <!-- HIGGSFIELD: [SUBJECT: candle beside two wine glasses on linen, warm low light, no people] 4:3 -->
+  <div class="g"><i>SLOT · candle and two glasses<br>4:3</i></div>
+  <!-- HIGGSFIELD: [SUBJECT: rain on a warm-lit restaurant window at night, no people] 4:3 -->
+  <div class="g"><i>SLOT · rain on the window<br>4:3</i></div>
+</section>
+<div class="bar">
+  <b>Six strangers. One evening. <span>See what happens.</span></b>
+  <a href="#">Join Thursday</a>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

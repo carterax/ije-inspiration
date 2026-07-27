@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ephemera / Impeccable V4 Photo Archive</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{--amber:#CC8800;--orange:#C55221;--cream:#F7F0E3;--ink:#111827;--soft:#6b7280}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--cream);color:var(--ink);font-family:"Chakra Petch",sans-serif}
+  .page{max-width:1200px;margin:0 auto;padding:0 32px 64px}
+  nav{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:2px solid var(--ink)}
+  .wordmark{font-weight:700;font-size:22px}
+  nav a{color:var(--orange);font-weight:600;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+  .hero{margin:24px 0;background:#fff;border-radius:10px;padding:14px;border:2px solid var(--ink)}
+  .heroslot{aspect-ratio:21/9;border:2px dashed var(--amber);border-radius:6px;display:flex;align-items:center;
+    justify-content:center;font-family:"JetBrains Mono";font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:#8a6a20;text-align:center;padding:16px}
+  .hero .cap{display:flex;justify-content:space-between;padding:12px 4px 0;font-family:"JetBrains Mono";
+    font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin:14px 0 22px}
+  h1{font-size:clamp(30px,4.2vw,48px);line-height:1.08;font-weight:700;max-width:22ch}
+  h1 em{font-style:normal;color:var(--orange)}
+  .head a{background:var(--orange);color:var(--cream);padding:14px 30px;border-radius:4px;text-decoration:none;
+    font-weight:600;flex-shrink:0}
+  .head a:hover{background:var(--amber);color:var(--ink)}
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .ph{background:#fff;border-radius:8px;padding:10px;border-top:4px solid var(--amber)}
+  .ph:nth-child(even){border-top-color:var(--orange)}
+  .ph .slot{aspect-ratio:4/5;border:2px dashed var(--amber);border-radius:4px;display:flex;align-items:center;
+    justify-content:center;font-family:"JetBrains Mono";font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:#8a6a20;text-align:center;padding:10px}
+  .ph p{margin-top:8px;font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--orange)}
+  @media(max-width:820px){.strip{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><div class="wordmark">IJE</div><a href="#">Claim a seat</a></nav>
+  <!-- HIGGSFIELD: [SUBJECT: overhead flat lay of six empty plates, glasses, cards, candles and a folded note on wood, no people]
+       warm amber grade, film grain. 21:9 -->
+  <section class="hero">
+    <div class="heroslot">HERO IMAGE SLOT · overhead: six plates, glasses, cards, candles, folded note · 21:9 · no people</div>
+    <div class="cap"><span>Plate 01 · The set table</span><span>Thursday, before anyone arrives</span></div>
+  </section>
+  <div class="head">
+    <h1>The evidence of good evenings, <em>filed weekly.</em></h1>
+    <a href="#">Claim a seat</a>
+  </div>
+  <section class="strip">
+    <!-- HIGGSFIELD per slot: single-object archival photo, warm amber grade, no people -->
+    <div class="ph"><div class="slot">SLOT · movie tickets on table · 4:5</div><p>Film club</p></div>
+    <div class="ph"><div class="slot">SLOT · cards mid-game · 4:5</div><p>Card night</p></div>
+    <div class="ph"><div class="slot">SLOT · candle and two glasses · 4:5</div><p>Dinner club</p></div>
+    <div class="ph"><div class="slot">SLOT · rain on restaurant window · 4:5</div><p>Stayed late</p></div>
+  </section>
+</div>
+<script src="variants-nav.js"></script>
+</body>
+</html>

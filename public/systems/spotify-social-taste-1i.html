@@ -91,27 +91,18 @@
   .n b{display:block;font-size:22px;font-weight:700;letter-spacing:-.01em}
   .n span{display:block;margin-top:6px;font-size:16.5px;color:var(--ink-soft)}
 
-  /* the Thursday, told as a timeline with photos on the beats that have them */
+  /* three steps, arrows between, nothing heavier than it needs to be */
   .how{padding:86px 0 0}
   h2{font-size:clamp(30px,4.4vw,50px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
-  .beats{margin-top:46px}
-  .beat{position:relative;padding-left:158px}
-  .beat .body{position:relative;padding:0 0 52px 36px;border-left:3px solid var(--lime)}
-  .beat:last-child .body{border-left-color:transparent;padding-bottom:0}
-  /* the dot on the line */
-  .beat .body::before{content:"";position:absolute;left:-12px;top:5px;width:21px;height:21px;
-    border-radius:50%;background:var(--green);border:4px solid var(--ground)}
-  /* the subtle arrow between beats */
-  .beat .body::after{content:"";position:absolute;left:-8px;bottom:18px;width:12px;height:12px;
-    border-right:3px solid var(--lime);border-bottom:3px solid var(--lime);transform:rotate(45deg)}
-  .beat:last-child .body::after{display:none}
-  .when{position:absolute;left:-158px;top:4px;width:122px;text-align:right;
-    font-size:15px;font-weight:600;color:var(--green-mid);line-height:1.35}
-  .beat h3{font-size:clamp(24px,2.8vw,33px);font-weight:700;letter-spacing:-.018em;line-height:1.12}
-  .beat p{margin-top:9px;font-size:17.5px;color:var(--ink-soft);max-width:40ch}
-  .beat .shot{margin-top:20px;max-width:460px;aspect-ratio:16/10;overflow:hidden;
-    border-radius:10px;background:var(--surface)}
-  .beat .shot img{width:100%;height:100%;object-fit:cover}
+  .flow{margin-top:46px;display:flex;align-items:flex-start;gap:28px}
+  .step{flex:1 1 0;min-width:0}
+  .step .num{width:58px;height:58px;display:flex;align-items:center;justify-content:center;
+    font-family:Caveat;font-weight:600;font-size:30px;color:var(--green);
+    border:3px solid var(--lime);border-radius:56% 44% 48% 52%/52% 48% 52% 48%}
+  .step h3{margin-top:20px;font-size:clamp(21px,2.3vw,27px);font-weight:700;
+    letter-spacing:-.015em;line-height:1.14}
+  .step p{margin-top:8px;font-size:17px;color:var(--ink-soft);max-width:26ch}
+  .arrow{flex:0 0 auto;margin-top:12px;font-size:32px;line-height:1;color:var(--green-mid)}
 
   /* only dinner exists, so only dinner gets weight */
   .nights{padding:90px 0 0}
@@ -154,9 +145,8 @@
 
   @media(max-width:900px){
     .nogrid{grid-template-columns:repeat(2,1fr)}
-    .beat{padding-left:0}
-    .when{position:static;width:auto;text-align:left;display:block;margin-bottom:6px}
-    .beat .body{padding-left:28px}
+    .flow{flex-direction:column;gap:20px}
+    .arrow{transform:rotate(90deg);margin:0 0 0 18px}
     .feature{grid-template-columns:1fr;gap:30px}
     .line{grid-template-columns:1fr;gap:6px}
     .close{border-radius:70px 24px 70px 24px;padding:68px 24px}
@@ -210,37 +200,24 @@
   </section>
 
   <section class="how">
-    <h2>How your Thursday goes.</h2>
-    <div class="beats">
-      <div class="beat">
-        <div class="body">
-          <span class="when">Monday</span>
-          <h3>You fill a short form</h3>
-          <p>Three minutes. Nothing weird.</p>
-        </div>
+    <h2>Three things, then you're in.</h2>
+    <div class="flow">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Tell us about yourself</h3>
+        <p>Three minutes. Nothing weird.</p>
       </div>
-      <div class="beat">
-        <div class="body">
-          <span class="when">Thursday<br>6:00 PM</span>
-          <h3>You're done for the day</h3>
-          <p>We text you the address. That's the first time you see it.</p>
-        </div>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>We build your table</h3>
+        <p>You don't pick people. We do.</p>
       </div>
-      <div class="beat">
-        <div class="body">
-          <span class="when">Thursday<br>7:00 PM</span>
-          <h3>Five strangers, one table</h3>
-          <p>Nobody knows anybody. That is the whole point.</p>
-          <div class="shot"><img src="img/moment-passing.jpg" alt="Six people sharing food around a table in Lagos"></div>
-        </div>
-      </div>
-      <div class="beat">
-        <div class="body">
-          <span class="when">Thursday<br>10:45 PM</span>
-          <h3>You're the last table there</h3>
-          <p>Maybe you found a new favourite spot. Maybe somebody asks if you're coming next week.</p>
-          <div class="shot"><img src="img/moment-aftermath.jpg" alt="A table at the end of the night, plates cleared"></div>
-        </div>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Show up hungry</h3>
+        <p>That's literally it.</p>
       </div>
     </div>
   </section>

@@ -17,7 +17,7 @@
      countdown, no editorial year columns. Plain words, short lines, the
      price said out loud.
 
-     Wabi-sabi does the softening: warm oat ground, muted clay and ochre,
+     Wabi-sabi does the softening: soft warm white ground, muted clay and ochre,
      organic uneven shapes instead of boxes, a hand-drawn line, nothing
      polished or precious, generous empty space, gentle asymmetry.
 
@@ -26,8 +26,8 @@
      Accessibility: 18px base, high-contrast pairs, 48px+ targets,
      visible focus rings, reduced-motion honoured. */
   :root{
-    --oat:#f3ece0;        /* warm ground */
-    --oat-deep:#e7dcca;   /* second surface */
+    --oat:#fbf9f6;        /* soft warm white, not cream */
+    --oat-deep:#f1ece4;   /* second surface, barely there */
     --ink:#2c2822;        /* soft charcoal, never pure black */
     --ink-soft:#5f584d;
     --clay:#b8452f;       /* deep clay, from our coral, passes on white */
@@ -105,18 +105,25 @@
   .step h3{margin-top:18px;font-size:23px;font-weight:700}
   .step p{margin-top:6px;font-size:17px;color:var(--ink-soft);max-width:30ch}
 
-  /* the nights: plain and warm, no years, no scarcity */
+  /* the nights: only dinner exists, so only dinner gets weight */
   .nights{padding:90px 0 0}
-  .nightlist{margin-top:32px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  .night{display:flex;align-items:center;gap:20px;padding:22px 24px;background:var(--oat-deep);
-    border-radius:26px 22px 24px 20px;text-decoration:none;color:inherit;transition:transform .18s ease}
-  .night:hover{transform:translateY(-3px)}
-  .night .dot{width:14px;height:14px;border-radius:50%;background:var(--ochre);flex:0 0 auto}
-  .night.on .dot{background:var(--clay)}
-  .night b{display:block;font-size:21px;font-weight:700}
-  .night span{font-size:16px;color:var(--ink-soft)}
-  .vote{margin-top:22px;font-size:17px;color:var(--ink-soft)}
-  .vote .hand{font-size:23px;color:var(--moss)}
+  .feature{margin-top:36px;display:grid;grid-template-columns:1.05fr 1fr;gap:46px;align-items:center}
+  .feature .shot{aspect-ratio:5/4;overflow:hidden;background:var(--oat-deep);
+    border-radius:180px 180px 26px 26px}
+  .feature .shot img{width:100%;height:100%;object-fit:cover}
+  .tag{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:var(--clay)}
+  .tag .dot{width:11px;height:11px;border-radius:50%;background:var(--clay);flex:0 0 auto}
+  .feature h3{margin-top:14px;font-size:clamp(38px,5.6vw,62px);font-weight:700;letter-spacing:-.025em;line-height:1}
+  .feature .say{margin-top:16px;font-size:20px;color:var(--ink-soft);max-width:32ch}
+  .feature .facts{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:17px}
+  .feature .facts span{display:flex;align-items:center;gap:9px}
+  .feature .facts i{font-style:normal;color:var(--ochre);font-size:20px;line-height:1}
+  .feature .btn{margin-top:30px}
+  /* everything else is still cooking, so it stays a whisper */
+  .also{margin-top:54px;padding-top:24px;border-top:1.5px solid rgba(44,40,34,.14);
+    font-size:17px;color:var(--ink-soft);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+  .also b{font-weight:600;color:var(--ink)}
+  .also .hand{font-size:22px;color:var(--moss);margin-left:4px}
 
   /* honest: three one-liners, no cards */
   .honest{padding:90px 0 0}
@@ -140,7 +147,9 @@
 
   @media(max-width:900px){
     .nogrid{grid-template-columns:repeat(2,1fr)}
-    .steps,.nightlist{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .feature{grid-template-columns:1fr;gap:30px}
+    .feature .shot{border-radius:130px 130px 24px 24px}
     .line{grid-template-columns:1fr;gap:6px}
     .close{border-radius:70px 24px 70px 24px;padding:68px 24px}
   }
@@ -215,25 +224,22 @@
 
   <section class="nights">
     <h2>What we're doing</h2>
-    <div class="nightlist">
-      <a class="night on" href="https://tally.so" target="_blank" rel="noopener">
-        <span class="dot" aria-hidden="true"></span>
-        <span><b>Dinner</b><span>Thursdays. Happening now.</span></span>
-      </a>
-      <a class="night" href="#more">
-        <span class="dot" aria-hidden="true"></span>
-        <span><b>Beach day</b><span>Soon</span></span>
-      </a>
-      <a class="night" href="#more">
-        <span class="dot" aria-hidden="true"></span>
-        <span><b>Games night</b><span>Soon</span></span>
-      </a>
-      <a class="night" href="#more">
-        <span class="dot" aria-hidden="true"></span>
-        <span><b>Rooftop evening</b><span>Soon</span></span>
-      </a>
-    </div>
-    <p class="vote" id="more">Want one of them first? <span class="hand">tell us on the form</span></p>
+    <article class="feature">
+      <div class="shot"><img src="img/moment-passing.jpg" alt="A table of people sharing food in Lagos"></div>
+      <div>
+        <span class="tag"><span class="dot" aria-hidden="true"></span> Happening now</span>
+        <h3>Dinner</h3>
+        <p class="say">Every Thursday. Six people who haven't met, one table, somewhere easy in Lagos.</p>
+        <div class="facts">
+          <span><i>&#9679;</i> Thursdays, 7pm</span>
+          <span><i>&#9679;</i> Six seats</span>
+          <span><i>&#9679;</i> You pay for your food</span>
+        </div>
+        <a class="btn" href="https://tally.so" target="_blank" rel="noopener">Save me a seat</a>
+      </div>
+    </article>
+    <p class="also" id="more">Still cooking: <b>beach day</b>, <b>games night</b>, <b>rooftop evening</b>.
+      <span class="hand">tell us which one first</span></p>
   </section>
 
   <section class="honest">

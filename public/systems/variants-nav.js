@@ -112,6 +112,7 @@
             { v: "1f", label: "OPEN PLAN" },
             { v: "1g", label: "SPREAD" },
             { v: "1h", label: "COLOUR BLOCKS" },
+            { v: "1i", label: "COME AS YOU ARE" },
           ] },
           { v: "2", label: "LIST FIRST", kids: [] },
           { v: "3", label: "TYPE BOARD", kids: [] },

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spotify Social / Taste V1I Come As You Are</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
   /* V1I (owner's brief): born of V1D + V1H, but DISTINCT.
      People said V1H reads serious, and it borrowed momoamo's bones. V1D is
@@ -15,132 +15,170 @@
      before it says anything else. So every exclusivity signal is stripped:
      no (R), no "curated", no "Est. 2026", no "No. 001", no seat-scarcity
      countdown, no editorial year columns. Plain words, short lines, the
-     price said out loud.
+     price said out loud. Only Dinner exists, so only Dinner gets weight.
 
-     Wabi-sabi does the softening: warm oat ground, muted clay and ochre,
-     organic uneven shapes instead of boxes, a hand-drawn line, nothing
-     polished or precious, generous empty space, gentle asymmetry.
+     Colour: flat ground from taste-2, deep green from V1H, lime as the one
+     accent. No orange, no cream (the orange was reading as somebody else's
+     brand). Shapes stay gently uneven (wabi-sabi) but the photos follow
+     V1H: clean 10px corners, mixed sizes, staggered, no hover pause.
 
-     Kept from V1H: the sliding photo carousel.
-     Kept from V1D: warmth, handwriting, human voice.
-     Accessibility: 18px base, high-contrast pairs, 48px+ targets,
-     visible focus rings, reduced-motion honoured. */
+     Accessibility: 18px base, high-contrast pairs, 56px targets, visible
+     focus rings, reduced-motion honoured. */
   :root{
-    --oat:#f3ece0;        /* warm ground */
-    --oat-deep:#e7dcca;   /* second surface */
-    --ink:#2c2822;        /* soft charcoal, never pure black */
-    --ink-soft:#5f584d;
-    --clay:#b8452f;       /* deep clay, from our coral, passes on white */
-    --clay-light:#e2543e; /* our coral, for large text only */
-    --ochre:#d99f2b;      /* from our sun */
-    --moss:#3f5e4c;       /* from our teal, grounded */
+    --ground:#f4f3ef;      /* flat neutral ground, from taste-2 */
+    --surface:#eae9e3;     /* second surface */
+    --ink:#191a1c;
+    --ink-soft:#5b5d60;
+    --green:#10322e;       /* from V1H */
+    --green-soft:#17453e;
+    --green-mid:#2e6f61;
+    --lime:#c6d94e;        /* the one accent */
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--oat);color:var(--ink);font-family:Outfit,sans-serif;font-size:18px;line-height:1.6;
+  body{background:var(--ground);color:var(--ink);font-family:Outfit,sans-serif;font-size:18px;line-height:1.6;
     -webkit-font-smoothing:antialiased;overflow-x:hidden}
   .hand{font-family:Caveat,cursive;font-weight:600}
   .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
-  .narrow{max-width:760px}
-  a:focus-visible,button:focus-visible{outline:3px solid var(--moss);outline-offset:4px;border-radius:6px}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:4px;border-radius:6px}
   img{display:block}
 
-  /* soft warm button: no hard shadow, no thick border, gently uneven corners */
+  /* soft button, gently uneven corners, no hard shadow */
   .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;
-    background:var(--clay);color:#fff8f0;text-decoration:none;font-weight:600;font-size:19px;
+    background:var(--green);color:#f4f3ef;text-decoration:none;font-weight:600;font-size:19px;
     padding:16px 38px;border-radius:34px 30px 32px 28px;
     transition:transform .18s ease,background .18s ease}
-  .btn:hover{background:#a03b27;transform:translateY(-2px)}
-  .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid rgba(44,40,34,.35)}
-  .btn.ghost:hover{background:rgba(44,40,34,.06);color:var(--ink)}
+  .btn:hover{background:var(--green-soft);transform:translateY(-2px)}
 
-  /* top bar: nothing to announce, just a way in */
+  /* top bar */
   header{display:flex;justify-content:space-between;align-items:center;padding:26px 0;gap:16px}
   .mark{font-weight:700;font-size:25px;letter-spacing:-.01em}
-  .mark i{font-style:normal;color:var(--clay-light)}
+  .mark i{font-style:normal;color:var(--green-mid)}
   header a{color:var(--ink);text-decoration:none;font-weight:600;font-size:17px;
-    border-bottom:2px solid var(--ochre);padding-bottom:3px}
-  header a:hover{color:var(--clay)}
+    border-bottom:3px solid var(--lime);padding-bottom:3px}
+  header a:hover{color:var(--green)}
 
-  /* hero: one plain sentence, one line under it, one button */
+  /* hero */
   .hero{padding:52px 0 12px;max-width:840px}
-  h1{font-size:clamp(38px,6.2vw,74px);font-weight:700;line-height:1.06;letter-spacing:-.025em}
-  .squiggle{display:inline-block;position:relative}
-  .squiggle svg{position:absolute;left:-2%;bottom:-.22em;width:104%;height:.32em;overflow:visible}
-  .squiggle path{fill:none;stroke:var(--ochre);stroke-width:7;stroke-linecap:round}
+  h1{font-size:clamp(38px,6.2vw,74px);font-weight:700;line-height:1.12;letter-spacing:-.025em}
+  /* inline-grid stacks every phrase in one cell, so the box is as wide as the
+     longest one and nothing under it shifts when the words change */
+  .rot{display:inline-grid;justify-items:start;font-weight:800}
+  /* letters are split by the script under the h1; --i is the letter's index, so each
+     one starts a beat after the last and the phrase types itself on and off */
+  .lead{font-weight:500}
+  .lead i,.rot i{display:inline-block;font-style:normal}
+  .lead i{animation:intro .5s cubic-bezier(.22,.61,.36,1) both;animation-delay:calc(var(--i)*.04s)}
+  @keyframes intro{
+    from{opacity:0;filter:blur(12px);transform:translateY(14px)}
+    to{opacity:1;filter:blur(0);transform:none}
+  }
+  .rot>span{grid-area:1/1}
+  /* backwards fill: hold the 0% frame through the delay, or all five show at once */
+  .rot i{animation:rot 11.2s cubic-bezier(.22,.61,.36,1) infinite backwards;
+    animation-delay:calc(var(--p) + var(--i)*.04s)}
+  .rot>span:nth-child(1){--p:1.5s}
+  .rot>span:nth-child(2){--p:4.3s}
+  .rot>span:nth-child(3){--p:7.1s}
+  .rot>span:nth-child(4){--p:9.9s}
+  @keyframes rot{
+    0%{opacity:0;filter:blur(10px);transform:translateY(12px)}
+    3%{opacity:1;filter:blur(0);transform:none}
+    19%{opacity:1;filter:blur(0);transform:none}
+    22%,100%{opacity:0;filter:blur(10px);transform:translateY(-12px)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .lead i{animation:none}
+    .rot i{animation:none;opacity:0}
+    .rot>span:first-child i{opacity:1}
+  }
   .hero p{margin-top:22px;font-size:21px;color:var(--ink-soft);max-width:40ch}
   .hero .row{margin-top:34px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
   .hero .cost{font-size:17px;color:var(--ink-soft)}
   .hero .cost b{color:var(--ink);font-weight:600}
 
-  /* carousel, kept from V1H but softened: uneven corners, warmer gaps */
-  .marquee{margin:64px 0 0;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw)}
-  .mtrack{display:flex;align-items:center;gap:26px;width:max-content;animation:slide 52s linear infinite;padding:0 13px}
-  .mtrack:hover,.mtrack:focus-within{animation-play-state:paused}
+  /* carousel: V1H geometry, no hover pause */
+  .marquee{margin:70px 0 0;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw)}
+  .mtrack{display:flex;align-items:flex-start;gap:46px;width:max-content;
+    animation:slide 46s linear infinite;padding:0 23px}
   @keyframes slide{from{transform:translateX(-50%)}to{transform:translateX(0)}}
   @media (prefers-reduced-motion: reduce){.mtrack{animation:none;transform:translateX(-50%)}}
-  .mi{flex:0 0 auto;overflow:hidden;background:var(--oat-deep)}
+  .mi{flex:0 0 auto;overflow:hidden;border-radius:10px;background:var(--surface)}
   .mi img{width:100%;height:100%;object-fit:cover}
-  .mi:nth-child(6n+1){width:clamp(210px,23vw,360px);aspect-ratio:4/5;border-radius:48% 52% 44% 56%/8% 8% 8% 8%}
-  .mi:nth-child(6n+2){width:clamp(230px,25vw,400px);aspect-ratio:5/4;border-radius:16px 90px 16px 90px}
-  .mi:nth-child(6n+3){width:clamp(190px,20vw,320px);aspect-ratio:1;border-radius:50%}
-  .mi:nth-child(6n+4){width:clamp(220px,24vw,380px);aspect-ratio:3/4;border-radius:90px 90px 18px 18px}
-  .mi:nth-child(6n+5){width:clamp(240px,26vw,420px);aspect-ratio:16/11;border-radius:18px}
-  .mi:nth-child(6n+6){width:clamp(200px,21vw,340px);aspect-ratio:4/5;border-radius:18px 18px 90px 90px}
+  .mi:nth-child(6n+1){width:clamp(220px,24vw,400px);aspect-ratio:4/5;margin-top:96px}
+  .mi:nth-child(6n+2){width:clamp(240px,27vw,460px);aspect-ratio:5/7;margin-top:0}
+  .mi:nth-child(6n+3){width:clamp(230px,25vw,420px);aspect-ratio:4/3;margin-top:168px}
+  .mi:nth-child(6n+4){width:clamp(210px,22vw,370px);aspect-ratio:1;margin-top:48px}
+  .mi:nth-child(6n+5){width:clamp(200px,21vw,350px);aspect-ratio:3/4;margin-top:130px}
+  .mi:nth-child(6n+6){width:clamp(250px,28vw,470px);aspect-ratio:16/11;margin-top:16px}
 
-  /* the reassurances: the most important thing on the page */
+  /* the reassurances */
   .no{padding:78px 0 10px}
   .nogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
-  .n{padding-top:20px;border-top:2px solid rgba(44,40,34,.16)}
+  .n{padding-top:20px;border-top:3px solid var(--lime)}
   .n b{display:block;font-size:22px;font-weight:700;letter-spacing:-.01em}
   .n span{display:block;margin-top:6px;font-size:16.5px;color:var(--ink-soft)}
 
-  /* how it works: three short beats, hand-drawn numbers */
+  /* three colour-blocked cards, numbers up front */
   .how{padding:86px 0 0}
   h2{font-size:clamp(30px,4.4vw,50px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
-  .steps{margin-top:38px;display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-  .step .num{width:62px;height:62px;display:flex;align-items:center;justify-content:center;
-    font-family:Caveat;font-weight:600;font-size:32px;color:var(--ink);
-    border:2px solid var(--ochre);border-radius:56% 44% 48% 52%/52% 48% 52% 48%}
-  .step h3{margin-top:18px;font-size:23px;font-weight:700}
-  .step p{margin-top:6px;font-size:17px;color:var(--ink-soft);max-width:30ch}
+  .steps{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .step{border-radius:20px;padding:28px 28px 32px;min-height:340px;display:flex;flex-direction:column}
+  .step .no{font-size:clamp(42px,5vw,62px);font-weight:700;line-height:1;letter-spacing:-.03em}
+  .step h3{margin-top:auto;font-size:clamp(23px,2.5vw,30px);font-weight:700;
+    letter-spacing:-.022em;line-height:1.08}
+  .step p{margin-top:12px;font-size:17px;line-height:1.5}
+  .s1{background:var(--green)}
+  .s1 .no{color:var(--lime)} .s1 h3{color:var(--ground)} .s1 p{color:rgba(244,243,239,.8)}
+  .s2{background:var(--lime)}
+  .s2 .no{color:var(--green-mid)} .s2 h3{color:var(--green)} .s2 p{color:rgba(16,50,46,.82)}
+  .s3{background:var(--green-mid)}
+  .s3 .no{color:var(--lime)} .s3 h3{color:var(--ground)} .s3 p{color:rgba(244,243,239,.88)}
 
-  /* the nights: plain and warm, no years, no scarcity */
+  /* only dinner exists, so only dinner gets weight */
   .nights{padding:90px 0 0}
-  .nightlist{margin-top:32px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  .night{display:flex;align-items:center;gap:20px;padding:22px 24px;background:var(--oat-deep);
-    border-radius:26px 22px 24px 20px;text-decoration:none;color:inherit;transition:transform .18s ease}
-  .night:hover{transform:translateY(-3px)}
-  .night .dot{width:14px;height:14px;border-radius:50%;background:var(--ochre);flex:0 0 auto}
-  .night.on .dot{background:var(--clay)}
-  .night b{display:block;font-size:21px;font-weight:700}
-  .night span{font-size:16px;color:var(--ink-soft)}
-  .vote{margin-top:22px;font-size:17px;color:var(--ink-soft)}
-  .vote .hand{font-size:23px;color:var(--moss)}
+  .feature{margin-top:36px;display:grid;grid-template-columns:1.05fr 1fr;gap:46px;align-items:center}
+  .feature .shot{aspect-ratio:5/4;overflow:hidden;background:var(--surface);border-radius:10px}
+  .feature .shot img{width:100%;height:100%;object-fit:cover}
+  .tag{display:inline-flex;align-items:center;font-size:15px;font-weight:600;color:var(--green);
+    background:var(--lime);padding:7px 16px;border-radius:999px}
+  .feature h3{margin-top:16px;font-size:clamp(38px,5.6vw,62px);font-weight:700;letter-spacing:-.025em;line-height:1}
+  .feature .say{margin-top:16px;font-size:20px;color:var(--ink-soft);max-width:32ch}
+  .feature .facts{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:17px}
+  .feature .facts span{display:flex;align-items:center;gap:9px}
+  .feature .facts i{font-style:normal;color:var(--green-mid);font-size:20px;line-height:1}
+  .feature .btn{margin-top:30px}
+  /* everything else is still cooking, so it stays a whisper */
+  .also{margin-top:54px;padding-top:24px;border-top:1.5px solid rgba(25,26,28,.16);
+    font-size:17px;color:var(--ink-soft);display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+  .also b{font-weight:600;color:var(--ink)}
+  .also .hand{font-size:22px;color:var(--green-mid);margin-left:4px}
 
-  /* honest: three one-liners, no cards */
+  /* honest: three one-liners */
   .honest{padding:90px 0 0}
   .lines{margin-top:30px}
   .line{display:grid;grid-template-columns:190px 1fr;gap:26px;padding:24px 0;
-    border-bottom:1.5px solid rgba(44,40,34,.14);align-items:baseline}
-  .line:first-child{border-top:1.5px solid rgba(44,40,34,.14)}
-  .line dt{font-size:17px;color:var(--moss);font-weight:600}
+    border-bottom:1.5px solid rgba(25,26,28,.14);align-items:baseline}
+  .line:first-child{border-top:1.5px solid rgba(25,26,28,.14)}
+  .line dt{font-size:17px;color:var(--green-mid);font-weight:600}
   .line dd{font-size:21px;font-weight:600;letter-spacing:-.01em}
 
-  /* close: quiet, warm, one way in */
-  .close{margin:96px 0 0;background:var(--moss);color:#f4efe4;
+  /* close */
+  .close{margin:96px 0 0;background:var(--green);color:#f4f3ef;
     border-radius:120px 30px 120px 30px;padding:96px 34px;text-align:center}
   .close h2{color:#fff;max-width:16ch;margin:0 auto}
-  .close p{margin-top:16px;font-size:19px;color:rgba(244,239,228,.86)}
-  .close .btn{margin-top:32px;background:var(--ochre);color:#2c2822}
-  .close .btn:hover{background:#f0b63c}
-  .close .hand{display:block;margin-top:22px;font-size:24px;color:rgba(244,239,228,.9)}
+  .close p{margin-top:16px;font-size:19px;color:rgba(244,243,239,.84)}
+  .close .btn{margin-top:32px;background:var(--lime);color:var(--green)}
+  .close .btn:hover{background:#d3e463}
+  .close .hand{display:block;margin-top:22px;font-size:24px;color:var(--lime)}
   footer{padding:34px 0 54px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
     font-size:16px;color:var(--ink-soft)}
 
   @media(max-width:900px){
     .nogrid{grid-template-columns:repeat(2,1fr)}
-    .steps,.nightlist{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .step{min-height:0;padding:24px 24px 28px}
+    .feature{grid-template-columns:1fr;gap:30px}
     .line{grid-template-columns:1fr;gap:6px}
     .close{border-radius:70px 24px 70px 24px;padding:68px 24px}
   }
@@ -154,10 +192,21 @@
   </header>
 
   <section class="hero">
-    <h1>You don't have to know
-      <span class="squiggle">anybody<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 34 2, 62 10, 96 5 S 160 2, 198 7"/></svg></span>.
+    <h1 aria-label="Dinner with strangers. Bring nothing.">
+      <span class="lead">Dinner with strangers.</span><br><span class="lead" style="--o:22">Bring</span>&nbsp;<span class="rot" aria-hidden="true">
+        <span>nothing.</span>
+        <span>yourself.</span>
+        <span>an appetite.</span>
+        <span>nobody.</span>
+      </span>
     </h1>
-    <p>That's the whole point. Six people who haven't met, one table, somewhere in Lagos.</p>
+    <script>
+    /* runs here, right under the h1, so the letters exist before first paint */
+    for (const el of document.querySelectorAll(".lead, .rot > span"))
+      el.innerHTML = [...el.textContent].map((c, i) =>
+        `<i style="--i:${i}">${c === " " ? "&nbsp;" : c}</i>`).join("");
+    </script>
+    <p>Every few weeks, six people who've never met share a table somewhere in Lagos.</p>
     <div class="row">
       <a class="btn" href="https://tally.so" target="_blank" rel="noopener">Save me a seat</a>
       <span class="cost">Joining is free. <b>You just pay for your own food.</b></span>
@@ -195,45 +244,42 @@
   <section class="how">
     <h2>Three things, then you're in.</h2>
     <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
+      <div class="step s1">
+        <span class="no">01</span>
         <h3>Tell us about you</h3>
-        <p>A few questions. Takes three minutes.</p>
+        <p>A few quick questions. It takes about three minutes, and helps us build the right table.</p>
       </div>
-      <div class="step">
-        <div class="num">2</div>
-        <h3>We sort the table</h3>
-        <p>Five others, the place, the time. All handled.</p>
+      <div class="step s2">
+        <span class="no">02</span>
+        <h3>We build your table</h3>
+        <p>We match six strangers who are likely to enjoy the same evening, book the venue, and send everyone the details.</p>
       </div>
-      <div class="step">
-        <div class="num">3</div>
+      <div class="step s3">
+        <span class="no">03</span>
         <h3>You show up</h3>
-        <p>Hungry. That's the only rule.</p>
+        <p>That's it. Come hungry, be yourself, and let the evening do the rest.</p>
       </div>
     </div>
   </section>
 
   <section class="nights">
     <h2>What we're doing</h2>
-    <div class="nightlist">
-      <a class="night on" href="https://tally.so" target="_blank" rel="noopener">
-        <span class="dot" aria-hidden="true"></span>
-        <span><b>Dinner</b><span>Thursdays. Happening now.</span></span>
-      </a>
-      <a class="night" href="#more">
-        <span class="dot" aria-hidden="true"></span>
-        <span><b>Beach day</b><span>Soon</span></span>
-      </a>
-      <a class="night" href="#more">
-        <span class="dot" aria-hidden="true"></span>
-        <span><b>Games night</b><span>Soon</span></span>
-      </a>
-      <a class="night" href="#more">
-        <span class="dot" aria-hidden="true"></span>
-        <span><b>Rooftop evening</b><span>Soon</span></span>
-      </a>
-    </div>
-    <p class="vote" id="more">Want one of them first? <span class="hand">tell us on the form</span></p>
+    <article class="feature">
+      <div class="shot"><img src="img/moment-passing.jpg" alt="A table of people sharing food in Lagos"></div>
+      <div>
+        <span class="tag">Happening now</span>
+        <h3>Dinner</h3>
+        <p class="say">Every Thursday. Six people who haven't met, one table, somewhere easy in Lagos.</p>
+        <div class="facts">
+          <span><i>&#9679;</i> Thursdays, 7pm</span>
+          <span><i>&#9679;</i> Six seats</span>
+          <span><i>&#9679;</i> You pay for your food</span>
+        </div>
+        <a class="btn" href="https://tally.so" target="_blank" rel="noopener">Save me a seat</a>
+      </div>
+    </article>
+    <p class="also" id="more">Still cooking: <b>beach day</b>, <b>games night</b>, <b>rooftop evening</b>.
+      <span class="hand">tell us which one first</span></p>
   </section>
 
   <section class="honest">

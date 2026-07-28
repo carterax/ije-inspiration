@@ -137,9 +137,26 @@
 
   /* only dinner exists, so only dinner gets weight */
   .nights{padding:90px 0 0}
-  .feature{margin-top:36px;display:grid;grid-template-columns:1.05fr 1fr;gap:46px;align-items:center}
-  .feature .shot{aspect-ratio:5/4;overflow:hidden;background:var(--surface);border-radius:10px}
-  .feature .shot img{width:100%;height:100%;object-fit:cover}
+  /* the one place the grid breaks. the photo runs off the right edge of the
+     screen, sits slightly crooked, and the copy climbs on top of it. */
+  .feature{margin-top:36px;display:grid;grid-template-columns:1fr .92fr;
+    gap:0;align-items:center;position:relative}
+  .feature .shot{grid-column:1/-1;grid-row:1;aspect-ratio:16/10;overflow:hidden;
+    background:var(--surface);border-radius:12px;
+    margin-right:calc(50% - 50vw);
+    transform:rotate(-1.2deg);box-shadow:0 30px 60px -30px rgba(25,26,28,.3)}
+  .feature .shot img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+  .feature .said{grid-column:1;grid-row:1;position:relative;z-index:2;
+    background:var(--ground);border-radius:14px;padding:38px 40px 40px;
+    margin:64px 0 -64px -18px;box-shadow:0 24px 50px -28px rgba(25,26,28,.28)}
+  /* scribbled on afterwards, like someone marked up a printout */
+  .scribble{position:absolute;z-index:3;right:2%;bottom:-26px;
+    transform:rotate(-7deg);display:flex;align-items:flex-end;gap:6px;pointer-events:none}
+  .scribble span{font-family:Caveat,cursive;font-weight:600;font-size:29px;
+    color:var(--green-mid);line-height:1}
+  .scribble svg{width:56px;height:40px;overflow:visible;transform:scaleX(-1) rotate(6deg)}
+  .scribble path{fill:none;stroke:var(--green-mid);stroke-width:2.6;
+    stroke-linecap:round;stroke-linejoin:round}
   .tag{display:inline-flex;align-items:center;font-size:15px;font-weight:600;color:var(--green);
     background:var(--lime);padding:7px 16px;border-radius:999px}
   .feature h3{margin-top:16px;font-size:clamp(38px,5.6vw,62px);font-weight:700;letter-spacing:-.025em;line-height:1}
@@ -176,6 +193,10 @@
 
   @media(max-width:900px){
     .nogrid{grid-template-columns:repeat(2,1fr)}
+    .feature{grid-template-columns:1fr}
+    .feature .shot{aspect-ratio:4/3;width:100%;margin-right:0;transform:none}
+    .feature .said{margin:-30px 0 0;padding:28px 24px 30px}
+    .scribble{position:static;transform:rotate(-4deg);margin:20px 0 0 4px;justify-content:flex-start}
     .steps{grid-template-columns:1fr}
     .step{min-height:0;padding:24px 24px 28px}
     .feature{grid-template-columns:1fr;gap:30px}
@@ -187,7 +208,7 @@
 <body>
 <div class="wrap">
   <header>
-    <span class="mark">ije<i>.</i></span>
+    <span class="mark" lang="ig">íjè<i>.</i></span>
     <a href="https://tally.so" target="_blank" rel="noopener">Save me a seat</a>
   </header>
 
@@ -266,7 +287,7 @@
     <h2>What we're doing</h2>
     <article class="feature">
       <div class="shot"><img src="img/moment-passing.jpg" alt="A table of people sharing food in Lagos"></div>
-      <div>
+      <div class="said">
         <span class="tag">Happening now</span>
         <h3>Dinner</h3>
         <p class="say">Every Thursday. Six people who haven't met, one table, somewhere easy in Lagos.</p>
@@ -276,6 +297,10 @@
           <span><i>&#9679;</i> You pay for your food</span>
         </div>
         <a class="btn" href="https://tally.so" target="_blank" rel="noopener">Save me a seat</a>
+      </div>
+      <div class="scribble" aria-hidden="true">
+        <span>the only one that exists yet</span>
+        <svg viewBox="0 0 56 40"><path d="M4 4 C22 2 40 12 48 30"/><path d="M40 27 L49 32 L44 22"/></svg>
       </div>
     </article>
     <p class="also" id="more">Still cooking: <b>beach day</b>, <b>games night</b>, <b>rooftop evening</b>.
